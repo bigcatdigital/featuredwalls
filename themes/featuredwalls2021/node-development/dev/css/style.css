@@ -54,9 +54,9 @@
   --brand-darker-invert: 	 #fff;
   --brand-secondary-invert: #303030;
   --serif-font: Quattrocento, serif;
-  --sans-font: Quattrocento Sans, sans-serif;
-  --base-font: Quattrocento, serif;
-  --heading-font: Quattrocento Sans, sans-serif;
+  --sans-font: azo-sans-web, sans-serif;
+  --base-font: azo-sans-web, sans-serif;
+  --heading-font: azo-sans-web, sans-serif;
   --text-colour: #303030;
   --heading-colour: #303030;
   --link-color: #000000;
