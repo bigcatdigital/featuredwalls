@@ -12,19 +12,23 @@ body
 	font-family: var(--base-font)
 	font-size: 100% 
 	line-height: 1.45  
-	background-color: var(--shade-f0)
+	background-color: var(--shade-f0) 
 
 h1, h2, h3, h4, h5
 	margin-top: 0
 	margin-bottom: var(--vertical-unit)
 	font-family: var(--heading-font) 
 	line-height: 1.35
+h1, h2, h3
+	font-weight: var(--bold-font-weight)
 h1
-	font-size: 2.0581rem
+	font-size: var(--h1-text)
 h2
-	font-size: 1.618rem 
+	font-size: var(--h2-text) 
 h3
-	font-size: 1.272rem
+	font-size: var(--h3-text)
+h4, h5
+	font-size: var(--h4-text) 
 p, ul, ol, blockquote 
 	margin-top: 0
 	margin-bottom: var(--vertical-unit)
@@ -34,7 +38,7 @@ a
 	color: var(--link-color)
 	transition: color var(--quicktrans) var(--easing)
 	@include linkHover
-		font-weight: var(--link-active-weight)
+		font-weight: var(--link-active-weight) 
 		color: var(--link-active-color)
 blockquote
 	margin-left: 0
@@ -49,6 +53,8 @@ iframe
 .svg-icon
 	max-width: 	2rem
 	max-height: 2rem
+.bc-intro-paragraph
+	font-size: 1rem
 
 @media screen and (min-width: 600px) 
 	html
@@ -78,11 +84,28 @@ iframe
 			> a
 				@media screen and (max-width: calc(#{$tablet-large} - 1px))	
 					color: var(--text-black)
+/* Header overlay */
+.bc-site-header
+	& &__home-link
+		> svg
+			max-height: 4.189rem
 
-/* Hero components overlay */
+/* Hero components overwrites */
 .bc-hero
-	.bc-media-overlay
-	
+	& &__body
+		@include makeFlexbox(column, $justify: center)
+	& &__body__content
+		margin-top: 10%
+	& &__heading
+		font-size: var(--large-text)
+		margin-bottom: 0
+	& &__tagline
+		margin-bottom: 0
+	& &__link
+		margin-bottom: 0
+	& &__footer
+		justify-content: center
+
 .bc-card 
 	& &__media 
 		background-color: var(--shade-60) 
@@ -141,7 +164,18 @@ iframe
 		&.bc-is-active
 			padding-top: 		var(--vertical-unit)
 			padding-bottom: var(--vertical-unit)
-			
+.bc-flickity
+	&.bc-flickity--feature-slider
+		.bc-flickity__slide
+			height: 90vh
+			.bc-flickity__slide__slide-info
+				position: absolute
+				right: 10%
+				bottom: 20%
+				width: 33.333% 
+				padding: var(--vertical-unit) var(--gutter)
+				background-color: red
+				color: white
 			
 
 
