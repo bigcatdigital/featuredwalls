@@ -1,0 +1,52 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 1024 607">
+  <defs>
+    <style>
+      .cls-1 {
+        clip-path: url(#clip-caps-minimal-lc-final);
+      }
+
+      .cls-2, .cls-3, .cls-5 {
+        fill: #fff;
+      }
+
+      .cls-2 {
+        font-size: 292px;
+        font-family: TTBluescreens-DemiBold, TT Bluescreens;
+        letter-spacing: 0.014em;
+      }
+
+      .cls-2, .cls-5 {
+        font-weight: 300;
+      }
+
+      .cls-4 {
+        fill: #eaeaea;
+      }
+
+      .cls-5 {
+        font-size: 112px;
+        font-family: TTBluescreens-Light, TT Bluescreens;
+      }
+
+      .cls-6 {
+        fill: #ff2020;
+      }
+    </style>
+    <clipPath id="clip-caps-minimal-lc-final">
+      <rect width="1024" height="607"/>
+    </clipPath>
+  </defs>
+  <g id="caps-minimal-lc-final" class="cls-1">
+    <rect class="cls-6" width="1024" height="607"/>
+    <text id="caps" class="cls-2" transform="translate(409 374)"><tspan x="0" y="0">caps</tspan></text>
+    <g id="Walls" transform="translate(48.355 -43.537)">
+      <rect id="wall3-wht" class="cls-3" width="59.702" height="125.137" transform="translate(249.771 313.044)"/>
+      <rect id="wall3" class="cls-4" width="59.702" height="68.337" transform="translate(249.77 233.995)"/>
+      <rect id="wall2" class="cls-4" width="59.702" height="68.337" transform="translate(180.048 369.844)"/>
+      <rect id="wall2-wht" class="cls-3" width="59.702" height="125.137" transform="translate(180.048 233.995)"/>
+      <rect id="wall1-wht" class="cls-3" width="59.702" height="125.137" transform="translate(110.326 313.044)"/>
+      <rect id="wall1" class="cls-4" width="59.702" height="68.337" transform="translate(110.326 233.995)"/>
+    </g>
+    <text id="ltd" class="cls-5" transform="translate(765.5 374.5)"><tspan x="0" y="0">ltd</tspan></text>
+  </g>
+</svg>

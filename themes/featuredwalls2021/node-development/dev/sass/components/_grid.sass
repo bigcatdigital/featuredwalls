@@ -13,17 +13,15 @@
 .bc-grid 
 	display: grid
 	grid-template-rows: auto 
-	gap: calc(var(--gutter)* 1.1)
+	gap: calc(var(--gutter))
 	grid-template-columns: repeat(auto-fill, minmax(var(--min-col-width), 1fr))
 		
-	&--narrow-cols
+	&--narrow-cols 
 		@extend .bc-grid
 		grid-template-columns: repeat(auto-fill, minmax(var(--min-col-width-narrow), 1fr))
 	&--collapsed 
 		@extend .bc-grid
 		gap: 0
-		margin-left: 	-$gutter
-		margin-right: -$gutter
 	&--auto, &--x2, &--x4
 		@extend .bc-grid
 	&--auto
@@ -42,7 +40,8 @@
 	display: block
 	@media screen and (min-width: #{$tablet})
 		display: grid
-	
+.bc-column
+	margin-bottom: calc(var(--vertical-unit) * 1.5) 
 /* Grid items */
 //Span classes - effective from vw 1024px
 @media screen and (min-width: #{$tablet-large})

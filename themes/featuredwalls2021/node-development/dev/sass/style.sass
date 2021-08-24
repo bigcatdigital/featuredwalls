@@ -23,10 +23,12 @@ h1, h2, h3
 	font-weight: var(--bold-font-weight)
 h1
 	font-size: var(--h1-text)
+	font-weight: normal
 h2
 	font-size: var(--h2-text) 
 h3
 	font-size: var(--h3-text)
+	font-weight: var(--font-weight)
 h4, h5
 	font-size: var(--h4-text) 
 p, ul, ol, blockquote 
@@ -65,7 +67,6 @@ iframe
 @media screen and (min-width: 1400px) 
 	html
 		font-size: 20px
-
 @import 'components/header.sass';	
 @import 'components/animations.sass';
 @import 'components/grid';
@@ -75,10 +76,34 @@ iframe
 @import 'components/flickity-sliders';
 @import 'components/bc-twin-component'; 
 @import 'components/tables';
-
-
+.bc-site-header
+	& &__main-navigation, & &__menu-link 
+		display: none
+.bc-container
+	padding-top: calc(var(--vertical-unit) * 2)
+.bc-text-content
+	max-width: (680px / 16px * 1rem)  
+.has-lines
+	position: relative
+	margin-bottom: 15px
+	overflow: visible
+	.lines
+		position: absolute
+		height: 15px
+		width: 100%
+		left: 0
+		right: 0
+		bottom: -15px 
+		background-image: url('../media/horizontal-down.svg')  
+		background-repeat: repeat-x
+		background-position: left top
+ 	
 /* Inner page header */
 .bc-site-header
+	& &__home-link
+		max-width: 25%
+		@media screen and (min-width: $tablet-large) 
+			max-width: 12.5%
 	& &__main-navigation
 		&__item
 			> a
@@ -92,14 +117,16 @@ iframe
 
 /* Hero components overwrites */
 .bc-hero
+	padding-top: 0
+	padding-bottom: 0 
+	height: 100vh
 	& &__body
 		@include makeFlexbox(column, $justify: center)
-	& &__body__content
-		margin-top: 10%
 	& &__heading
 		font-size: var(--large-text)
 		margin-bottom: 0
 	& &__tagline
+		font-size: var(--h3-text) 
 		margin-bottom: 0
 	& &__link
 		margin-bottom: 0
@@ -164,22 +191,163 @@ iframe
 		&.bc-is-active
 			padding-top: 		var(--vertical-unit)
 			padding-bottom: var(--vertical-unit)
+/* FW&C container */
+.bc-fwc-containter
+	background-color: transparent
+	background-image: linear-gradient(white, var(--shade-f0))
 .bc-flickity
+	.flickity-page-dots	
+		display: none	
+	.flickity-button	
+		top: 50% 
+		transform: translateY(-50%)
+		border-radius: 0
+		background-color: rgba(0, 0, 0, 0.24)
+		transition: background-color 320ms ease-out
+		.flickity-button-icon
+			fill: var(--white) 
+		@include linkHover
+			background-color: rgba(0, 0, 0, 0.72)
+	.flickity-prev-next-button.previous
+		left: 0
+	.flickity-prev-next-button.next
+		right: 0
 	&.bc-flickity--feature-slider
+		position: relative
+		&:before, &::after
+			display: none
+			content: " "
+			position: absolute
+			width: 15%
+			height: 0.24rem
+			background-color: $brand-primary
+		&:before
+			right: 0
+			top: -0.24rem
+		&:after
+			left: 0
+			bottom: -0.24rem
+		@media screen and (min-width: $tablet)
+			&:before, &::after
+				width: 8%
+		.flickity-button	
+			width: 3.330rem
+			height: 3.330rem
 		.bc-flickity__slide
-			height: 90vh
+			height: 65vh 
+			flex-direction: column
+			opacity: 0.56
+			&.has-landscape-image
+				.bc-flickity__slide__slide-info
+					left: 0
+					right: auto
+					width: 100%
+					background-color: rgba($red, 1)
+					@media screen and (min-width: $tablet) 
+						left: auto 
+						right: 12%
+						bottom: 16% 
+						width: 40% 
+						background-color: rgba($red, 0.56)
+			@media screen and (min-width: $tablet)
+				height: 40vh
+			@media screen and (min-width: $tablet-large)
+				height: 90vh
+			&.is-selected
+				opacity: 1
+			picture
+				flex: 1 1 80%
+				overflow: hidden 
+				@include makeFlexbox(column, $justify: center, $align: center)
 			.bc-flickity__slide__slide-info
+				display: none
 				position: absolute
-				right: 10%
-				bottom: 20%
-				width: 33.333% 
+				right: 5%
+				bottom: 20% 
+				width: 80%
 				padding: var(--vertical-unit) var(--gutter)
-				background-color: red
 				color: white
+				background-color: rgba($red, 0.56)
+				&__heading	
+					margin-bottom: calc(var(--vertical-unit) / 2)
+					font-size: var(--regular-text)
+				p
+					margin-bottom: 0
+				@media screen and (min-width: $tablet)
+					right: 12%
+					bottom: 16% 
+					width: 40%
+					&__heading	
+						font-size: var(--regular-text)
+		@media screen and (min-width: $tablet-large)
+			.flickity-viewport			
+				overflow: visible
 			
-
-
-
-
-		
+//50/50 width sliders 
+.bc-flickity
+	&.bc-flickity--50-50
+		.flickity-page-dots	
+			display: none
+		@media screen and (max-width: ($tablet-large - 1))
+			padding-bottom: 0
+			.flickity-button	
+				top: 80%
+.bc-2-col-slider
+	margin-bottom: var(--vertical-unit)
+	grid-template-columns: 1fr 
+	&.bc-grid
+		@media screen and (min-width: $tablet)
+			grid-template-columns: repeat(2, 1fr) 
+			&:nth-of-type(1)
+				.bc-2-col-slider__intro
+					order: 2	
+		@media screen and (min-width: $tablet-large)
+			grid-template-columns: (1fr - 0.618fr) 0.618fr
+	@media screen and (min-width: $tablet)
+		&:nth-of-type(even)
+			.bc-2-col-slider__intro
+				order: 2	
+	@media screen and (min-width: $tablet)
+		&:nth-of-type(even)
+			&.bc-grid 
+				grid-template-columns: 0.618fr (1fr - 0.618fr) 
+	& &__intro
+		@include makeFlexbox(column, center)
+	.bc-flickity
+		position: relative
+		&::after
+			display: none 
+			content: " "
+			position: absolute
+			width: 15%
+			height: 0.381rem
+			background-color: $brand-primary
+		&:after
+			right: 0
+			bottom: -0.381rem
+		@media screen and (min-width: $tablet)
+			&:before, &::after
+				width: 8%
+		.bc-flickity__slide
+			height: 60vh
+			justify-content: center
+			picture
+				@include makeFlexbox($justify: center, $align: center)
+.bc-footer, .bc-get-started 
+	color: var(--white)
+	a 
+		color: var(--white)
+		text-decoration: none
+		@include linkHover()
+			text-decoration: underline
+	.svg-icon
+		fill: var(--white)
+.bc-footer
+	background-color: $brand-darker
+.bc-get-started 
+	background-color: $brand-primary
+.bc-get-started
+	& &__column
+		@media screen and (min-width: $tablet)
+			@include makeFlexbox($direction: column, $justify: center)
 		

@@ -1,32 +1,33 @@
 .bc-flickity
-	
 	position: relative
 	& &__slide
 		width: 100%
 		margin-right: var(--gutter)
+		@include makeFlexbox($justify: center, $align: center)
+		img
+			max-width: 100%
+		&.is-object-contain, &.is-object-cover 
+			background-color: $shade-f0
+			img
+				position: absolute
+				top: 0
+				left: 0
+				width: 100%
+				height: 100%
+				object-position: center 
+				object-fit: cover
+				z-index: 0
+		&.is-object-contain
+			img
+				object-fit: contain
 	&.bc-flickity--text-slider
-		//max-width: var(--text-max-width)
-		//margin-left: auto
-		//margin-right: auto
 		.flickity-viewport
 			transition: height var(--medtrans) var(--easing) 
-	.bc-flickity__slide
-		min-width: var(--min-col-width)
-		img
-			object-position: center 
-			object-fit: cover
-    	/* position: absolute; */
-			width: 100%
-			height: 100%
-	&.bc-flickity--card-slider
+		
+			
+	&.bc-flickity--card-slider 
 		.bc-flickity__slide
 			min-width: var(--min-col-width)
-			img
-				object-position: center 
-    		object-fit: cover
-    		/* position: absolute; */
-    		width: 100%
-    		height: 100%
 		@media screen and (min-width: $small) 
 			.bc-flickity__slide
 				max-width: calc(50% - #{(($gutter * 1	) / 2)})
@@ -43,7 +44,6 @@
 			bottom: var(--vertical-unit)
 			top: auto  
 			transform: translateY(50%)
-			background-color: transparent
 		.flickity-button
 			z-index: 10
 	
