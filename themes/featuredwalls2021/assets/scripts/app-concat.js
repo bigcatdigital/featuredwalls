@@ -9844,7 +9844,8 @@ return Flickity;
 			const flkSlider = new Flickity($bcFlkSlider, {
 				adaptiveHeight: (sliderType === 'text-slider' ) ? true : false,
 				cellAlign: (sliderType === 'card-slider' ) ? 'left' : 'center',
-				groupCells: true
+				groupCells: true,
+				cellSelector: '.bc-flickity__slide'
 			});
 			flkSlider.select(0);
 			//const $button = $bcFlkSlider.querySelector('.flickity-button');
