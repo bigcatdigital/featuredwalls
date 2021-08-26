@@ -15,20 +15,22 @@ body
 	background-color: var(--shade-f0) 
 
 h1, h2, h3, h4, h5
+
 	margin-top: 0
 	margin-bottom: var(--vertical-unit)
 	font-family: var(--heading-font) 
+	font-weight: normal
 	line-height: 1.35
-h1, h2, h3
-	font-weight: var(--bold-font-weight)
+h2, h3, h4, h5
+	font-family: var(--base-font) 
+	font-weight: 700 
 h1
 	font-size: var(--h1-text)
-	font-weight: normal
+	
 h2
 	font-size: var(--h2-text) 
 h3
 	font-size: var(--h3-text)
-	font-weight: var(--font-weight)
 h4, h5
 	font-size: var(--h4-text) 
 p, ul, ol, blockquote 
@@ -39,9 +41,26 @@ button
 a 
 	color: var(--link-color)
 	transition: color var(--quicktrans) var(--easing)
-	@include linkHover
+	position: relative
+	text-decoration: none
+	@include linkHover 
 		font-weight: var(--link-active-weight) 
 		color: var(--link-active-color)
+		text-decoration: none 
+		&::after
+			height: 0.300rem
+	&::after
+		content: " "
+		position: absolute
+		bottom: 0
+		left: 0
+		width: 100%
+		height: 0rem
+		background-color: rgba($brand-primary-invert, 0.9)
+		transition: height 220ms ease-out
+		
+		
+
 blockquote
 	margin-left: 0
 	margin-top: calc(var(--vertical-unit) * 2)
@@ -51,7 +70,7 @@ blockquote
 	p 
 		font-style: italic
 img
-	max-width: 100% 
+	max-width: 100%
 iframe 
 	border: none
 .svg-icon
@@ -78,13 +97,23 @@ iframe
 @import 'components/flickity-sliders';
 @import 'components/bc-twin-component'; 
 @import 'components/tables';
+.bc-hero__footer__scroll
+	@include linkHover() 
+		&::after
+			height: 0
 .bc-site-header
 	& &__main-navigation, & &__menu-link 
 		display: none
 .bc-container
 	padding-top: calc(var(--vertical-unit) * 2)
-.bc-text-content
+.bc-text-component
 	max-width: (680px / 16px * 1rem)  
+	margin-left: auto
+	margin-right: auto
+.bc-media-component
+	max-width: ((680px * 1.618) / 16px * 1rem)  
+	margin-left: auto
+	margin-right: auto
 .has-lines
 	position: relative
 	margin-bottom: 15px
@@ -187,7 +216,7 @@ iframe
 	& &__body
 		height: 0
 		overflow: hidden 
-		padding-left:  calc(var(--gutter) / 2)
+		padding-left:  calc(var(--vertical-unit) / 2) calc(var(--gutter) / 2)
 		padding-right: calc(var(--gutter) / 2)
 		transition: padding var(--medtrans) var(--easing), height var(--medtrans) var(--easing)
 		&.bc-is-active
@@ -198,6 +227,7 @@ iframe
 	background-color: transparent
 	background-image: linear-gradient(white, var(--shade-f0))
 .bc-flickity
+	padding-bottom: 0
 	.flickity-page-dots	
 		display: none	
 	.flickity-button	
@@ -236,9 +266,12 @@ iframe
 			width: 3.330rem
 			height: 3.330rem
 		.bc-flickity__slide
-			height: 65vh 
 			flex-direction: column
+			height: 65vh 
+			margin-right: -10px
 			opacity: 0.56
+			transform: scale(0.90)
+			transition: opacity 320ms ease-out, transform 320ms ease-out
 			&.has-landscape-image
 				.bc-flickity__slide__slide-info
 					left: 0
@@ -257,6 +290,7 @@ iframe
 				height: 90vh
 			&.is-selected
 				opacity: 1
+				transform: scale(1)
 			picture
 				flex: 1 1 80%
 				overflow: hidden 
@@ -297,14 +331,18 @@ iframe
 .bc-2-col-slider
 	margin-bottom: var(--vertical-unit)
 	grid-template-columns: 1fr 
+	position: relative
+	
 	&.bc-grid
 		@media screen and (min-width: $tablet)
 			grid-template-columns: repeat(2, 1fr) 
+			gap: var(--gutter) 
 			&:nth-of-type(1)
 				.bc-2-col-slider__intro
 					order: 2	
 		@media screen and (min-width: $tablet-large)
 			grid-template-columns: (1fr - 0.618fr) 0.618fr
+			gap: var(--gutter) 
 	@media screen and (min-width: $tablet)
 		&:nth-of-type(even)
 			.bc-2-col-slider__intro
@@ -312,21 +350,38 @@ iframe
 	@media screen and (min-width: $tablet)
 		&:nth-of-type(even)
 			&.bc-grid 
-				grid-template-columns: 0.618fr (1fr - 0.618fr) 
+				grid-template-columns: 0.618fr (1fr - 0.618fr)
+				gap: var(--gutter)  
 	& &__intro
 		@include makeFlexbox(column, center)
 	.bc-flickity
 		position: relative
-		&::after
-			display: none 
-			content: " "
+		padding: (20 / (14 * 1) * 1rem) (20 / 14 * 1rem)
+		.frame
 			position: absolute
-			width: 15%
-			height: 0.381rem
-			background-color: $brand-primary
-		&:after
-			right: 0
-			bottom: -0.381rem
+			width: 10%
+			height: 10%
+			border: 3px solid transparent
+			&.frame--top 
+				top: 0
+				left: 0
+				border-top-color: var(--brand-primary) 
+				border-left-color: var(--brand-primary) 
+			&.frame--bottom
+				right: 0
+				bottom: 0
+				border-bottom-color: var(--brand-primary) 
+				border-right-color: var(--brand-primary) 
+			&::after
+				display: none 
+				content: " "
+				position: absolute
+				width: 15%
+				height: 0.381rem
+				background-color: $brand-primary
+			&:after
+				right: 0
+				bottom: -0.381rem
 		@media screen and (min-width: $tablet)
 			&:before, &::after
 				width: 8%
@@ -335,6 +390,7 @@ iframe
 			justify-content: center
 			picture
 				@include makeFlexbox($justify: center, $align: center)
+			
 .bc-footer, .bc-get-started 
 	color: var(--white)
 	a 
@@ -348,8 +404,22 @@ iframe
 	background-color: $brand-darker
 .bc-get-started 
 	background-color: $brand-primary
-.bc-get-started
 	& &__column
 		@media screen and (min-width: $tablet)
-			@include makeFlexbox($direction: column, $justify: center)
+			@include makeFlexbox($direction: column, $justify: center, $align: stretch)
+	.bc-icon-link
+		flex: 1 1 100%
+		transition: background-color 320ms ease-out
+		margin-left: calc(var(--gutter) / 2  * -1)
+		margin-right: calc(var(--gutter) / 2  * -1)
+		padding: calc(var(--vertical-unit) / 2) calc(var(--gutter) / 2) 
+		.svg-icon
+			opacity: 0.9
+			transition: opacity 320ms ease-out
+		@include linkHover()
+			background-color: $brand-darker
+			.svg-icon
+				opacity: 1
+
+	
 		
