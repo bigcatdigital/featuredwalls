@@ -61,13 +61,13 @@
   --heading-colour: #303030;
   --link-color: #FF2020;
   --link-active-color: #e20000;
-  --link-active-weight: 500;
+  --link-active-weight: 700;
   --text-line-height: 1.45;
   --heading-line-height: 1.3;
   --font-weight: 400;
-  --bold-font-weight: 500;
+  --bold-font-weight: 700;
   --text-font-weight: 400;
-  --heading-font-weight: 500;
+  --heading-font-weight: 700;
   --text--1: 0.7862rem;
   --text-00: 1rem;
   --text-01: 1.272rem;
@@ -572,6 +572,36 @@ iframe {
 @media screen and (min-width: 1400px) {
   html {
     font-size: 20px; } }
+
+/* Observable elements */
+/* Featured text intros */
+.bc-text-component.bc-featured-intro {
+  max-width: 45.5rem;
+  padding-top: var(--gutter);
+  padding-left: 0;
+  padding-right: 0; }
+  .bc-text-component.bc-featured-intro .bc-content-block__heading {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    flex-wrap: nowrap;
+    align-items: center;
+    margin-left: calc(1.5rem * -1);
+    margin-right: calc(1.5rem * -1);
+    margin-bottom: 0; }
+  .bc-text-component.bc-featured-intro .bc-featured-intro__heading {
+    padding-top: calc(var(--vertical-unit) / 2);
+    padding-bottom: calc(var(--vertical-unit) / 2);
+    padding-left: calc(var(--gutter));
+    padding-right: calc(var(--gutter));
+    background-color: var(--white); }
+  .bc-text-component.bc-featured-intro .bc-featured-intro__body {
+    margin-left: calc(var(--gutter) * -1rem);
+    margin-right: calc(var(--gutter) * -1rem);
+    padding-top: calc(var(--vertical-unit) / 2);
+    padding-left: calc(var(--gutter));
+    padding-right: calc(var(--gutter));
+    background-image: linear-gradient(#fff, transparent); }
 
 .bc-site-header {
   position: relative;
@@ -1101,7 +1131,7 @@ table {
   table th {
     font-weight: var(--bold-font-weight); }
 
-.bc-hero__footer__scroll:active::after, .bc-hero__footer__scroll:hover::after, .bc-hero__footer__scroll:focus::after {
+.bc-hero__footer__scroll:active::after, .bc-hero__footer__scroll:hover::after, .bc-hero__footer__scroll:focus::after, .bc-site-header__home-link:active::after, .bc-site-header__home-link:hover::after, .bc-site-header__home-link:focus::after {
   height: 0; }
 
 .bc-site-header .bc-site-header__main-navigation, .bc-site-header .bc-site-header__menu-link {
@@ -1165,8 +1195,9 @@ table {
     font-size: var(--large-text);
     margin-bottom: 0; }
   .bc-hero .bc-hero__tagline, .bc-hero--full-screen .bc-hero__tagline {
-    font-size: var(--h3-text);
-    margin-bottom: 0; }
+    font-size: var(--text-00);
+    font-weight: var(--bold-font-weight);
+      font-weight-margin-bottom: 0; }
   .bc-hero .bc-hero__link, .bc-hero--full-screen .bc-hero__link {
     margin-bottom: 0; }
   .bc-hero .bc-hero__footer, .bc-hero--full-screen .bc-hero__footer {
@@ -1239,8 +1270,6 @@ table {
 
 .bc-flickity {
   padding-bottom: 0; }
-  .bc-flickity .flickity-page-dots {
-    display: none; }
   .bc-flickity .flickity-button {
     top: 50%;
     transform: translateY(-50%);
@@ -1256,23 +1285,18 @@ table {
   .bc-flickity .flickity-prev-next-button.next {
     right: 0; }
   .bc-flickity.bc-flickity--feature-slider {
-    position: relative; }
-    .bc-flickity.bc-flickity--feature-slider:before, .bc-flickity.bc-flickity--feature-slider::after {
-      display: none;
-      content: " ";
-      position: absolute;
-      width: 15%;
-      height: 0.24rem;
-      background-color: #FF2020; }
-    .bc-flickity.bc-flickity--feature-slider:before {
-      right: 0;
-      top: -0.24rem; }
-    .bc-flickity.bc-flickity--feature-slider:after {
-      left: 0;
-      bottom: -0.24rem; }
-    @media screen and (min-width: 768px) {
-      .bc-flickity.bc-flickity--feature-slider:before, .bc-flickity.bc-flickity--feature-slider::after {
-        width: 8%; } }
+    position: relative;
+    margin-bottom: calc(var(--vertical-unit) * 2); }
+    .bc-flickity.bc-flickity--feature-slider .flickity-page-dots {
+      display: block;
+      bottom: calc(1.5rem * -1rem); }
+      .bc-flickity.bc-flickity--feature-slider .flickity-page-dots .dot {
+        transition: background-color 320ms ease-out, opacity 320ms ease-out; }
+        .bc-flickity.bc-flickity--feature-slider .flickity-page-dots .dot:active, .bc-flickity.bc-flickity--feature-slider .flickity-page-dots .dot:hover, .bc-flickity.bc-flickity--feature-slider .flickity-page-dots .dot:focus {
+          background-color: var(--red);
+          opacity: 0.64; }
+        .bc-flickity.bc-flickity--feature-slider .flickity-page-dots .dot.is-selected {
+          background-color: var(--red); }
     .bc-flickity.bc-flickity--feature-slider .flickity-button {
       width: 3.330rem;
       height: 3.330rem; }
@@ -1297,7 +1321,10 @@ table {
             background-color: rgba(255, 0, 0, 0.56); } }
       @media screen and (min-width: 768px) {
         .bc-flickity.bc-flickity--feature-slider .bc-flickity__slide {
-          height: 40vh; } }
+          height: 60vh; } }
+      @media screen and (min-width: 810px) {
+        .bc-flickity.bc-flickity--feature-slider .bc-flickity__slide {
+          height: 75vh; } }
       @media screen and (min-width: 1024px) {
         .bc-flickity.bc-flickity--feature-slider .bc-flickity__slide {
           height: 90vh; } }
@@ -1337,15 +1364,6 @@ table {
       .bc-flickity.bc-flickity--feature-slider .flickity-viewport {
         overflow: visible; } }
 
-.bc-flickity.bc-flickity--50-50 .flickity-page-dots {
-  display: none; }
-
-@media screen and (max-width: 1023px) {
-  .bc-flickity.bc-flickity--50-50 {
-    padding-bottom: 0; }
-    .bc-flickity.bc-flickity--50-50 .flickity-button {
-      top: 80%; } }
-
 .bc-2-col-slider {
   margin-bottom: calc(var(--vertical-unit) * 2);
   grid-template-columns: 1fr;
@@ -1375,13 +1393,22 @@ table {
     align-items: flex-start; }
   .bc-2-col-slider .bc-flickity {
     position: relative;
-    padding: 1.42857rem 1.42857rem; }
+    padding: 1.42857rem 1.42857rem;
+    --frame-border-color: rgba(192, 192, 192, 0.8); }
+    .bc-2-col-slider .bc-flickity .flickity-page-dots {
+      display: none; }
+    .bc-2-col-slider .bc-flickity.is-observed .frame.frame--top {
+      border-top-color: var(--brand-primary);
+      border-left-color: var(--brand-primary); }
+    .bc-2-col-slider .bc-flickity.is-observed .frame.frame--bottom {
+      border-bottom-color: var(--brand-primary);
+      border-right-color: var(--brand-primary); }
     .bc-2-col-slider .bc-flickity .frame {
       position: absolute;
       width: 10%;
       height: 10%;
       border: 2px solid transparent;
-      --frame-border-color: rgba(192, 192, 192, 0.8); }
+      transition: border-color 420ms ease-out; }
       .bc-2-col-slider .bc-flickity .frame.frame--top {
         top: 0;
         left: 0;

@@ -9524,9 +9524,14 @@ return Flickity;
 		
 		return { top: elRect.top + scrollTop, left: elRect.left + scrollLeft };
 	} 
-	
+	/* Insersection Observer (IO) */
+	function IOmaker($el, opts, callback) {
+		console.log(opts);
+		let observer = new IntersectionObserver(callback, opts);
+		observer.observe($el);
+		return observer;
+	} 
 	/*** Animation functions **/
-	
 	/*
 		bcLerpScroll - scroll an element (usually the window) to some target target using linear interpolation
 			en.wikipedia.org/wiki/Linear_interpolation
@@ -9689,8 +9694,6 @@ return Flickity;
 		}
 		return;
 	}//bcAdjustHeight
-	
-	
 	/* 
 		Scroll links
 		For on page vertical scrolling
@@ -9718,7 +9721,6 @@ return Flickity;
 		}
 		
 	});
-	
 	/* Show/hide (accordion) components
 	 * $el: element to show or hide
 	 * target: element target height as an integer
@@ -9930,7 +9932,27 @@ return Flickity;
 		});// end $bcTwinComponents for each
 	}//end if $bcTwinComponents is > 0
 
-
+	/* Add observer */
+	const twoColSliderObserveables = Array.from(document.querySelectorAll('.bc-2-col-slider .bc-flickity'));
+	twoColSliderObserveables.forEach(($slider) => {
+		function sliderCallback(entries, ) {
+			entries.forEach(entry => {
+				if (entry.isIntersecting) {
+					console.log('Is observed');
+					$slider.classList.add('is-observed');
+				} else {
+					console.log('Is not observed');
+					$slider.classList.remove('is-observed');
+				}
+			});
+			
+			
+		}
+		const opts = {
+			threshold: 0.5
+		};
+		IOmaker($slider, opts, sliderCallback);
+	});
 	window.addEventListener('resize', () => {
 		//mainNavigationSetup();
 	});

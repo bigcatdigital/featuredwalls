@@ -1,5 +1,5 @@
 @import 'globals/_globals'
-@import 'components/_mixins'
+@import 'components/mixins.sass'
 @import 'components/utilities.sass' 
 
 *
@@ -58,9 +58,6 @@ a
 		height: 0rem
 		background-color: rgba($brand-primary-invert, 0.9)
 		transition: height 220ms ease-out
-		
-		
-
 blockquote
 	margin-left: 0
 	margin-top: calc(var(--vertical-unit) * 2)
@@ -88,6 +85,36 @@ iframe
 @media screen and (min-width: 1400px) 
 	html
 		font-size: 20px
+/* Observable elements */
+.is-observable
+	&.is-observed
+/* Featured text intros */
+.bc-text-component 
+	&.bc-featured-intro 
+		max-width: (680px / 16px * 1rem + ($gutter * 2))
+		 
+			 
+		padding-top: var(--gutter)
+		padding-left:  0
+		padding-right: 0
+		.bc-content-block__heading 
+			@include makeFlexbox($align: center)
+			margin-left:  calc(#{$gutter} * -1)
+			margin-right: calc(#{$gutter} * -1)
+			margin-bottom: 0
+		.bc-featured-intro__heading
+			padding-top: calc(var(--vertical-unit) / 2)
+			padding-bottom: calc(var(--vertical-unit) / 2)
+			padding-left:  calc(var(--gutter))
+			padding-right: calc(var(--gutter))
+			background-color: var(--white)	
+		.bc-featured-intro__body
+			margin-left:  calc(#{$gutter} * -1)
+			margin-right: calc(#{$gutter} * -1)	
+			padding-top: calc(var(--vertical-unit) / 2)
+			padding-left:  calc(var(--gutter))
+			padding-right: calc(var(--gutter))	
+			background-image: linear-gradient($white, transparent)
 @import 'components/header.sass';	
 @import 'components/animations.sass';
 @import 'components/grid';
@@ -97,7 +124,7 @@ iframe
 @import 'components/flickity-sliders';
 @import 'components/bc-twin-component'; 
 @import 'components/tables';
-.bc-hero__footer__scroll
+.bc-hero__footer__scroll, .bc-site-header__home-link
 	@include linkHover() 
 		&::after
 			height: 0
@@ -157,8 +184,9 @@ iframe
 		font-size: var(--large-text)
 		margin-bottom: 0
 	& &__tagline
-		font-size: var(--h3-text) 
-		margin-bottom: 0
+		font-size: var(--text-00) 
+		font-weight: var(--bold-font-weight) 
+ 		margin-bottom: 0
 	& &__link
 		margin-bottom: 0
 	& &__footer
@@ -227,11 +255,9 @@ iframe
 	background-color: transparent
 	background-image: linear-gradient(white, var(--shade-f0))
 .bc-flickity
-	padding-bottom: 0
-	.flickity-page-dots	
-		display: none	
+	padding-bottom: 0	
 	.flickity-button	
-		top: 50% 
+		top: 50%
 		transform: translateY(-50%)
 		border-radius: 0
 		background-color: rgba(0, 0, 0, 0.24)
@@ -245,23 +271,18 @@ iframe
 	.flickity-prev-next-button.next
 		right: 0
 	&.bc-flickity--feature-slider
-		position: relative
-		&:before, &::after
-			display: none
-			content: " "
-			position: absolute
-			width: 15%
-			height: 0.24rem
-			background-color: $brand-primary
-		&:before
-			right: 0
-			top: -0.24rem
-		&:after
-			left: 0
-			bottom: -0.24rem
-		@media screen and (min-width: $tablet)
-			&:before, &::after
-				width: 8%
+		position: relative 
+		margin-bottom: calc(var(--vertical-unit) * 2 )
+		.flickity-page-dots
+			display: block 
+			bottom: calc(#{$vertical-unit} * -1rem)  
+			.dot
+				transition: background-color 320ms ease-out, opacity 320ms ease-out
+				@include linkHover()
+					background-color: var(--red)
+					opacity: 0.64
+				&.is-selected
+					background-color: var(--red)
 		.flickity-button	
 			width: 3.330rem
 			height: 3.330rem
@@ -285,7 +306,9 @@ iframe
 						width: 40% 
 						background-color: rgba($red, 0.56)
 			@media screen and (min-width: $tablet)
-				height: 40vh
+				height: 60vh
+			@media screen and (min-width: 810px)
+				height: 75vh
 			@media screen and (min-width: $tablet-large)
 				height: 90vh
 			&.is-selected
@@ -319,15 +342,7 @@ iframe
 			.flickity-viewport			
 				overflow: visible
 			
-//50/50 width sliders 
-.bc-flickity
-	&.bc-flickity--50-50
-		.flickity-page-dots	
-			display: none
-		@media screen and (max-width: ($tablet-large - 1))
-			padding-bottom: 0
-			.flickity-button	
-				top: 80%
+//Two-col sliders 
 .bc-2-col-slider
 	margin-bottom: calc(var(--vertical-unit) * 2)
 	grid-template-columns: 1fr 
@@ -356,13 +371,23 @@ iframe
 	.bc-flickity
 		position: relative
 		padding: (20 / (14 * 1) * 1rem) (20 / 14 * 1rem)
+		.flickity-page-dots	
+			display: none
+		--frame-border-color: #{rgba($shade-b0, 0.8)}  
+		&.is-observed
+			.frame
+				&.frame--top 
+					border-top-color: var(--brand-primary)
+					border-left-color: var(--brand-primary) 
+				&.frame--bottom
+					border-bottom-color: var(--brand-primary) 
+					border-right-color:  var(--brand-primary)  
 		.frame
 			position: absolute
 			width: 10%
 			height: 10%
 			border: 2px solid transparent
-			@debug rgba($brand-primary, 0.8)
-			--frame-border-color: #{rgba($shade-b0, 0.8)}  
+			transition: border-color 420ms ease-out
 			&.frame--top 
 				top: 0
 				left: 0
