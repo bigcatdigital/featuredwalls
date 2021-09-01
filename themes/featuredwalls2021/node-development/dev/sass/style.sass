@@ -99,14 +99,14 @@ iframe
 		padding-right: 0
 		.bc-content-block__heading 
 			@include makeFlexbox($align: center)
-			margin-left:  calc(#{$gutter} * -1)
-			margin-right: calc(#{$gutter} * -1)
+			margin-left:  calc((#{$gutter} * -1) / 2)
+			margin-right: calc((#{$gutter} * -1) / 2)
 			margin-bottom: 0
 		.bc-featured-intro__heading
 			padding-top: calc(var(--vertical-unit) / 2)
 			padding-bottom: calc(var(--vertical-unit) / 2)
-			padding-left:  calc(var(--gutter))
-			padding-right: calc(var(--gutter))
+			padding-left:  calc((#{$gutter} * -1) / 2)
+			padding-right: calc((#{$gutter} * -1) / 2)
 			background-color: var(--white)	
 		.bc-featured-intro__body
 			margin-left:  calc(#{$gutter} * -1)
