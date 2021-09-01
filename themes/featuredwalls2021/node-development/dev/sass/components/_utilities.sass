@@ -23,6 +23,12 @@
 	.svg-icon
 		margin-right: calc(var(--gutter) / 2)
 		max-height: calc(var(--vertical-unit)* 1.5)
+		fill: var(--brand-primary) 
+	@include makeFlexbox($align: center)
+.bc-arrow-link
+	.svg-icon
+		margin-left: calc(var(--gutter) / 2)
+		max-height: calc(var(--vertical-unit)* 1.5)
 	@include makeFlexbox($align: center)
 /* Featured links */
 .bc-icon-links
@@ -31,6 +37,7 @@
 	.svg-icon
 		max-height: #{$line-height}rem
 		max-width: #{$line-height}rem
+		
 	a 
 		@include makeFlexbox(row, center, center)
 		width: 2rem
