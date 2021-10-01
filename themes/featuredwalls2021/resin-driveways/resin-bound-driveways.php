@@ -10,9 +10,9 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
 	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 	<link href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700&family=Oswald:wght@200;400;500;600&display=swap" rel="stylesheet">
-	<link rel="stylesheet" href="./assets/css/vendor/flickity.min.css" />
+	<link rel="stylesheet" href="../assets/css/vendor/flickity.min.css" />
 	<?php 
-    echo '<link rel="stylesheet" href="' . './assets/css/style.css?t=s' . microtime() . '" />';
+    echo '<link rel="stylesheet" href="' . '../assets/css/style.css?t=s' . microtime() . '" />';
   ?>
 </head>  
 <body>
@@ -21,16 +21,16 @@
 		<a href="#main-site-content" title="Skip site menu, go to to main site content"></a>	
 	</nav>
 	<header class="bc-site-header bc-container">
-    <a title="Site hompepage" class="bc-site-header__home-link" href="/"> 
-		  <img src="./assets/media/caps-minimal-lc-final.png" alt="CAPS Ltd logo - presenting Featured Walls and Ceilings" /> 
+    <a title="Site hompepage" class="bc-site-header__home-link" href="../"> 
+		  <img src="../assets/media/caps-minimal-lc-final.png" alt="CAPS Ltd logo - presenting Featured Walls and Ceilings" /> 
 		</a>
 		<a href="#main-site-content" class="bc-site-header__menu-skip bc-is-hidden" title="Skip site menu, to main site content"></a>
 		<a href="javascript:void(0)" aria-hidden="true" class="bc-site-header__menu-link" title="Site Menu">
 			<svg class="svg-icon bc-site-header__menu-link__menu ">
-				<use xlink:href="assets/media/svg/icons/bc-svgs.svg#menu-thin"></use>
+				<use xlink:href="../assets/media/svg/icons/bc-svgs.svg#menu-thin"></use>
 			</svg>
 			<svg class="svg-icon bc-site-header__menu-link__close "> 
-				<use xlink:href="assets/media/svg/icons/bc-svgs.svg#close-x"></use>
+				<use xlink:href="../assets/media/svg/icons/bc-svgs.svg#close-x"></use>
 			</svg>
 		</a>
 		<ul id="site-main-navigation" role="navigation" aria-label="Main site navigation" class="bc-site-header__main-navigation">
@@ -52,7 +52,7 @@
 		</div>
 		<div class="bc-media-component bc-column">
       <picture class="">
-        <img src="assets/media/resin-bound-compass-2.jpg" alt="A resin bound driveway with embedded compass design" />
+        <img src="../assets/media/resin-bound-compass-2.jpg" alt="A resin bound driveway with embedded compass design" />
       </picture>
     </div>
     <div class="bc-text-component" id="resin-body-content">
@@ -72,9 +72,9 @@
       <p>We will find a design solution that works for you.</p>
       <p class="bc-icon-link">
         <svg class="svg-icon">
-					<use xlink:href="assets/media/svg/icons/bc-svgs.svg#arrow--left"></use>
+					<use xlink:href="../assets/media/svg/icons/bc-svgs.svg#arrow--left"></use>
 				</svg>
-        <a href="./">Back to our homepage</a>	
+        <a href="../">Back to our homepage</a>	
       </p>
     </div>   
 	</section>
@@ -88,19 +88,19 @@
 			<div class="bc-get-started__column">
 				<p class="bc-icon-link">
 					<svg class="svg-icon">
-						<use xlink:href="assets/media/svg/icons/bc-svgs.svg#phone-outline-2"></use>
+						<use xlink:href="../assets/media/svg/icons/bc-svgs.svg#phone-outline-2"></use>
 					</svg>	
 					<a href="tel:0863627302">086 362 7302</a>
 				</p>
 				<p class="bc-icon-link">
 					<svg class="svg-icon">
-						<use xlink:href="assets/media/svg/icons/bc-svgs.svg#facebook"></use>
+						<use xlink:href="../assets/media/svg/icons/bc-svgs.svg#facebook"></use>
 					</svg>	
 					<a href="https://www.facebook.com/featuredbespokewallsandceilings">Featured Walls and Ceilings</a>
 				</p>
 				<p class="bc-icon-link">
 					<svg class="svg-icon">
-						<use xlink:href="assets/media/svg/icons/bc-svgs.svg#email-at"></use>
+						<use xlink:href="../assets/media/svg/icons/bc-svgs.svg#email-at"></use>
 					</svg>	
 					<a href="mailto:capsltd@hotmail.com">capsltd@hotmail.com</a>
 				</p>
@@ -120,7 +120,6 @@
 		</div><!-- // .bc-grid -->
 	</footer>
   </div><!-- //. bc-body-wrap --> 
-  <script src="assets/scripts/app-concat.js"></script>  
-  <?php echo 'script src="assets/scripts/app-concat.js' . microtime() . '"></script>'; ?>
+  <?php echo '<script src="../assets/scripts/app-concat.js?t=' . microtime() . '"></script>'; ?>
 </body>
 </html> 

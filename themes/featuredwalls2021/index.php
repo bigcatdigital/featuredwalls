@@ -11,9 +11,9 @@
 	<link rel="preconnect" href="https://fonts.googleapis.com">
 	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 	<link href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700&family=Oswald:wght@200;400;500;600&display=swap" rel="stylesheet">
-	<link rel="stylesheet" href="./assets/css/vendor/flickity.min.css" />
+	<link rel="stylesheet" href="assets/css/vendor/flickity.min.css" />
 	<?php 
-    echo '<link rel="stylesheet" href="' . './assets/css/style.css?t=s' . microtime() . '" />';
+    echo '<link rel="stylesheet" href="' . 'assets/css/style.css?t=s' . microtime() . '" />';
   ?>
 </head>  
 	<body>
@@ -22,8 +22,8 @@
 				<a href="#main-site-content" title="Skip site menu, go to to main site content"></a>	
 			</nav>
 			<header class="bc-site-header bc-is-hero-overlay bc-container">
-				<a title="Site hompepage" class="bc-site-header__home-link" href="/"> 
-					<img src="./assets/media/caps-minimal-lc-final.png" alt="CAPS Ltd logo - presenting Featured Walls and Ceilings" /> 
+				<a title="Site hompepage" class="bc-site-header__home-link" href="./"> 
+					<img src="assets/media/caps-minimal-lc-final.png" alt="CAPS Ltd logo - presenting Featured Walls and Ceilings" /> 
 				</a>
 				<a href="#main-site-content" class="bc-site-header__menu-skip bc-is-hidden" title="Skip site menu, to main site content"></a>
 				<a href="javascript:void(0)" aria-hidden="true" class="bc-site-header__menu-link" title="Site Menu">
@@ -210,7 +210,7 @@
 						<p class="bc-hero__tagline">Elegant, long lasting, durable, beautiful custom designed resin bound driveways</p>
 						<p><i>What if you could have a custom designed durable, safe walkway, driveway or patio added to your home or work premises?</i></p>
 						<p class="bc-arrow-link">
-						<a href="./resin-bound-driveways.php">Find out more here</a>				
+						<a href="resin-driveways/resin-bound-driveways.php">Find out more here</a>				
 							<svg class="svg-icon">
 								<use xlink:href="assets/media/svg/icons/bc-svgs.svg#arrow"></use>
 							</svg>	
@@ -261,7 +261,7 @@
 				</div><!-- // .bc-grid -->
 			</footer>
 		</div><!-- //. bc-body-wrap --> 
-		<script src="assets/scripts/app-concat.js"></script>  
-    <?php echo 'script src="assets/scripts/app-concat.js' . microtime() . '"></script>'; ?>
+		<!-- <script src="assets/scripts/app-concat.js"></script>   -->
+    <?php echo '<script src="assets/scripts/app-concat.js?t=' . microtime() . '"></script>'; ?>
 	</body>
 </html> 
