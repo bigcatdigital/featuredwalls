@@ -527,6 +527,10 @@ h4, h5 {
 p, ul, ol, blockquote {
   margin-top: 0;
   margin-bottom: var(--vertical-unit); }
+  @media screen and (max-width: 600px) {
+    p, ul, ol, blockquote {
+      font-size: var(--text-01);
+      line-height: calc(var(--text-01) * 1.5); } }
 
 button {
   font-family: var(--base-font); }
@@ -868,7 +872,7 @@ iframe {
       max-height: 1rem; }
     .bc-hero .bc-hero__footer__scroll:active, .bc-hero--full-screen .bc-hero__footer__scroll:active, .bc-hero .bc-hero__footer__scroll:hover, .bc-hero--full-screen .bc-hero__footer__scroll:hover, .bc-hero .bc-hero__footer__scroll:focus, .bc-hero--full-screen .bc-hero__footer__scroll:focus {
       text-decoration: none;
-      background-color: rgba(0, 0, 0, 0.2); }
+      background-color: rgba(255, 32, 32, 0.72); }
   .bc-hero .bc-hero__heading, .bc-hero--full-screen .bc-hero__heading, .bc-hero .bc-hero__tagline, .bc-hero--full-screen .bc-hero__tagline, .bc-hero p, .bc-hero--full-screen p, .bc-hero .bc-hero__link, .bc-hero--full-screen .bc-hero__link {
     margin-top: 0;
     margin-bottom: var(--vertical-unit); }
@@ -1149,9 +1153,6 @@ table {
 .bc-site-header .bc-site-header__main-navigation, .bc-site-header .bc-site-header__menu-link {
   display: none; }
 
-.bc-container#body-content, #body-content.bc-hero, #body-content.bc-hero--full-screen {
-  padding-top: calc(var(--vertical-unit) * 2); }
-
 .bc-text-component {
   max-width: 40.625rem;
   margin-left: auto;
@@ -1208,7 +1209,6 @@ table {
     font-size: var(--large-text);
     margin-bottom: 0; }
   .bc-hero .bc-hero__tagline, .bc-hero--full-screen .bc-hero__tagline {
-    font-size: var(--text-00);
     font-weight: var(--bold-font-weight);
       font-weight-margin-bottom: 0; }
   .bc-hero .bc-hero__link, .bc-hero--full-screen .bc-hero__link {
@@ -1282,6 +1282,7 @@ table {
 
 /* FW&C container */
 .bc-fwc-containter {
+  padding-top: calc(var(--vertical-unit) * 2);
   background-color: transparent;
   background-image: linear-gradient(white, var(--shade-f0)); }
 
@@ -1296,7 +1297,7 @@ table {
     .bc-flickity .flickity-button .flickity-button-icon {
       fill: var(--white); }
     .bc-flickity .flickity-button:active, .bc-flickity .flickity-button:hover, .bc-flickity .flickity-button:focus {
-      background-color: rgba(0, 0, 0, 0.72); }
+      background-color: rgba(255, 32, 32, 0.98); }
   .bc-flickity .flickity-prev-next-button.previous {
     left: 0; }
   .bc-flickity .flickity-prev-next-button.next {
@@ -1492,6 +1493,10 @@ table {
 
 .bc-get-started {
   background-color: #FF2020; }
+  @media screen and (min-width: 720px) {
+    .bc-get-started .bc-get-started__links {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr); } }
   @media screen and (min-width: 768px) {
     .bc-get-started .bc-get-started__column {
       display: flex;

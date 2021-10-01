@@ -19,6 +19,7 @@
 		height: 100vh
 		padding-top: 0
 		padding-bottom: 0
+	
 	& &__media 
 		position: absolute
 		top: 0
@@ -49,13 +50,11 @@
 	& &__header, & &__footer
 		flex: 0 1 10%
 	& &__footer
-		
 		p, a
 			margin: 0
 		&__scroll
 			@include makeFlexbox(column, center, center)
 			padding: calc(var(--vertical-unit) / 2) calc(var(--gutter) * 2)
-			
 			text-decoration: none
 			transition: background-color var(--medtrans) var(--easing)
 			.svg-icon
@@ -63,7 +62,7 @@
 				max-height: 1rem 
 			@include linkHover
 				text-decoration: none
-				background-color: rgba($black, 0.2)
+				background-color: rgba($brand-primary, 0.72)
 	& &__heading, & &__tagline, p, & &__link 
 		margin-top: 0
 		margin-bottom: var(--vertical-unit)

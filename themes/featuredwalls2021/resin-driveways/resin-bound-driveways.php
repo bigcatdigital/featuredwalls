@@ -14,6 +14,14 @@
 	<?php 
     echo '<link rel="stylesheet" href="' . '../assets/css/style.css?t=s' . microtime() . '" />';
   ?>
+	<!-- Global site tag (gtag.js) - Google Analytics -->
+	<script async src="https://www.googletagmanager.com/gtag/js?id=G-EB511QMQDJ"></script>
+	<script>
+		window.dataLayer = window.dataLayer || [];
+		function gtag(){dataLayer.push(arguments);}
+		gtag('js', new Date());
+		gtag('config', 'G-EB511QMQDJ');
+	</script>
 </head>  
 <body>
 <div class="bc-body-wrap">
@@ -80,12 +88,12 @@
 	</section>
 	<!-- // About resin bound driveways -->
   <section id="get-started" class="bc-container bc-get-started">
-		<article class="bc-grid--x2">
-			<div class="bc-get-started__column">
+		<article class="">
+			<div class="bc-text-component bc-content-block bc-column">
 				<h1>Get started</h1>
 				<p>Contact us now by email, phone or on social media to get started.</p>
 			</div><!-- // bc-grid column-->
-			<div class="bc-get-started__column">
+			<div class="bc-column bc-text-component bc-get-started__links">
 				<p class="bc-icon-link">
 					<svg class="svg-icon">
 						<use xlink:href="../assets/media/svg/icons/bc-svgs.svg#phone-outline-2"></use>
@@ -96,8 +104,15 @@
 					<svg class="svg-icon">
 						<use xlink:href="../assets/media/svg/icons/bc-svgs.svg#facebook"></use>
 					</svg>	
+					<a href="https://www.facebook.com/resinbounddesigns">Resin Bound Designs Ireland</a>
+				</p>
+				<p class="bc-icon-link">
+					<svg class="svg-icon">
+						<use xlink:href="../assets/media/svg/icons/bc-svgs.svg#facebook"></use>
+					</svg>	
 					<a href="https://www.facebook.com/featuredbespokewallsandceilings">Featured Walls and Ceilings</a>
 				</p>
+				
 				<p class="bc-icon-link">
 					<svg class="svg-icon">
 						<use xlink:href="../assets/media/svg/icons/bc-svgs.svg#email-at"></use>

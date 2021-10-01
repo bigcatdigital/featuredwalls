@@ -15,6 +15,14 @@
 	<?php 
     echo '<link rel="stylesheet" href="' . 'assets/css/style.css?t=s' . microtime() . '" />';
   ?>
+	<!-- Global site tag (gtag.js) - Google Analytics -->
+	<script async src="https://www.googletagmanager.com/gtag/js?id=G-EB511QMQDJ"></script>
+	<script>
+		window.dataLayer = window.dataLayer || [];
+		function gtag(){dataLayer.push(arguments);}
+		gtag('js', new Date());
+		gtag('config', 'G-EB511QMQDJ');
+	</script>
 </head>  
 	<body>
 		<div class="bc-body-wrap">
@@ -50,7 +58,7 @@
 				<article class="bc-hero__body" aria-label="Main page hero body">
 					<div class="bc-hero__body__content">
 						<h1 class="bc-hero__heading">Featured Walls and Ceilings</h1>
-						<p class="bc-hero__tagline"><strong><i>Imagine your home</i></strong> enhanced by the beauty of stunning custom interior design</p>
+						<p class=""><strong><i>Imagine your home</i> enhanced by the beauty of stunning custom interior design.</strong></p>
 					</div>
 				</article>
 				<footer class="bc-hero__footer">
@@ -65,12 +73,11 @@
 				<div class="lines"></div>
 			</section>
 			<!-- // Hero -->
-
 			<!-- Featured walls and Ceilings -->
 			<section id="body-content" class="bc-container bc-fwc-containter" aria-label="Find out about our stylish featured walls and Ceilings">
 				<div class="bc-text-component bc-content-block bc-column">
 					<h1>Discover the potential</h1>
-					<p class=""><strong><i>Create impact</i></strong> with one of our stylish featured walls, media unit and inset fireplaces.</p>	
+					<p class=""><strong><i>Create impact</i>with one of our stylish featured walls, media unit and inset fireplaces.</strong> </p>	
 					<p>We will work with our clients to create custom, uniquely designed featured wall solutions. </p>
 				</div>
 				<div class="bc-flickity bc-flickity--feature-slider bc-media-component">
@@ -109,8 +116,8 @@
 			</section>
 			<!-- // Flickity hero slider -->
 			<!-- Sensory rooms -->
-			<section id="sensory-rooms" class="bc-container " aria-label="Find out about our stylish featured walls and Ceilings">
-				<div class="bc-text-component bc-content-block bc-column bc-featured-intro"> 
+			<section id="sensory-rooms" class="bc-container bc-fwc-containter" aria-label="Find out about our stylish featured walls and Ceilings">
+				<div class="bc-text-component bc-content-block bc-column">
 					<h1 class="bc-content-block__heading"><span class="bc-featured-intro__heading">Customized sensory rooms</span></h1> 
 					<div class="bc-featured-intro__body">
 						<p class=""><strong><i>Wouldn't it be amazing</i></strong> to set aside a space for a calming sensory experience in which you our your children can relax?</p>	
@@ -199,7 +206,7 @@
 				</div><!-- // .bc-2-col-sliders -->
 			</section>
 			<!-- Resin bound driveways -->
-			<section id="resin-bound" class="bc-container bc-hero bc-hero--in-page">
+			<section id="resin-bound" class="bc-container bc-hero bc-hero--full-screen">
 				<picture class="bc-hero__media">
 					<img src="assets/media/resin-bound-compass-2.jpg" alt="A resin bound driveway with embedded compass design" />
 				</picture>
@@ -207,7 +214,7 @@
 				<article class="bc-hero__body" aria-label="Main page hero body">
 					<div class="bc-hero__body__content bc-text-component">
 						<h1 class="bc-hero__heading">Resin bound driveways</h1>
-						<p class="bc-hero__tagline">Elegant, long lasting, durable, beautiful custom designed resin bound driveways</p>
+						<p class=""><strong>Elegant, long lasting, durable, beautiful custom designed resin bound driveways</strong></p>
 						<p><i>What if you could have a custom designed durable, safe walkway, driveway or patio added to your home or work premises?</i></p>
 						<p class="bc-arrow-link">
 						<a href="resin-driveways/resin-bound-driveways.php">Find out more here</a>				
@@ -220,12 +227,12 @@
 			</section>
 			<!-- // Resin bound driveways -->
 			<section id="get-started" class="bc-container bc-get-started">
-				<article class="bc-grid--x2">
-					<div class="bc-get-started__column">
+				<article class="">
+					<div class="bc-text-component bc-content-block bc-column">
 						<h1>Get started</h1>
 						<p>Contact us now by email, phone or on social media to get started.</p>
 					</div><!-- // bc-grid column-->
-					<div class="bc-get-started__column"> 
+					<div class="bc-column bc-text-component bc-get-started__links">
 						<p class="bc-icon-link">
 							<svg class="svg-icon">
 								<use xlink:href="assets/media/svg/icons/bc-svgs.svg#phone-outline-2"></use>
@@ -236,8 +243,15 @@
 							<svg class="svg-icon">
 								<use xlink:href="assets/media/svg/icons/bc-svgs.svg#facebook"></use>
 							</svg>	
+							<a href="https://www.facebook.com/resinbounddesigns">Resin Bound Designs Ireland</a>
+						</p>
+						<p class="bc-icon-link">
+							<svg class="svg-icon">
+								<use xlink:href="assets/media/svg/icons/bc-svgs.svg#facebook"></use>
+							</svg>	
 							<a href="https://www.facebook.com/featuredbespokewallsandceilings">Featured Walls and Ceilings</a>
 						</p>
+						
 						<p class="bc-icon-link">
 							<svg class="svg-icon">
 								<use xlink:href="assets/media/svg/icons/bc-svgs.svg#email-at"></use>
@@ -261,7 +275,6 @@
 				</div><!-- // .bc-grid -->
 			</footer>
 		</div><!-- //. bc-body-wrap --> 
-		<!-- <script src="assets/scripts/app-concat.js"></script>   -->
     <?php echo '<script src="assets/scripts/app-concat.js?t=' . microtime() . '"></script>'; ?>
 	</body>
 </html> 
