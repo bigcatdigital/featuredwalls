@@ -4,6 +4,9 @@
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<title>Featured Walls and Ceilings | Homepage</title>
+
+	<link rel="shortcut icon" type="image/png" href="assets/media/caps-favicon.png"/>
+
 	<meta name="description" content="Featured Walls and Ceilings: creating beautiful spaces with custom interior and exterior design specialists. Serving north-west of Ireland, Northern Ireland and all of the island of Ireland.">
 	<link href="https://fonts.googleapis.com/css?family=Alegreya|Alegreya+Sans|Merriweather|Merriweather+Sans|Nunito|Nunito+Sans|Quattrocento|Quattrocento+Sans|Roboto|Roboto+Mono|Roboto+Slab&display=swap" rel="stylesheet">
 
