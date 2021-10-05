@@ -3,8 +3,8 @@
 <head>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<title>Featured Walls and Ceilings | Homepage</title>
-	<meta name="description" content="Featured Walls and Ceilings: we design and lay custom, unique, beautiful resin bound driveways for our clients in the northwest, Northern Ireland and all of the island of Ireland.">
+	<title>CAPS Ltd Resin Bound Driveway design and installation</title>
+	<meta name="description" content="Resin Bound Driveways: we design and lay custom, unique, beautiful resin bound driveways for our clients in the northwest, Northern Ireland and all of the island of Ireland.">
 	<link rel="shortcut icon" type="image/png" href="../assets/media/caps-favicon.png"/>
 	<link href="https://fonts.googleapis.com/css?family=Alegreya|Alegreya+Sans|Merriweather|Merriweather+Sans|Nunito|Nunito+Sans|Quattrocento|Quattrocento+Sans|Roboto|Roboto+Mono|Roboto+Slab&display=swap" rel="stylesheet">
 	<!-- Google fonts Oswald & Lato -->

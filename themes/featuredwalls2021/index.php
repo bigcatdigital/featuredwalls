@@ -3,7 +3,7 @@
 <head>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<title>Featured Walls and Ceilings | Homepage</title>
+	<title>CAPS Ltd Feature Walls Sepcialists, Sensory Room design, Resin Bound Driveway installation</title>
 
 	<link rel="shortcut icon" type="image/png" href="assets/media/caps-favicon.png"/>
 
@@ -60,8 +60,8 @@
 				
 				<article class="bc-hero__body" aria-label="Main page hero body">
 					<div class="bc-hero__body__content">
-						<h1 class="bc-hero__heading">Featured Walls and Ceilings</h1>
-						<p class=""><strong><i>Imagine your home</i> enhanced by the beauty of stunning custom interior design.</strong></p>
+						<h1 class="bc-hero__heading">Ireland&apos;s Feature Wall Specialists</h1>
+						<p class=""><strong><i>Imagine your special room</i> enhanced by the beauty of a stunning custom designed feature wall.</strong></p>
 					</div>
 				</article>
 				<footer class="bc-hero__footer">
@@ -79,9 +79,9 @@
 			<!-- Featured walls and Ceilings -->
 			<section id="body-content" class="bc-container bc-fwc-containter" aria-label="Find out about our stylish featured walls and Ceilings">
 				<div class="bc-text-component bc-content-block bc-column">
-					<h1>Discover the potential</h1>
-					<p class=""><strong><i>Create impact</i>with one of our stylish featured walls, media unit and inset fireplaces.</strong> </p>	
-					<p>We will work with our clients to create custom, uniquely designed featured wall solutions. </p>
+					<h2 class="bc-section-title">Discover the potential</h2>
+					<p class=""><strong><i>Make an impact</i></strong> in your living room, bedroom, or other special room with one of our stylish feature walls which can include a TV wall unit and inset fireplace.</strong> </p>	
+					<p>As Ireland's <strong>feature wall specialists</strong>, we work with you to create a custom installation, uniquely designed to suit your needs and to make you stand out.</p>
 				</div>
 				<div class="bc-flickity bc-flickity--feature-slider bc-media-component">
 					<article class="bc-flickity__slide" aria-label="Hero slide #1">
@@ -103,17 +103,12 @@
 							
 							<img src="assets/media/featured-wall-interior-designed-3.jpg" alt="A custom featured wall with inset fireplace and lighting" />
 						</picture><!-- // .bc-hero__media --> 
-						<div class="bc-flickity__slide__slide-info">
-							<h3 class="bc-flickity__slide__slide-info__heading">Hero slide #3</h3>
-							<p class="">Hero tagline</p>
-						</div><!-- // .bc-hero__body__content --> 
+						
 					</article><!-- // .bc-flickity__slide -->
 					<article class="bc-flickity__slide" aria-label="Hero slide #3">
 						<picture class="">
-							
 							<img src="assets/media/featured-walls-and-ceilings-wood-finish.jpg" alt="A custom featured wall with inset fireplace and lighting" />
 						</picture><!-- // .bc-hero__media -->
-						
 					</article><!-- // .bc-flickity__slide -->
 				</div><!-- //.bc-flickity -->
 			</section>
@@ -123,7 +118,7 @@
 				<div class="bc-text-component bc-content-block bc-column">
 					<h1 class="bc-content-block__heading"><span class="bc-featured-intro__heading">Customized sensory rooms</span></h1> 
 					<div class="bc-featured-intro__body">
-						<p class=""><strong><i>Wouldn't it be amazing</i></strong> to set aside a space for a calming sensory experience in which you our your children can relax?</p>	
+						<p class=""><strong><i>Wouldn't it be amazing</i></strong>  to set aside a space for a calming sensory experience in which you or your children can relax?</p>	
 						<p>We design and install our unique <i>star ceilings</i> and <i>LED ceiling lights</i> to help our customers do just that to great effect. </p>
 					</div>
 				</div><!-- .bc-featured-intro -->
