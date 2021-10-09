@@ -6,7 +6,7 @@
   --base-cols: 4;
   --min-col-width: 240px;
   --min-col-width-narrow: 180px;
-  --max-content-width: 1200px;
+  --max-content-width: 1440px;
   --line-height: 1.45;
   --vertical-unit: 1.5rem;
   --gutter: 1.5rem;
@@ -582,13 +582,17 @@ iframe {
   html {
     font-size: 16px; } }
 
-@media screen and (min-width: 1200px) {
+@media screen and (min-width: 1400px) {
   html {
     font-size: 18px; } }
 
-@media screen and (min-width: 1400px) {
+@media screen and (min-width: 1800px) {
   html {
     font-size: 20px; } }
+
+@media screen and (min-width: 2000px) {
+  html {
+    font-size: 24px; } }
 
 /* Observable elements */
 .bc-site-header {
@@ -752,7 +756,7 @@ iframe {
 .bc-container, .bc-hero, .bc-hero--full-screen {
   width: 100%;
   padding: var(--gutter); }
-  @media screen and (min-width: 1200px) {
+  @media screen and (min-width: 1440px) {
     .bc-container, .bc-hero, .bc-hero--full-screen {
       padding-left: calc((100% - var(--max-content-width)) / 2);
       padding-right: calc((100% - var(--max-content-width)) / 2); } }
@@ -1128,15 +1132,15 @@ table {
 .bc-site-header .bc-site-header__main-navigation, .bc-site-header .bc-site-header__menu-link {
   display: none; }
 
-.bc-text-component {
-  max-width: 40.625rem;
+.bc-text-component, .bc-media-component {
   margin-left: auto;
   margin-right: auto; }
 
+.bc-text-component {
+  max-width: 40.625rem; }
+
 .bc-media-component {
-  max-width: 65.73125rem;
-  margin-left: auto;
-  margin-right: auto; }
+  max-width: 57.44375rem; }
   @media screen and (max-width: 839px) {
     .bc-media-component {
       margin-left: calc(var(--gutter) * -1);
@@ -1300,10 +1304,12 @@ table {
     .bc-flickity.bc-flickity--feature-slider .bc-flickity__slide {
       flex-direction: column;
       height: 65vh;
-      margin-right: -10px;
-      opacity: 0.56;
-      transform: scale(0.9);
-      transition: opacity 320ms ease-out, transform 320ms ease-out; }
+      margin-right: -10px; }
+      @media screen and (min-width: 1024px) {
+        .bc-flickity.bc-flickity--feature-slider .bc-flickity__slide {
+          opacity: 0.56;
+          transform: scale(0.9);
+          transition: opacity 320ms ease-out, transform 320ms ease-out; } }
       .bc-flickity.bc-flickity--feature-slider .bc-flickity__slide.has-landscape-image .bc-flickity__slide__slide-info {
         left: 0;
         right: auto;
@@ -1325,9 +1331,10 @@ table {
       @media screen and (min-width: 1024px) {
         .bc-flickity.bc-flickity--feature-slider .bc-flickity__slide {
           height: 90vh; } }
-      .bc-flickity.bc-flickity--feature-slider .bc-flickity__slide.is-selected {
-        opacity: 1;
-        transform: scale(1); }
+      @media screen and (min-width: 1024px) {
+        .bc-flickity.bc-flickity--feature-slider .bc-flickity__slide.is-selected {
+          opacity: 1;
+          transform: scale(1); } }
       .bc-flickity.bc-flickity--feature-slider .bc-flickity__slide picture {
         flex: 1 1 80%;
         overflow: hidden;

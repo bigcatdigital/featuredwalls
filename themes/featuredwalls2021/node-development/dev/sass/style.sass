@@ -82,12 +82,15 @@ iframe
 @media screen and (min-width: 600px) 
 	html
 		font-size: 16px
-@media screen and (min-width: 1200px) 
-	html
-		font-size: 18px
 @media screen and (min-width: 1400px) 
 	html
+		font-size: 18px
+@media screen and (min-width: 1800px) 
+	html
 		font-size: 20px
+@media screen and (min-width: 2000px) 
+	html
+		font-size: 24px
 /* Observable elements */
 .is-observable
 	&.is-observed
@@ -111,14 +114,13 @@ iframe
 .bc-site-header
 	& &__main-navigation, & &__menu-link 
 		display: none
+.bc-text-component, .bc-media-component
+	margin-left: auto
+	margin-right: auto
 .bc-text-component
-	max-width: (650px / 16px * 1rem)  
-	margin-left: auto
-	margin-right: auto
+	max-width: (650px / 16px * 1rem) 
 .bc-media-component
-	max-width: ((650px / 16px * 1rem) * 1.618)
-	margin-left: auto
-	margin-right: auto
+	max-width: ((650px / 16px * 1rem) * 1.414)
 	@media screen and (max-width: 839px)
 		margin-left: calc(var(--gutter) * -1)
 		margin-right: calc(var(--gutter) * -1) 
@@ -247,7 +249,7 @@ iframe
 		top: 50%
 		transform: translateY(-50%)
 		border-radius: 0
-		background-color: rgba(0, 0, 0, 0.24)
+		background-color: rgba(0, 0, 0, 0.24) 
 		transition: background-color 320ms ease-out
 		.flickity-button-icon
 			fill: var(--white) 
@@ -278,9 +280,10 @@ iframe
 			flex-direction: column
 			height: 65vh 
 			margin-right: -10px
-			opacity: 0.56
-			transform: scale(0.90)
-			transition: opacity 320ms ease-out, transform 320ms ease-out
+			@media screen and (min-width: $tablet-large) 
+				opacity: 0.56
+				transform: scale(0.90)
+				transition: opacity 320ms ease-out, transform 320ms ease-out
 			&.has-landscape-image
 				.bc-flickity__slide__slide-info
 					left: 0
@@ -299,9 +302,10 @@ iframe
 				height: 75vh
 			@media screen and (min-width: $tablet-large)
 				height: 90vh
-			&.is-selected
-				opacity: 1
-				transform: scale(1)
+			@media screen and (min-width: $tablet-large) 
+				&.is-selected
+					opacity: 1
+					transform: scale(1)
 			picture
 				flex: 1 1 80%
 				overflow: hidden 
