@@ -3,7 +3,8 @@
 <head>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<title>CAPS Ltd Resin Bound Driveway design and installation</title>
+	<meta name="robots" content="max-snippet:-1, max-image-preview:large, max-video-preview:-1" />
+	<title>Resin Bound Driveway design and installation</title>
 	<meta name="description" content="Resin Bound Driveways: we design and lay custom, unique, beautiful resin bound driveways for our clients in the northwest, Northern Ireland and all of the island of Ireland.">
 	<link rel="shortcut icon" type="image/png" href="../assets/media/caps-favicon.png"/>
 	<link href="https://fonts.googleapis.com/css?family=Alegreya|Alegreya+Sans|Merriweather|Merriweather+Sans|Nunito|Nunito+Sans|Quattrocento|Quattrocento+Sans|Roboto|Roboto+Mono|Roboto+Slab&display=swap" rel="stylesheet">
@@ -12,6 +13,7 @@
 	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 	<link href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700&family=Oswald:wght@200;400;500;600&display=swap" rel="stylesheet">
 	<link rel="stylesheet" href="../assets/css/vendor/flickity.min.css" />
+	<link rel="canonical" href="http://www.featuredwalls.ie/resin-driveways/resin-bound-driveways.php" />
 	<?php 
     echo '<link rel="stylesheet" href="' . '../assets/css/style.css?t=s' . microtime() . '" />';
   ?>

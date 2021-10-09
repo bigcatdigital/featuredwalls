@@ -3,11 +3,11 @@
 <head>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<title>CAPS Ltd Feature Walls Sepcialists, Sensory Room design, Resin Bound Driveway installation</title>
+	<meta name="robots" content="max-snippet:-1, max-image-preview:large, max-video-preview:-1" />
+	<title>Feature Walls Specialist | Home</title>
 
 	<link rel="shortcut icon" type="image/png" href="assets/media/caps-favicon.png"/>
-
-	<meta name="description" content="Featured Walls and Ceilings: creating beautiful spaces with custom interior and exterior design specialists. Serving north-west of Ireland, Northern Ireland and all of the island of Ireland.">
+	<meta name="description" content="Specialists in creating beautiful feature walls, sensory rooms and resin bound driveways with custom interior and exterior design. Serving north-west of Ireland, Northern Ireland and all of the island of Ireland.">
 	<link href="https://fonts.googleapis.com/css?family=Alegreya|Alegreya+Sans|Merriweather|Merriweather+Sans|Nunito|Nunito+Sans|Quattrocento|Quattrocento+Sans|Roboto|Roboto+Mono|Roboto+Slab&display=swap" rel="stylesheet">
 
 	<!-- Google fonts Oswald & Lato -->
@@ -15,6 +15,7 @@
 	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 	<link href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700&family=Oswald:wght@200;400;500;600&display=swap" rel="stylesheet">
 	<link rel="stylesheet" href="assets/css/vendor/flickity.min.css" />
+	<link rel="canonical" href="http://www.featuredwalls.ie/" />
 	<?php 
     echo '<link rel="stylesheet" href="' . 'assets/css/style.css?t=s' . microtime() . '" />';
   ?>
@@ -57,7 +58,6 @@
 				<picture class="bc-hero__media">
 					<img src="assets/media/featured-walls-and-ceilings-wood-finish.jpg" alt="A featured wall installation in a beautifully designed interior" />
 				</picture>
-				
 				<article class="bc-hero__body" aria-label="Main page hero body">
 					<div class="bc-hero__body__content">
 						<h1 class="bc-hero__heading">Ireland&apos;s Feature Wall Specialists</h1>
