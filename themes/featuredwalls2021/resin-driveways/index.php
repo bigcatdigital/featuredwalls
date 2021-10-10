@@ -31,7 +31,7 @@
 	<nav class="bc-is-hidden" aria-label="Skip to main content link" >
 		<a href="#main-site-content" title="Skip site menu, go to to main site content"></a>	
 	</nav>
-	<header class="bc-site-header bc-container">
+	<header class="bc-site-header bc-is-hero-overlay bc-container">
     <a title="Site hompepage" class="bc-site-header__home-link" href="../"> 
 		  <img src="../assets/media/caps-minimal-lc-final.png" alt="CAPS Ltd logo - presenting Featured Walls and Ceilings" /> 
 		</a>
@@ -52,11 +52,23 @@
 		</ul>	
 	</header><!-- // ..be-hero__header -->
 	<!-- Hero -->
+	<section class="bc-hero has-lines bc-innerpage-hero">
+		<picture class="bc-hero__media">
+			<img src="../assets/media/featured-walls-and-ceilings-wood-finish.jpg" alt="A featured wall installation in a beautifully designed interior" />
+		</picture>
+		<article class="bc-hero__body" aria-label="Main page hero body">
+			<div class="bc-hero__body__content">
+				<h1 class="bc-hero__heading">Resin bound driveways</h1>
+			</div>
+		</article>
+		<div class="bc-media-overlay"></div>
+		<div class="lines"></div>
+	</section><!-- // .bc-hero -->
 	
 	<!-- About resin bound driveways-->
   <section id="body-content" class="bc-container " aria-label="Find out about our stylish featured walls and Ceilings">
 		<div class="bc-text-component bc-content-block bc-column">
-			<h1>Resin bound driveways</h1>
+			<h1>Custom designed resin driveways</h1>
 			<p class=""><strong>Elegant, long lasting, durable, beautiful.</strong></p>	
 			<p>We we create custom designed resin bound surfaces for driveways, pathways, patios, walkways...anywhere a stone or tarmac surface can be used.</p>
       <p><a class="bc-scroll-link" href="#resin-body-content"><i>Find out why and how below here.</i></a></p>

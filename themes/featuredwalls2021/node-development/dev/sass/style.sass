@@ -78,6 +78,51 @@ iframe
 	max-height: 2rem
 .bc-intro-paragraph
 	font-size: 1rem
+.bc-arrow-link
+	svg
+		fill: $brand-primary	
+.bc-call-to-action
+	@include makeFlexbox($justify: center, $align: center)
+	padding: calc(var(--vertical-unit) * 2) var(--gutter)
+.bc-call-to-action-button
+	position: relative
+	@include makeFlexbox($justify: center, $align: center)
+	margin-bottom: 0
+	padding: calc(var(--vertical-unit) / 2) calc(var(--gutter) * 1.25)
+	color: var(--white)
+	border-radius: var(--text-02)
+	a 
+		font-size: calc(var(--text-01) - ((var(--text-01) - var(--text-00)) / 2))
+		margin-right: calc(var(--gutter) / 2)
+		color: var(--white) 
+		@include linkHover
+			font-weight: normal
+			&::after
+				height: 0
+	.svg-icon
+		fill: var(--white)
+		z-index: 2
+	background-color: var(--brand-primary)
+	&::before
+		content: ""
+		position: absolute
+		opacity: 0
+		width: 100%
+		height: 100%
+		background-color: darken($brand-primary, 12%)
+		z-index: 0
+		border-radius: var(--text-02)
+		transform-origin: center center
+		transform: scale(0) 
+		transition: opacity 280ms ease-out, transform 280ms ease-out
+	@include linkHover
+		a 
+			font-weight: var(--link-active-weight)
+			&:after
+				height: 0.3rem
+		&::before
+			opacity: 1
+			transform: scale(1)
 
 @media screen and (min-width: 600px) 
 	html
@@ -102,7 +147,7 @@ iframe
 @import 'components/cards'; 
 @import 'components/bc-two-column-layout'; 
 @import 'components/flickity-sliders';
-@import 'components/bc-twin-component'; 
+@import 'components/bc-two-col-feature';
 @import 'components/tables';
 
 .bc-section-title
@@ -157,10 +202,11 @@ iframe
 			max-height: 4.189rem
 
 /* Hero components overwrites */
-
 .bc-hero
 	padding-top: 		calc(var(--vertical-unit) * 4)
 	padding-bottom: calc(var(--vertical-unit) * 4)
+	.bc-media-overlay
+		background-color: rgba($black, 0.48)
 	& &__body
 		@include makeFlexbox(column, $justify: center)
 		&__content
@@ -177,9 +223,21 @@ iframe
 		margin-bottom: 0
 	& &__footer
 		justify-content: center
-.bc-hero--full-screen
+	&.bc-hero--in-page 
+		.bc-hero__body
+			justify-content: flex-end 
+		.bc-hero__heading
+			margin-bottom: var(--vertical-unit)
+		.bc-media-overlay
+			background-color: transparent
+			background-image: linear-gradient(rgba($black, 0) 40%, rgba($black, 0.72)) 
+	&.bc-innerpage-hero
+		padding-top: calc(var(--vertical-unit) * 6)
+		padding-bottom: calc(var(--vertical-unit) * 5)
+.bc-hero--full-screen:not(.bc-hero--in-page)
 	padding-top: 		0
 	padding-bottom: 0
+	
 .bc-card 
 	& &__media 
 		background-color: var(--shade-60) 
@@ -253,8 +311,7 @@ iframe
 		transition: background-color 320ms ease-out
 		.flickity-button-icon
 			fill: var(--white) 
-		@include linkHover
-			@debug 
+		@include linkHover 
 			background-color: rgba($brand-primary, 0.98)
 	.flickity-prev-next-button.previous
 		left: 0
@@ -333,7 +390,25 @@ iframe
 		@media screen and (min-width: $tablet-large)
 			.flickity-viewport			
 				overflow: visible
-			
+/* Two col feature overrides */
+.bc-2-col-feature
+	& &__col
+		position: relative
+	& &__media 
+		@include makeFlexbox(column, $justify: stretch, $align: stretch)
+		picture
+			flex: 1 1 auto
+			@include is-4x5
+	& &__overlay
+		position: absolute
+		top: 0
+		left: 0
+		@include makeFlexbox(column, $justify: flex-end)
+		width: 100%
+		height: 100%
+		padding: var(--gutter)
+		color: $white
+		background-image: linear-gradient(rgba(0, 0, 0, 0) 40%, rgba(0, 0, 0, 0.42))	
 //Two-col sliders 
 .bc-2-col-sliders
 	&.bc-grid--x2

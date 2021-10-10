@@ -100,7 +100,6 @@
 					</article><!-- // .bc-flickity__slide -->
 					<article class="bc-flickity__slide" aria-label="Hero slide #3">
 						<picture class="">
-							
 							<img src="assets/media/featured-wall-interior-designed-3.jpg" alt="A custom featured wall with inset fireplace and lighting" />
 						</picture><!-- // .bc-hero__media --> 
 						
@@ -122,100 +121,52 @@
 						<p>We design and install our unique <i>star ceilings</i> and <i>LED ceiling lights</i> to help our customers do just that to great effect. </p>
 					</div>
 				</div><!-- .bc-featured-intro -->
-				<div class="bc-grid--x2 bc-2-col-sliders bc-media-component">
-					<!-- slider-left -->
-					<div class="bc-2-col-slider"> 
-						<!-- slider left -->
-						<div class="bc-flickity">
-							<span class="frame frame--top"></span> 
-							<span class="frame frame--bottom"></span>
-							<article class="bc-flickity__slide is-object-contain" aria-label="Hero slide #1">	
-								<picture class="">
-									<img src="assets/media/star-ceiling-lights-2.jpg" alt="A star ceiling lighting design to create a relaxing experience in your room" />
-								</picture><!-- // .bc-hero__media -->
-							</article><!-- // .bc-flickity__slide -->
-							<article class="bc-flickity__slide is-object-contain" aria-label="Hero slide #3">
-								<picture class="">
-									<img src="assets/media/star-ceiling-lights-3.jpg" alt="A star ceiling lighting design to create a relaxing experience in your room" />
-								</picture><!-- // .bc-hero__media --> 
-							</article><!-- // .bc-flickity__slide -->
-							<article class="bc-flickity__slide is-object-contain" aria-label="Hero slide #1">
-								<picture class=""> 
-									<img src="assets/media/star-ceiling-lights-1.jpg" alt="A star ceiling lighting design to create a relaxing experience in your room" />
-								</picture><!-- // .bc-hero__media -->
-							</article><!-- // .bc-flickity__slide -->
-						</div><!-- //.bc-flickity -->
-						<div class="bc-2-col-slider__intro"> 
+				<div class="bc-2-col-feature bc-media-component">
+					<div class="bc-2-col-feature__col"> 
+						<article class="bc-2-col-feature__media is-object-contain" aria-label="Our calming star ceilings">	
+							<picture class="">
+								<img src="assets/media/star-ceiling-lights-2.jpg" alt="A star ceiling lighting design to create a relaxing experience in your room" />
+							</picture><!-- //  -->
+						</article><!-- // .bc-2-col-feature__media -->
+						<div class="bc-2-col-feature__overlay"> 
 							<h2>Star ceilings</h2>
 							<p>Add colour, life and stimulate imagination with a custom Star Ceiling.</p> 
-						</div><!-- // .bc-2-col-slider__intro -->
-					</div><!-- // slider left -->
-					<!-- slider right -->
-					<div class="bc-2-col-slider">
-						<div class="bc-flickity">
-							<span class="frame frame--top"></span>
-							<span class="frame frame--bottom"></span>
-							<article class="bc-flickity__slide is-object-contain" aria-label="Hero slide #1">
-								<picture class=""> 
-									<img src="assets/media/ceiling-led-lights-1.jpg" alt="A ceiling LED lighting installation to add atmosphere to a room" />
-								</picture><!-- // .bc-hero__media -->
-
-							</article><!-- // .bc-flickity__slide -->
-							<article class="bc-flickity__slide is-object-contain" aria-label="Hero slide #1">
-								<picture class="">
-									<img src="assets/media/ceiling-led-lights-2.jpg" alt="A custom featured wall with inset fireplace and lighting" />
-								</picture><!-- // .bc-hero__media -->
-
-							</article><!-- // .bc-flickity__slide -->
-							<article class="bc-flickity__slide is-object-contain" aria-label="Hero slide #3">
-								<picture class="">
-
-									<img src="assets/media/ceiling-led-lights-2.jpg" alt="A ceiling LED lighting installation to add atmosphere to a room" />
-								</picture><!-- // .bc-hero__media --> 
-
-							</article><!-- // .bc-flickity__slide -->
-							<article class="bc-flickity__slide is-object-contain" aria-label="Hero slide #3">
-								<picture class="">
-									<img src="assets/media/ceiling-led-lights-3.jpg" alt="A ceiling LED lighting installation to add atmosphere to a room" />
-								</picture><!-- // .bc-hero__media -->
-							</article><!-- // .bc-flickity__slide -->
-							<article class="bc-flickity__slide is-object-contain" aria-label="Hero slide #3">
-								<picture class="">
-									<img src="assets/media/ceiling-led-lights-4.jpg" alt="A ceiling LED lighting installation to add atmosphere to a room" />
-								</picture><!-- // .bc-hero__media -->
-							</article><!-- // .bc-flickity__slide -->
-							<article class="bc-flickity__slide is-object-contain" aria-label="Hero slide #3">
-								<picture class="">
-									<img src="assets/media/ceiling-led-lights-5.jpg" alt="A ceiling LED lighting installation to add atmosphere to a room" />
-								</picture><!-- // .bc-hero__media -->
-							</article><!-- // .bc-flickity__slide -->
-							<article class="bc-flickity__slide is-object-contain" aria-label="Hero slide #3">
-								<picture class="">
-									<img src="assets/media/ceiling-led-lights-6.jpg" alt="A ceiling LED lighting installation to add atmosphere to a room" />
-								</picture><!-- // .bc-hero__media -->
-							</article><!-- // .bc-flickity__slide -->
-						</div><!-- //.bc-flickity -->
-						<div class="bc-2-col-slider__intro">
-							<h2>LED ceiling lights</h2>
-							<p>Bring calm and atomosphere to any space with our uniquely designed LED ceiling lights units.</p> 
-						</div>
-					</div>
-					<!-- // slider right -->
-				</div><!-- // .bc-2-col-sliders -->
+						</div><!-- // .bc-2-col-feature__overlay -->
+					</div><!-- // .bc-2-col-feature__col -->
+					<div class="bc-2-col-feature__col"> 
+						<article class="bc-2-col-feature__media is-object-contain" aria-label="Our calming star ceilings">	
+							<picture class=""> 
+								<img src="assets/media/ceiling-led-lights-1.jpg" alt="A ceiling LED lighting installation to add atmosphere to a room" />
+							</picture><!-- //  -->
+						</article><!-- // .bc-2-col-feature__media -->
+						<div class="bc-2-col-feature__overlay"> 
+						<h2>LED ceiling lights</h2>
+								<p>Bring calm and atomosphere to any space with our uniquely designed LED ceiling lights units.</p> 
+						</div><!-- // .bc-2-col-feature__overlay -->
+					</div><!-- // .bc-2-col-feature__col -->
+				</div><!-- // .bc-2-col-feature -->
+				<div class="bc-call-to-action">
+					<p class="bc-call-to-action-button">	
+						<a href="sensory-rooms/">More sensory room ideas</a>
+						<svg class="svg-icon">
+							<use xlink:href="assets/media/svg/icons/bc-svgs.svg#arrow"></use>
+						</svg>
+					</p>
+				</div>
 			</section>
 			<!-- Resin bound driveways -->
-			<section id="resin-bound" class="bc-container bc-hero bc-hero--full-screen">
+			<section id="resin-bound" class="bc-container bc-hero bc-hero--full-screen bc-hero--in-page">
+				<div class="bc-media-overlay"></div>
 				<picture class="bc-hero__media">
 					<img src="assets/media/resin-bound-compass-2.jpg" alt="A resin bound driveway with embedded compass design" />
 				</picture>
-				
 				<article class="bc-hero__body" aria-label="Main page hero body">
 					<div class="bc-hero__body__content bc-text-component">
 						<h1 class="bc-hero__heading">Resin bound driveways</h1>
 						<p class=""><strong>Elegant, long lasting, durable, beautiful custom designed resin bound driveways</strong></p>
 						<p><i>What if you could have a custom designed durable, safe walkway, driveway or patio added to your home or work premises?</i></p>
 						<p class="bc-arrow-link">
-						<a href="resin-driveways/resin-bound-driveways.php">Find out more here</a>				
+						<a href="resin-driveways/">Find out more here</a>				
 							<svg class="svg-icon">
 								<use xlink:href="assets/media/svg/icons/bc-svgs.svg#arrow"></use>
 							</svg>	

@@ -47,11 +47,26 @@
 	@include arContainer 
 	padding-top: #{(2 / 3 * 100%)}
 @mixin is-4x3()
+	@include arContainer 
 	padding-top: #{(3 / 4 * 100%)}
 @mixin is-5x4()
+	@include arContainer 
 	padding-top: #{(4 / 5 * 100%)}
 @mixin is-16x9()
+	@include arContainer 
 	padding-top: #{(9 / 16 * 100%)}
+@mixin is-2x3()
+	@include arContainer 
+	padding-top: #{(3 / 2 * 100%)}
+@mixin is-3x4()
+	@include arContainer 
+	padding-top: #{(4 / 3 * 100%)}
+@mixin is-4x5()
+	@include arContainer 
+	padding-top: #{(5 / 4 * 100%)}
+@mixin is-9x16()
+	@include arContainer 
+	padding-top: #{(16 / 9 * 100%)}
 	
 //end is-1x1()
 @mixin objectEmbed($ar: #{(9 / 16) * 100%})
@@ -117,3 +132,19 @@
 	max-width: var(--text-max-width)
 	margin-left: auto
 	margin-right: auto
+
+/* Grids */
+@mixin makeGrid($cols)
+	display: grid
+	grid-template-rows: auto 
+	gap: calc(var(--gutter))
+	grid-template-columns: repeat(auto-fill, minmax(var(--min-col-width), 1fr))
+	@if $cols == 2
+		@media screen and (min-width: $tablet)
+			grid-template-columns: repeat(2, 1fr)
+	@else if $cols == 4
+		@media screen and (min-width: $tablet)
+			grid-template-columns: repeat(2, 1fr)
+		@media screen and (min-width: $laptop)
+			grid-template-columns: repeat(4, 1fr)
+	
