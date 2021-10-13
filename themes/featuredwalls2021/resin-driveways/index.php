@@ -56,8 +56,8 @@
 		<picture class="bc-hero__media">
 			<img src="../assets/media/featured-walls-and-ceilings-wood-finish.jpg" alt="A featured wall installation in a beautifully designed interior" />
 		</picture>
-		<article class="bc-hero__body" aria-label="Main page hero body">
-			<div class="bc-hero__body__content">
+		<article class="bc-hero__body bc-content-component" aria-label="Main page hero body">
+			<div class="bc-hero__body__content bc-text-block">
 				<h1 class="bc-hero__heading">Resin bound driveways</h1>
 			</div>
 		</article>
@@ -67,48 +67,54 @@
 	
 	<!-- About resin bound driveways-->
   <section id="body-content" class="bc-container " aria-label="Find out about our stylish featured walls and Ceilings">
-		<div class="bc-text-component bc-content-block bc-column">
-			<h1>Custom designed resin driveways</h1>
-			<p class=""><strong>Elegant, long lasting, durable, beautiful.</strong></p>	
-			<p>We we create custom designed resin bound surfaces for driveways, pathways, patios, walkways...anywhere a stone or tarmac surface can be used.</p>
-      <p><a class="bc-scroll-link" href="#resin-body-content"><i>Find out why and how below here.</i></a></p>
-		</div>
-		<div class="bc-media-component bc-column">
+		<div class="bc-content-component--text bc-content-block bc-column">
+			<div class="bc-text-block">
+				<h1>Custom designed resin driveways</h1>
+				<p class=""><strong>Elegant, long lasting, durable, beautiful.</strong></p>	
+				<p>We we create custom designed resin bound surfaces for driveways, pathways, patios, walkways...anywhere a stone or tarmac surface can be used.</p>
+				<p><a class="bc-scroll-link" href="#resin-body-content"><i>Find out why and how below here.</i></a></p>
+			</div><!-- // .bc-text-block -->
+		</div><!-- // .bc-contnt-component--text -->
+		<div class="bc-content-component--media bc-column">
       <picture class="">
         <img src="../assets/media/resin-bound-compass-2.jpg" alt="A resin bound driveway with embedded compass design" />
       </picture>
     </div>
-    <div class="bc-text-component" id="resin-body-content">
-      <h2>What is is?</h2>
-      <p>It is a surfacing material that is created by mixing <strong>resin</strong> and <strong>aggregate stone</strong>. The mixture is then laid onto the surface to create a strong, clear and permeable finish. It is a popular option for footpaths, patios, walkways and driveways.</p>
-      <p>Some people call it “<i>stone carpet</i>”, it provides a seamless finish which is durable and has no loose stones or weeds to remove. </p> 
-      <p>It&apos;s <strong>permeable</strong> too, as the mixing process creates small gaps between the composite aggregates, this supports drainage requirements. That&apos; good news in itself but it also avoids any need for planning permission that may be required for other surfaces.</p>
-      <p>Resin bound surfaces can even be laid over existing driveways, car parks and other existing stone pavements. </p>
-      <h2>Why use it?</h2>
-      <p>It is durable and permeable and can be used where a stone finish is needed. It has improved slip resistance. It is also slip resistant, weed and frost resistant and colour-stable.</p>
-      <h2>The design possibilities</h2>
-      <p>They’re almost limitless, any shape can be created. There are standard colour combinations and we can also work to make an almost limitless range of new colours to suit your needs.</p>
-      <p>This wide range of colours and blends make for unique design options and it makes for a beautiful alternative to traditional outdoor surfaces. </p>
-      <p><strong>Sound like your thing?</strong></p>
-      
-      <p><a class="bc-scroll-link" href="#get-started">Get in touch with us here and tell us what you&apos;re thinking</a>.</p>
-      <p>We will find a design solution that works for you.</p>
-      <p class="bc-icon-link">
-        <svg class="svg-icon">
-					<use xlink:href="../assets/media/svg/icons/bc-svgs.svg#arrow--left"></use>
-				</svg>
-        <a href="../">Back to our homepage</a>	
-      </p>
-    </div>   
+    <div class="bc-content-component--text" id="resin-body-content">
+			<div class="bc-text-block">
+				<h2>What is is?</h2>
+				<p>It is a surfacing material that is created by mixing <strong>resin</strong> and <strong>aggregate stone</strong>. The mixture is then laid onto the surface to create a strong, clear and permeable finish. It is a popular option for footpaths, patios, walkways and driveways.</p>
+				<p>Some people call it “<i>stone carpet</i>”, it provides a seamless finish which is durable and has no loose stones or weeds to remove. </p> 
+				<p>It&apos;s <strong>permeable</strong> too, as the mixing process creates small gaps between the composite aggregates, this supports drainage requirements. That&apos; good news in itself but it also avoids any need for planning permission that may be required for other surfaces.</p>
+				<p>Resin bound surfaces can even be laid over existing driveways, car parks and other existing stone pavements. </p>
+				<h2>Why use it?</h2>
+				<p>It is durable and permeable and can be used where a stone finish is needed. It has improved slip resistance. It is also slip resistant, weed and frost resistant and colour-stable.</p>
+				<h2>The design possibilities</h2>
+				<p>They’re almost limitless, any shape can be created. There are standard colour combinations and we can also work to make an almost limitless range of new colours to suit your needs.</p>
+				<p>This wide range of colours and blends make for unique design options and it makes for a beautiful alternative to traditional outdoor surfaces. </p>
+				<p><strong>Sound like your thing?</strong></p>
+				<p><a class="bc-scroll-link" href="#get-started">Get in touch with us here and tell us what you&apos;re thinking</a>.</p>
+				<p>We will find a design solution that works for you.</p>
+				<p class="bc-icon-link">
+					<svg class="svg-icon">
+						<use xlink:href="../assets/media/svg/icons/bc-svgs.svg#arrow--left"></use>
+					</svg>
+					<a href="../">Back to our homepage</a>	
+				</p>
+			</div>
+    </div><!-- // .bc-content-component -->  
 	</section>
 	<!-- // About resin bound driveways -->
   <section id="get-started" class="bc-container bc-get-started">
 		<article class="">
-			<div class="bc-text-component bc-content-block bc-column">
-				<h1>Get started</h1>
-				<p>Contact us now by email, phone or on social media to get started.</p>
-			</div><!-- // bc-grid column-->
-			<div class="bc-column bc-text-component bc-get-started__links">
+			<div class="bc-content-component--text bc-content-block bc-column">
+				<div class="bc-text-block">
+					<h1>Get started</h1>
+					<p>Contact us now by email, phone or on social media to get started.</p>
+				</div>
+				
+			</div><!-- // .bc-content-component-->
+			<div class="bc-column bc-content-component bc-get-started__links">
 				<p class="bc-icon-link">
 					<svg class="svg-icon">
 						<use xlink:href="../assets/media/svg/icons/bc-svgs.svg#phone-outline-2"></use>

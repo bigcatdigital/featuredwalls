@@ -58,8 +58,8 @@
 				<picture class="bc-hero__media">
 					<img src="assets/media/featured-walls-and-ceilings-wood-finish.jpg" alt="A featured wall installation in a beautifully designed interior" />
 				</picture>
-				<article class="bc-hero__body" aria-label="Main page hero body">
-					<div class="bc-hero__body__content">
+				<article class="bc-hero__body bc-content-component" aria-label="Main page hero body">
+					<div class="bc-hero__body__content bc-text-block">
 						<h1 class="bc-hero__heading">Ireland&apos;s Feature Wall Specialists</h1>
 						<p class=""><strong><i>Imagine your special room</i> enhanced by the beauty of a stunning custom designed feature wall.</strong></p>
 					</div>
@@ -78,12 +78,14 @@
 			<!-- // Hero -->
 			<!-- Featured walls and Ceilings -->
 			<section id="body-content" class="bc-container bc-fwc-containter" aria-label="Find out about our stylish featured walls and Ceilings">
-				<div class="bc-text-component bc-content-block bc-column">
-					<h2 class="bc-section-title">Discover the potential</h2>
-					<p class=""><strong><i>Make an impact</i></strong> in your living room, bedroom, or other special room with one of our stylish feature walls which can include a TV wall unit and inset fireplace.</strong> </p>	
-					<p>As Ireland's <strong>feature wall specialists</strong>, we work with you to create a custom installation, uniquely designed to suit your needs and to make you stand out.</p>
-				</div>
-				<div class="bc-flickity bc-flickity--feature-slider bc-media-component">
+				<div class="bc-content-component--text bc-content-block bc-column">
+					<div class="bc-text-block">
+						<h2 class="bc-section-title">Discover the potential</h2>
+						<p class=""><strong><i>Make an impact</i></strong> in your living room, bedroom, or other special room with one of our stylish feature walls which can include a TV wall unit and inset fireplace.</strong> </p>	
+						<p>As Ireland's <strong>feature wall specialists</strong>, we work with you to create a custom installation, uniquely designed to suit your needs and to make you stand out.</p>
+					</div><!-- // .bc-text-block -->	
+				</div><!-- // .bc-content-component -->
+				<div class="bc-flickity bc-flickity--feature-slider bc-content-component--media">
 					<article class="bc-flickity__slide" aria-label="Hero slide #1">
 						<picture class=""> 
 							<source srcset="assets/media/featured-wall-interior-designed-1.jpg" media="(min-width: 768px)" alt="A custom featured wall with inset fireplace and lighting" />
@@ -114,14 +116,17 @@
 			<!-- // Flickity hero slider -->
 			<!-- Sensory rooms -->
 			<section id="sensory-rooms" class="bc-container bc-fwc-containter" aria-label="Find out about our stylish featured walls and Ceilings">
-				<div class="bc-text-component bc-content-block bc-column">
-					<h1 class="bc-content-block__heading"><span class="bc-featured-intro__heading">Customized sensory rooms</span></h1> 
-					<div class="bc-featured-intro__body">
-						<p class=""><strong><i>Wouldn't it be amazing</i></strong>  to set aside a space for a calming sensory experience in which you or your children can relax?</p>	
-						<p>We design and install our unique <i>star ceilings</i> and <i>LED ceiling lights</i> to help our customers do just that to great effect. </p>
+				<div class="bc-content-component--text bc-content-block bc-column">
+					<div class="bc-text-block">
+						<h1 class="bc-content-block__heading"><span class="bc-featured-intro__heading">Customized sensory rooms</span></h1> 
+						<div class="bc-featured-intro__body">
+							<p class=""><strong><i>Wouldn't it be amazing</i></strong>  to set aside a space for a calming sensory experience in which you or your children can relax?</p>	
+							<p>We design and install our unique <i>star ceilings</i> and <i>LED ceiling lights</i> to help our customers do just that to great effect. </p>
+						</div>
 					</div>
+					
 				</div><!-- .bc-featured-intro -->
-				<div class="bc-2-col-feature bc-media-component">
+				<div class="bc-2-col-feature bc-content-component--media">
 					<div class="bc-2-col-feature__col"> 
 						<article class="bc-2-col-feature__media is-object-contain" aria-label="Our calming star ceilings">	
 							<picture class="">
@@ -161,16 +166,19 @@
 					<img src="assets/media/resin-bound-compass-2.jpg" alt="A resin bound driveway with embedded compass design" />
 				</picture>
 				<article class="bc-hero__body" aria-label="Main page hero body">
-					<div class="bc-hero__body__content bc-text-component">
-						<h1 class="bc-hero__heading">Resin bound driveways</h1>
-						<p class=""><strong>Elegant, long lasting, durable, beautiful custom designed resin bound driveways</strong></p>
-						<p><i>What if you could have a custom designed durable, safe walkway, driveway or patio added to your home or work premises?</i></p>
-						<p class="bc-arrow-link">
-						<a href="resin-driveways/">Find out more here</a>				
-							<svg class="svg-icon">
-								<use xlink:href="assets/media/svg/icons/bc-svgs.svg#arrow"></use>
-							</svg>	
-						</p>
+					<div class="bc-hero__body__content bc-content-component">
+						<div class="bc-text-block">
+							<h1 class="bc-hero__heading">Resin bound driveways</h1>
+							<p class=""><strong>Elegant, long lasting, durable, beautiful custom designed resin bound driveways</strong></p>
+							<p><i>What if you could have a custom designed durable, safe walkway, driveway or patio added to your home or work premises?</i></p>
+							<p class="bc-arrow-link">
+								<a href="resin-driveways/">Find out more here</a>				
+								<svg class="svg-icon">
+									<use xlink:href="assets/media/svg/icons/bc-svgs.svg#arrow"></use>
+								</svg>	
+							</p>
+						</div><!-- // .bc-text-block -->
+						
 					</div>
 				</article>
 			</section>

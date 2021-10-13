@@ -56,8 +56,8 @@
 		<picture class="bc-hero__media">
 			<img src="../assets/media/featured-walls-and-ceilings-wood-finish.jpg" alt="A featured wall installation in a beautifully designed interior" />
 		</picture>
-		<article class="bc-hero__body" aria-label="Main page hero body">
-			<div class="bc-hero__body__content">
+		<article class="bc-hero__body bc-content-component" aria-label="Main page hero body">
+			<div class="bc-hero__body__content bc-text-block">
 				<h1 class="bc-hero__heading">Sensory Room Design</h1>
 			</div>
 		</article>
@@ -67,13 +67,15 @@
 	
 	<!-- About resin bound driveways-->
   <section id="body-content" class="bc-container " aria-label="Find out about our stylish featured walls and Ceilings">
-		<div class="bc-text-component bc-content-block bc-column">
-			<h1>Thoughtfully designed sensory experiences</h1>
-			<p class=""><strong><em> Sensory room design, equipment and ideas</em>.</strong></p>	
-			<p>Create a sensory room for a child or adult with autism or other sensory processing disorder. <a href="https://asiam.ie/creating-a-quiet-space/">A sensory room</a> will help reduce any distress or discomfort the person experinces and they help the person with key life skills like self-organization, sensory management and coordination.</p>
-      <p>We have a lot of ideas  we can draw on and we will work with you to develop any ideas you have about what will work for your child or adult with any of these difficulties. There is more about sensory rooms below.</p>
-		</div>
-    <div class="bc-flickity bc-flickity--feature-slider bc-media-component">
+		<div class="bc-content-component--text bc-content-block bc-column">
+			<div class="bc-text-block">
+				<h1>Thoughtfully designed sensory experiences</h1>
+				<p class=""><strong><em> Sensory room design, equipment and ideas</em>.</strong></p>	
+				<p>Create a sensory room for a child or adult with autism or other sensory processing disorder. <a href="https://asiam.ie/creating-a-quiet-space/">A sensory room</a> will help reduce any distress or discomfort the person experinces and they help the person with key life skills like self-organization, sensory management and coordination.</p>
+				<p>We have a lot of ideas  we can draw on and we will work with you to develop any ideas you have about what will work for your child or adult with any of these difficulties. There is more about sensory rooms below.</p>
+			</div><!-- // .bc-text-block -->
+		</div><!-- // .bc-content-component--text -->
+    <div class="bc-flickity bc-flickity--feature-slider bc-content-component--media">
 			<article class="bc-flickity__slide" aria-label="Hero slide #1">
 				<picture class="">
 					<img src="../assets/media/star-ceiling-lights-1.jpg" alt="An example of calming ceiling lights for use in a sensory room" />
@@ -87,35 +89,38 @@
 
 		</div><!-- //.bc-flickity.bc-media-component -->
 		
-    <div class="bc-text-component">
-      <h2>Safe spaces</h2>
-      <p>Sensory rooms, which often include equipment, toys, lights and sounds, are spaces which allow for calming tactile, auditory and comforting experiences for people with sensory processing difficulties. They are quiet “safe” spaces away from overstimulation and allow for pleasing sensations and improved sense of well-being.</p>  
-      <p>They provide multi-sensory environments for people with a wide range of disabilities like autism, cerebral palsy, people with brain injuries; and for people with mental health issues such as stress or suffering from anxiety.</p> 
-      <h2>Cost</h2>  
-      <p>There is a perception that the cost is high or that a lot of space is needed but that is not necessarily the case. The space can be created as one room or as a space in a room; it can be a corner of a room, for example. We will work with your budget to add lighting, play objects, other sensory objects, sounds and calming visual elements to help sooth stimulation. 
-</p>
-      <p>We will work with you, drawing on our skills and experience, to suit your budget and needs. We know that as carers you will have a lot of your own ideas and we will work through those to bring them to life where possible. </p>
-      <h2>An informed approach</h2>
-      <p>Our understanding and approach are informed by <a href="https://www.childtherapyni.co.uk/">Ciara McElhenny</a>, leading child psychologist in Northern Ireland and in the Republic so you know you are in safe hands and working with people who understand and care about your needs.</p>
-      <p><a class="bc-scroll-link" href="#get-started">Get in touch with us here and tell us what you&apos;re thinking</a>.</p>
-      <p>We will find a solution that works for you.</p>
-      <p><a href="https://www.experia.co.uk/sensory-rooms/">You can find out more about sensory rooms here</a>.</p>
-      <p class="bc-icon-link">
-        <svg class="svg-icon">
-					<use xlink:href="../assets/media/svg/icons/bc-svgs.svg#arrow--left"></use>
-				</svg>
-        <a href="../">Back to our homepage</a>	
-      </p>
-    </div>   
-	</section>
-	<!-- // About resin bound driveways -->
+    <div class="bc-content-component--text">
+			<div class="bc-text-block">
+				<h2>Safe spaces</h2>
+				<p>Sensory rooms, which often include equipment, toys, lights and sounds, are spaces which allow for calming tactile, auditory and comforting experiences for people with sensory processing difficulties. They are quiet “safe” spaces away from overstimulation and allow for pleasing sensations and improved sense of well-being.</p>  
+				<p>They provide multi-sensory environments for people with a wide range of disabilities like autism, cerebral palsy, people with brain injuries; and for people with mental health issues such as stress or suffering from anxiety.</p> 
+				<h2>Cost</h2>  
+				<p>There is a perception that the cost is high or that a lot of space is needed but that is not necessarily the case. The space can be created as one room or as a space in a room; it can be a corner of a room, for example. We will work with your budget to add lighting, play objects, other sensory objects, sounds and calming visual elements to help sooth stimulation. 
+	</p>
+				<p>We will work with you, drawing on our skills and experience, to suit your budget and needs. We know that as carers you will have a lot of your own ideas and we will work through those to bring them to life where possible. </p>
+				<h2>An informed approach</h2>
+				<p>Our understanding and approach are informed by <a href="https://www.childtherapyni.co.uk/">Ciara McElhenny</a>, leading child psychologist in Northern Ireland and in the Republic so you know you are in safe hands and working with people who understand and care about your needs.</p>
+				<p><a class="bc-scroll-link" href="#get-started">Get in touch with us here and tell us what you&apos;re thinking</a>.</p>
+				<p>We will find a solution that works for you.</p>
+				<p><a href="https://www.experia.co.uk/sensory-rooms/">You can find out more about sensory rooms here</a>.</p>
+				<p class="bc-icon-link">
+					<svg class="svg-icon">
+						<use xlink:href="../assets/media/svg/icons/bc-svgs.svg#arrow--left"></use>
+					</svg>
+					<a href="../">Back to our homepage</a>	
+				</p>
+			</div><!-- // .bc-text-block -->
+    </div><!-- // .bc-content-component--text -->   
+	</section><!-- // About resin bound driveways -->
   <section id="get-started" class="bc-container bc-get-started">
 		<article class="">
-			<div class="bc-text-component bc-content-block bc-column">
-				<h1>Get started</h1>
-				<p>Contact us now by email, phone or on social media to get started.</p>
+			<div class="bc-content-component--text bc-content-block bc-column">
+				<div class="bc-text-block">	
+					<h1>Get started</h1>
+					<p>Contact us now by email, phone or on social media to get started.</p>
+				</div><!-- // .bc-text-block -->
 			</div><!-- // bc-grid column-->
-			<div class="bc-column bc-text-component bc-get-started__links">
+			<div class="bc-column bc-content-component bc-get-started__links">
 				<p class="bc-icon-link">
 					<svg class="svg-icon">
 						<use xlink:href="../assets/media/svg/icons/bc-svgs.svg#phone-outline-2"></use>
