@@ -19,7 +19,7 @@
       "patterns": [
         "dev/*"
       ],
-      "extensions": "sass,scss"
+      "extensions": "sass"
     },
     "css": {
       "patterns": [

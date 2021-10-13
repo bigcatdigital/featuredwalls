@@ -1127,7 +1127,7 @@ table {
   max-width: 40.625rem; }
 
 .bc-media-component {
-  max-width: 57.44375rem; }
+  max-width: 70.72%; }
   @media screen and (max-width: 839px) {
     .bc-media-component {
       margin-left: calc(var(--gutter) * -1);
