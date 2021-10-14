@@ -93,7 +93,7 @@
 			<div class="bc-text-block">
 				<h2>Safe spaces</h2>
 				<p>Our sensory rooms often include equipment, toys, lights and sounds. They are spaces which allow for calming tactile, auditory and comforting experiences for people with sensory processing difficulties. We build them to be quiet “safe” spaces away from overstimulation and allow for pleasing sensations to help re-set the sense of well-being.</p>  
-				<p>OUr rooms provide multi-sensory environments for people with a wide range of disabilities including autism, cerebral palsy, people with brain injuries; and people with mental health issues like stress or anxiety, for example.</p> 
+				<p>Our rooms provide multi-sensory environments for people with a wide range of disabilities including autism, cerebral palsy, people with brain injuries; and people with mental health issues like stress or anxiety, for example.</p> 
 				<h2>Experince and understanding</h2>
 				<p>We draw on our many years of building experience and our own understanding of the particular needs of suffers to create the best expereince possible for an individual; and we thing about the work always in terms of the <em>requirements of one individual</em>.</p>
 				<p>Our understanding and approach are informed by <a href="https://www.childtherapyni.co.uk/">Ciara McElhenny</a>, leading child psychologist in Northern Ireland and in the Republic so you know you are in safe hands and working with people who understand and care about your needs.</p>
