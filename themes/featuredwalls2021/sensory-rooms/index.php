@@ -71,8 +71,8 @@
 			<div class="bc-text-block">
 				<h1>Thoughtfully designed sensory experiences</h1>
 				<p class=""><strong><em> Sensory room design, equipment and ideas</em>.</strong></p>	
-				<p>Create a sensory room for a child or adult with autism or other sensory processing disorder. <a href="https://asiam.ie/creating-a-quiet-space/">A sensory room</a> will help reduce any distress or discomfort the person experinces and they help the person with key life skills like self-organization, sensory management and coordination.</p>
-				<p>We have a lot of ideas  we can draw on and we will work with you to develop any ideas you have about what will work for your child or adult with any of these difficulties. There is more about sensory rooms below.</p>
+				<p>We create <a href="https://asiam.ie/creating-a-quiet-space/">sensory rooms</a> for children and adults with sensory processing difficulties. The aim is to create a custom space which reduces the distress and discomfort a person experinces, and so assist with immediate sensory management challenge.</p>
+				<p>We have a lot of ideas and experience we can draw on and we with clients to develop very custom custom solutions to work for your child or adult with any of these difficulties. There is more about sensory rooms below.</p>
 			</div><!-- // .bc-text-block -->
 		</div><!-- // .bc-content-component--text -->
     <div class="bc-flickity bc-flickity--feature-slider bc-content-component--media">
@@ -92,17 +92,17 @@
     <div class="bc-content-component--text">
 			<div class="bc-text-block">
 				<h2>Safe spaces</h2>
-				<p>Sensory rooms, which often include equipment, toys, lights and sounds, are spaces which allow for calming tactile, auditory and comforting experiences for people with sensory processing difficulties. They are quiet “safe” spaces away from overstimulation and allow for pleasing sensations and improved sense of well-being.</p>  
-				<p>They provide multi-sensory environments for people with a wide range of disabilities like autism, cerebral palsy, people with brain injuries; and for people with mental health issues such as stress or suffering from anxiety.</p> 
-				<h2>Cost</h2>  
-				<p>There is a perception that the cost is high or that a lot of space is needed but that is not necessarily the case. The space can be created as one room or as a space in a room; it can be a corner of a room, for example. We will work with your budget to add lighting, play objects, other sensory objects, sounds and calming visual elements to help sooth stimulation. 
-	</p>
-				<p>We will work with you, drawing on our skills and experience, to suit your budget and needs. We know that as carers you will have a lot of your own ideas and we will work through those to bring them to life where possible. </p>
-				<h2>An informed approach</h2>
+				<p>Our sensory rooms often include equipment, toys, lights and sounds. They are spaces which allow for calming tactile, auditory and comforting experiences for people with sensory processing difficulties. We build them to be quiet “safe” spaces away from overstimulation and allow for pleasing sensations to help re-set the sense of well-being.</p>  
+				<p>OUr rooms provide multi-sensory environments for people with a wide range of disabilities including autism, cerebral palsy, people with brain injuries; and people with mental health issues like stress or anxiety, for example.</p> 
+				<h2>Experince and understanding</h2>
+				<p>We draw on our many years of building experience and our own understanding of the particular needs of suffers to create the best expereince possible for an individual; and we thing about the work always in terms of the <em>requirements of one individual</em>.</p>
 				<p>Our understanding and approach are informed by <a href="https://www.childtherapyni.co.uk/">Ciara McElhenny</a>, leading child psychologist in Northern Ireland and in the Republic so you know you are in safe hands and working with people who understand and care about your needs.</p>
+				<h2>Cost</h2>  
+				<p>There there can be a perception that the cost for this sory of solution is high or that a lot of space is required but that is not always the case. The space can be created as a room or as a space in a room; this could be a corner of a room, for example.  
+	</p>
+				<p>We will work with your budget to add lighting, play objects, other sensory objects, sounds and calming visual elements to help sooth stimulation. We know as well that as carers you will have a lot of your own ideas and we will work through those to bring them to life where possible. </p>
 				<p><a class="bc-scroll-link" href="#get-started">Get in touch with us here and tell us what you&apos;re thinking</a>.</p>
 				<p>We will find a solution that works for you.</p>
-				<p><a href="https://www.experia.co.uk/sensory-rooms/">You can find out more about sensory rooms here</a>.</p>
 				<p class="bc-icon-link">
 					<svg class="svg-icon">
 						<use xlink:href="../assets/media/svg/icons/bc-svgs.svg#arrow--left"></use>

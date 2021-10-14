@@ -70,7 +70,7 @@
 		<div class="bc-content-component--text bc-content-block bc-column">
 			<div class="bc-text-block">
 				<h1>Custom designed resin driveways</h1>
-				<p class=""><strong>Elegant, long lasting, durable, beautiful.</strong></p>	
+				<p class=""><strong>Elegant, long lasting, durable, beautiful.</strong></p>	 
 				<p>We we create custom designed resin bound surfaces for driveways, pathways, patios, walkways...anywhere a stone or tarmac surface can be used.</p>
 				<p><a class="bc-scroll-link" href="#resin-body-content"><i>Find out why and how below here.</i></a></p>
 			</div><!-- // .bc-text-block -->
@@ -83,14 +83,13 @@
     <div class="bc-content-component--text" id="resin-body-content">
 			<div class="bc-text-block">
 				<h2>What is is?</h2>
-				<p>It is a surfacing material that is created by mixing <strong>resin</strong> and <strong>aggregate stone</strong>. The mixture is then laid onto the surface to create a strong, clear and permeable finish. It is a popular option for footpaths, patios, walkways and driveways.</p>
+				<p><a href="https://www.vubaresinproducts.com/blog/what-can-you-lay-resin-bound-on">Resin bound</a> is a surfacing material that is created by mixing <strong>resin</strong> and <strong>aggregate stone</strong>. The mixture is then laid onto the surface to create a strong, clear and permeable finish. It is a popular option for footpaths, patios, walkways and driveways.</p>
 				<p>Some people call it “<i>stone carpet</i>”, it provides a seamless finish which is durable and has no loose stones or weeds to remove. </p> 
 				<p>It&apos;s <strong>permeable</strong> too, as the mixing process creates small gaps between the composite aggregates, this supports drainage requirements. That&apos; good news in itself but it also avoids any need for planning permission that may be required for other surfaces.</p>
+				<p>It has improved slip resistance; it is weed and frost resistant and colour-stable.</p>
 				<p>Resin bound surfaces can even be laid over existing driveways, car parks and other existing stone pavements. </p>
-				<h2>Why use it?</h2>
-				<p>It is durable and permeable and can be used where a stone finish is needed. It has improved slip resistance. It is also slip resistant, weed and frost resistant and colour-stable.</p>
 				<h2>The design possibilities</h2>
-				<p>They’re almost limitless, any shape can be created. There are standard colour combinations and we can also work to make an almost limitless range of new colours to suit your needs.</p>
+				<p>They’re almost limitless, any shape can be created. There are standard colour combinations and we can work to make an almost limitless range of new colours to suit your needs.</p>
 				<p>This wide range of colours and blends make for unique design options and it makes for a beautiful alternative to traditional outdoor surfaces. </p>
 				<p><strong>Sound like your thing?</strong></p>
 				<p><a class="bc-scroll-link" href="#get-started">Get in touch with us here and tell us what you&apos;re thinking</a>.</p>

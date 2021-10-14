@@ -81,8 +81,8 @@
 				<div class="bc-content-component--text bc-content-block bc-column">
 					<div class="bc-text-block">
 						<h2 class="bc-section-title">Discover the potential</h2>
-						<p class=""><strong><i>Make an impact</i></strong> in your living room, bedroom, or other special room with one of our stylish feature walls which can include a TV wall unit and inset fireplace.</strong> </p>	
-						<p>As Ireland's <strong>feature wall specialists</strong>, we work with you to create a custom installation, uniquely designed to suit your needs and to make you stand out.</p>
+						<p class=""><strong><i>Make an impact</i></strong> in your living room, bedroom, or other special room with one of our stylish feature walls including a TV wall unit, stylish fireplace and inset lighting.</strong> </p>	
+						<p>As Ireland's <strong>feature wall</strong> experts, we work with you to create and co-design a custom installation, uniquely designed to suit your needs and to make you stand out.</p>
 					</div><!-- // .bc-text-block -->	
 				</div><!-- // .bc-content-component -->
 				<div class="bc-flickity bc-flickity--feature-slider bc-content-component--media">
@@ -120,8 +120,9 @@
 					<div class="bc-text-block">
 						<h1 class="bc-content-block__heading"><span class="bc-featured-intro__heading">Customized sensory rooms</span></h1> 
 						<div class="bc-featured-intro__body">
-							<p class=""><strong><i>Wouldn't it be amazing</i></strong>  to set aside a space for a calming sensory experience in which you or your children can relax?</p>	
-							<p>We design and install our unique <i>star ceilings</i> and <i>LED ceiling lights</i> to help our customers do just that to great effect. </p>
+							<p class=""><strong><i>Imagine</i></strong> a space for set aside for a calming sensory experience for a child or loved with sensory input needs? </p>	
+							<p>We design and create sensory spaces using our unique <i>star ceilings</i>, <i>LED ceiling lights</i> along with a range of materials and audio devices to achive that.</p>
+							<p>We understand that every situation is different so we use our experience and understanding to work with clients to co-design spaces to suit particular needs.</p>
 						</div>
 					</div>
 					
@@ -152,7 +153,7 @@
 				</div><!-- // .bc-2-col-feature -->
 				<div class="bc-call-to-action">
 					<p class="bc-call-to-action-button">	
-						<a href="sensory-rooms/">More sensory room ideas</a>
+						<a href="sensory-rooms/">Our sensory room experinces</a>
 						<svg class="svg-icon">
 							<use xlink:href="assets/media/svg/icons/bc-svgs.svg#arrow"></use>
 						</svg>

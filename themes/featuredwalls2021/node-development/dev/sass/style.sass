@@ -45,11 +45,10 @@ a
 	color: var(--link-color)
 	transition: color var(--quicktrans) var(--easing)
 	position: relative
-	text-decoration: none
 	@include linkHover 
 		font-weight: var(--link-active-weight) 
 		color: var(--link-active-color)
-		text-decoration: none 
+		text-decoration: none  
 		&::after
 			height: 0.300rem
 	&::after
@@ -77,10 +76,14 @@ iframe
 	max-width: 	2rem 
 	max-height: 2rem
 .bc-intro-paragraph
-	font-size: 1rem
-.bc-arrow-link
+	font-size: 1rem 
+.bc-arrow-link, .bc-icon-link
+	text-decoration: none
 	svg
 		fill: $brand-primary	
+	a 
+		@include linkHover
+			text-decoration: none
 .bc-call-to-action
 	@include makeFlexbox($justify: center, $align: center)
 	padding: calc(var(--vertical-unit) * 2) var(--gutter)
@@ -90,13 +93,13 @@ iframe
 	margin-bottom: 0
 	padding: calc(var(--vertical-unit) / 2) calc(var(--gutter) * 1.25)
 	color: var(--white)
-	border-radius: var(--text-02)
 	a 
 		font-size: calc(var(--text-01) - ((var(--text-01) - var(--text-00)) / 2))
-		margin-right: calc(var(--gutter) / 2)
+		margin-right: calc(var(--gutter) / 2) 
 		color: var(--white) 
+		text-decoration: none
 		@include linkHover
-			font-weight: normal
+			font-weight: normal 
 			&::after
 				height: 0
 	.svg-icon
@@ -111,10 +114,9 @@ iframe
 		height: 100%
 		background-color: darken($brand-primary, 12%)
 		z-index: 0
-		border-radius: var(--text-02)
 		transform-origin: center center
 		transform: scale(0) 
-		transition: opacity 280ms ease-out, transform 280ms ease-out
+		transition: opacity 220ms cubic-bezier(.63,.42,.47,.97), transform 220ms cubic-bezier(.63,.42,.47,.97)
 	@include linkHover
 		a 
 			font-weight: var(--link-active-weight)
@@ -249,8 +251,6 @@ iframe
 	& &__footer
 		justify-content: center
 	&.bc-hero--in-page 
-		.bc-hero__body
-			justify-content: flex-end 
 		.bc-hero__heading
 			margin-bottom: var(--vertical-unit)
 		.bc-media-overlay
@@ -532,11 +532,11 @@ iframe
 	color: var(--white)
 	a 
 		color: var(--white)
-		text-decoration: none
-		@include linkHover()
-			text-decoration: underline
 	.svg-icon
 		fill: var(--white)
+	.bc-icon-link
+		a
+			text-decoration: none
 .bc-footer
 	background-color: $brand-darker
 .bc-get-started 
