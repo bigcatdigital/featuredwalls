@@ -91,7 +91,6 @@
 							<source srcset="assets/media/featured-wall-interior-designed-1.jpg" media="(min-width: 768px)" alt="A custom featured wall with inset fireplace and lighting" />
 							<img src="assets/media/featured-wall-interior-designed-1-portrait.jpg" alt="A custom featured wall with inset fireplace and lighting" />
 						</picture><!-- // .bc-hero__media -->
-					
 					</article><!-- // .bc-flickity__slide -->
 					<article class="bc-flickity__slide" aria-label="Hero slide #1">
 						<picture class="">
@@ -112,20 +111,22 @@
 						</picture><!-- // .bc-hero__media -->
 					</article><!-- // .bc-flickity__slide -->
 				</div><!-- //.bc-flickity -->
+				<div class="bc-call-to-action">
+					<p class="bc-call-to-action-button">	
+						<a href="#get-started" class="bc-scroll-link">Get started here</a>
+					</p><!-- // .bc-call-to-action-button -->
+				</div><!-- // .bc-call-to-action -->
 			</section>
 			<!-- // Flickity hero slider -->
-			<!-- Sensory rooms -->
-			<section id="sensory-rooms" class="bc-container bc-fwc-containter" aria-label="Find out about our stylish featured walls and Ceilings">
+			<section class="bc-container bc-fwc-containter">
 				<div class="bc-content-component--text bc-content-block bc-column">
 					<div class="bc-text-block">
-						<h1 class="bc-content-block__heading"><span class="bc-featured-intro__heading">Customized sensory rooms</span></h1> 
-						<div class="bc-featured-intro__body">
-							<p class=""><strong><i>Imagine</i></strong> a space for set aside for a calming sensory experience for a child or loved with sensory input needs? </p>	
-							<p>We design and create sensory spaces using our unique <i>star ceilings</i>, <i>LED ceiling lights</i> along with a range of materials and audio devices to achive that.</p>
-							<p>We understand that every situation is different so we use our experience and understanding to work with clients to co-design spaces to suit particular needs.</p>
+						<h1 class="bc-content-block__heading"><span class="bc-featured-intro__heading">More of what we do</span></h1> 
+						<div class="bc-featured-intro__body"> 
+							<p class=""><strong>Imagine a space for set aside</strong> for a calming sensory experience for a child or loved with sensory input needs? </p>	
+							<p>Or <strong>your own driveway custom designed</strong> for you using resin bound surfacing? See below...</p>
 						</div>
 					</div>
-					
 				</div><!-- .bc-featured-intro -->
 				<div class="bc-2-col-feature bc-content-component--media">
 					<div class="bc-2-col-feature__col"> 
@@ -135,55 +136,36 @@
 							</picture><!-- //  -->
 						</article><!-- // .bc-2-col-feature__media -->
 						<div class="bc-2-col-feature__overlay"> 
-							<h2>Star ceilings</h2>
-							<p>Add colour, life and stimulate imagination with a custom Star Ceiling.</p> 
-						</div><!-- // .bc-2-col-feature__overlay -->
-					</div><!-- // .bc-2-col-feature__col -->
-					<div class="bc-2-col-feature__col"> 
-						<article class="bc-2-col-feature__media is-object-contain" aria-label="Our calming star ceilings">	
-							<picture class=""> 
-								<img src="assets/media/ceiling-led-lights-1.jpg" alt="A ceiling LED lighting installation to add atmosphere to a room" />
-							</picture><!-- //  -->
-						</article><!-- // .bc-2-col-feature__media -->
-						<div class="bc-2-col-feature__overlay"> 
-						<h2>LED ceiling lights</h2>
-								<p>Bring calm and atomosphere to any space with our uniquely designed LED ceiling lights units.</p> 
-						</div><!-- // .bc-2-col-feature__overlay -->
-					</div><!-- // .bc-2-col-feature__col -->
-				</div><!-- // .bc-2-col-feature -->
-				<div class="bc-call-to-action">
-					<p class="bc-call-to-action-button">	
-						<a href="sensory-rooms/">Our sensory room experinces</a>
-						<svg class="svg-icon">
-							<use xlink:href="assets/media/svg/icons/bc-svgs.svg#arrow"></use>
-						</svg>
-					</p>
-				</div>
-			</section>
-			<!-- Resin bound driveways -->
-			<section id="resin-bound" class="bc-container bc-hero bc-hero--full-screen bc-hero--in-page">
-				<div class="bc-media-overlay"></div>
-				<picture class="bc-hero__media">
-					<img src="assets/media/resin-bound-compass-2.jpg" alt="A resin bound driveway with embedded compass design" />
-				</picture>
-				<article class="bc-hero__body" aria-label="Main page hero body">
-					<div class="bc-hero__body__content bc-content-component">
-						<div class="bc-text-block">
-							<h1 class="bc-hero__heading">Resin bound driveways</h1>
-							<p class=""><strong>Elegant, long lasting, durable, beautiful custom designed resin bound driveways</strong></p>
-							<p><i>What if you could have a custom designed durable, safe walkway, driveway or patio added to your home or work premises?</i></p>
+							<h2>Custom sensory room design</h2>
+							<p>Add colour, life and a calming experience with a customised sensory room.</p> 
 							<p class="bc-arrow-link">
 								<a href="resin-driveways/">Find out more here</a>				
 								<svg class="svg-icon">
 									<use xlink:href="assets/media/svg/icons/bc-svgs.svg#arrow"></use>
 								</svg>	
-							</p>
-						</div><!-- // .bc-text-block -->
-						
-					</div>
-				</article>
-			</section>
-			<!-- // Resin bound driveways -->
+							</p><!-- // .bc-arrow-link -->
+						</div><!-- // .bc-2-col-feature__overlay -->
+					</div><!-- // .bc-2-col-feature__col -->
+					<div class="bc-2-col-feature__col"> 
+						<article class="bc-2-col-feature__media is-object-contain" aria-label="Our calming star ceilings">	
+							<picture class=""> 
+								<img src="assets/media/resin-bound-compass-2.jpg" alt="A ceiling LED lighting installation to add atmosphere to a room" />
+							</picture><!-- //  -->
+						</article><!-- // .bc-2-col-feature__media -->
+						<div class="bc-2-col-feature__overlay"> 
+							<h2>Resin bound surface design</h2>
+							<p>Elegant, long lasting, durable, beautiful custom designed resin bound driveways.</p> 
+							<p class="bc-arrow-link">
+								<a href="resin-driveways/">Find out more here</a>				
+								<svg class="svg-icon">
+									<use xlink:href="assets/media/svg/icons/bc-svgs.svg#arrow"></use>
+								</svg>	
+							</p><!-- // .bc-arrow-link -->
+						</div><!-- // .bc-2-col-feature__overlay -->
+					</div><!-- // .bc-2-col-feature__col -->
+				</div><!-- // .bc-2-col-feature -->
+			</section><!-- // More about our work -->
+
 			<section id="get-started" class="bc-container bc-get-started">
 				<article class="">
 					<div class="bc-text-component bc-content-block bc-column">

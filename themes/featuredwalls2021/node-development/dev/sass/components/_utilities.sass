@@ -39,20 +39,18 @@
 		max-width: #{$line-height}rem
 		
 	a 
-		@include makeFlexbox(row, center, center)
+		@include makeFlexbox(row, center, center)   
 		width: 2rem
 		height: 2rem
-		text-decoration: none
+		text-decoration: none 
 		@include linkHover
 			text-decoration: none
-	
-.bc-arrow-link
+.bc-arrow-link  
 	@include arrowLink
 	
 /* Text component */
 .bc-text-component
 	@include makeTextComponent
-
 .bc-intro-paragraph
 	font-size: $text-01
 	font-weight: var(--bold-font-weight)
