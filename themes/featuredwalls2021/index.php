@@ -4,7 +4,7 @@
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<meta name="robots" content="max-snippet:-1, max-image-preview:large, max-video-preview:-1" />
-	<title>Feature Walls Specialist | Home</title>
+	<title>Custom Feature Wall Design | CAPS Ltd</title>
 
 	<link rel="shortcut icon" type="image/png" href="assets/media/caps-favicon.png"/>
 	<meta name="description" content="Specialists in creating beautiful feature walls, sensory rooms and resin bound driveways with custom interior and exterior design. Serving north-west of Ireland, Northern Ireland and all of the island of Ireland.">
