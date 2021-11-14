@@ -8,6 +8,7 @@
 
 	<link rel="shortcut icon" type="image/png" href="assets/media/caps-favicon.png"/>
 	<meta name="description" content="Specialists in creating beautiful feature walls, sensory rooms and resin bound driveways with custom interior and exterior design. Serving north-west of Ireland, Northern Ireland and all of the island of Ireland.">
+
 	<link href="https://fonts.googleapis.com/css?family=Alegreya|Alegreya+Sans|Merriweather|Merriweather+Sans|Nunito|Nunito+Sans|Quattrocento|Quattrocento+Sans|Roboto|Roboto+Mono|Roboto+Slab&display=swap" rel="stylesheet">
 
 	<!-- Google fonts Oswald & Lato -->
