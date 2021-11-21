@@ -69,14 +69,14 @@
 
 
 	function build_project_styles() {
-		wp_enqueue_style('azo-sans', '//use.typekit.net/lwq7zun.css', NULL, microtime());	
-		wp_enqueue_style('scope-one', '//fonts.googleapis.com/css?family=Scope+One&display=swap', NULL, time());	
-		wp_enqueue_style('ca-flickty',  'https://unpkg.com/flickity@2/dist/flickity.min.css', NULL, time());	
-		wp_enqueue_style('project-styles', get_theme_file_uri('/assets/css/style.min.css'), NULL, time(), 'all');	
+		wp_enqueue_style('alegreya', '//fonts.googleapis.com/css?family=Alegreya|Alegreya+Sans|Merriweather|Merriweather+Sans|Nunito|Nunito+Sans|Quattrocento|Quattrocento+Sans|Roboto|Roboto+Mono|Roboto+Slab&display=swap', NULL, time());	
+		wp_enqueue_style('lato', '//fonts.googleapis.com/css2?family=Lato:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700&family=Oswald:wght@200;400;500;600&display=swap', NULL, time());	
+		wp_enqueue_style('flickty-styles',  'https://unpkg.com/flickity@2/dist/flickity.min.css', NULL, time());	
+		wp_enqueue_style('project-styles', get_theme_file_uri('/assets/css/style.css'), NULL, time(), 'all');	
 	}
 	add_action('wp_enqueue_scripts', 'build_project_styles');
 	function build_project_scripts() {
-		wp_enqueue_script('project-scripts',  get_theme_file_uri('/assets/js/scripts.min.js'), NULL, time(), true);	
+		wp_enqueue_script('project-scripts',  get_theme_file_uri('/assets/scripts/app-concat.js'), NULL, false, true);	
 	}
 	add_action('wp_enqueue_scripts', 'build_project_scripts');
 
@@ -89,33 +89,31 @@
 	add_action('after_setup_theme', 'project_features');
 
 	//Preload scripts
-	add_action('wp_head', function () {
-  	global $wp_scripts;
-	  foreach ($wp_scripts->queue as $handle) {
-	    $script = $wp_scripts->registered[$handle];
-	    
-	    //-- If version is set, append to end of source.
-	    $source = $script->src . ($script->ver ? "?ver={$script->ver}" : "");
-	
-	    //-- Spit out the tag.
-	    echo "<link rel='preload' href='{$source}' as='script'/>\n";
-	  }
-	}, 1);
+	// add_action('wp_head', function () {
+  // 	global $wp_scripts;
+	//   foreach ($wp_scripts->queue as $handle) {
+	//     $script = $wp_scripts->registered[$handle];
+	//     //-- If version is set, append to end of source.
+	//     $source = $script->src . ($script->ver ? "?ver={$script->ver}" : "");
+	//     //-- Spit out the tag.
+	//     echo "<link rel='preload' href='{$source}' as='script'/>\n";
+	//   }
+	// }, 1);
 	
 
 /** REST API filters **/
 //Function to add all CPT ACF fields to REST API response 
-function bc_add_CPT_to_rest($post_type) {
-	function bc_rest_prepare_post($data, $post, $request) {
-		$_data = $data->data;	
-		$fields = get_fields($post->ID);	
-		foreach ($fields as $key => $value){
-			$_data[$key] = get_field($key, $post->ID);
-		}
-		$data->data = $_data; 
-		return $data;
-	}
-	add_filter('rest_prepare_' . $post_type, 'bc_rest_prepare_post', 10, 3);
-}
+// function bc_add_CPT_to_rest($post_type) {
+// 	function bc_rest_prepare_post($data, $post, $request) {
+// 		$_data = $data->data;	
+// 		$fields = get_fields($post->ID);	
+// 		foreach ($fields as $key => $value){
+// 			$_data[$key] = get_field($key, $post->ID);
+// 		}
+// 		$data->data = $_data; 
+// 		return $data;
+// 	}
+// 	add_filter('rest_prepare_' . $post_type, 'bc_rest_prepare_post', 10, 3);
+// }
 
 ?>

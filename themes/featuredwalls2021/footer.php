@@ -1,71 +1,75 @@
-<footer>
-			<div class="bc-content-container">
-				<div class="bc-content-grid bc-cols-3">	
-					<?php 
-						$contact_info = new WP_Query([
-						'post_type' => 'contact-information'
-						]);	
-						
-						while ($contact_info->have_posts()) {
-							$contact_info->the_post() ; ?>
-					<div class="bc-col">
-						<?php if (get_field('contact-#1')) {
-							$contact_1 = get_field('contact-#1'); ?>
-						<h2 class="ca-contact-office"><?php echo esc_html($contact_1['office-name']) ?></h2>
-						<p class="ca-contact-detail"><?php echo $contact_1['office-detail'] ?></p>
-							<?php if ($contact_1['office-number']) { ?>
-						<h3>Phone</h3>
-						<p class="ca-contact-detail"><a href="tel:<?php echo $contact_1['office-number'] ?>">+353 <?php echo $contact_1['office-number'] ?></a></p>
-							<?php }//end if 'office-number' ?>
-						<?php }//end if 'contact-#1' ?>
-						<?php if (get_field('contact-main-email')) { ?>
-						<h3 class="ca-contact-office-sub">Email</h3>
-						<p class="ca-contact-detail"><a href="mailto:<?php echo get_field('contact-main-email') ?>"><?php echo get_field('contact-main-email'); ?></a></p>
-						<?php }//end if 'contact-main-phone-email' ?>
-					</div>
-					<div class="bc-col">
-					<?php if (get_field('contact-#2')) {
-						$contact_2 = get_field('contact-#2'); ?>
-						<h2 class="ca-contact-office"><?php echo esc_html($contact_2['office-name']) ?></h2>
-						<p class="ca-contact-detail"><?php echo $contact_2['office-detail'] ?></p>
-							<?php if ($contact_2['office-number']) { ?>
-						<h3>Phone</h3>
-						<p class="ca-contact-detail"><a href="tel:<?php echo $contact_2['office-number'] ?>">+353 <?php echo $contact_2['office-number'] ?></a></p>
-							<?php }//end if 'office-number' ?>
-					<?php }//end if 'contact-#2' ?>
-					</div>
-						<?php if (get_field('contact-social-media-profiles')) { 
-							$soc_media_profiles = get_field('contact-social-media-profiles'); ?>	
-					<div class="bc-col">	
-						<h2 class="ca-contact-office">Follow</h2>
-							<p class="ca-contact-detail">
-							<?php if ($soc_media_profiles['soc-media-#1']) { ?>
-								<a href="<?php echo esc_url($soc_media_profiles['soc-media-#1']['url']) ?>"><?php echo $soc_media_profiles['soc-media-#1']['title'] ?></a>
-							<?php }// end if 'soc-media-#1'  ?>
-							<?php if ($soc_media_profiles['soc-media-#2']) { ?>
-								<br />
-								<a href="<?php echo esc_url($soc_media_profiles['soc-media-#2']['url']) ?>"><?php echo $soc_media_profiles['soc-media-#2']['title'] ?></a>
-							<?php }// end if 'soc-media-#2'  ?>
-							<?php if ($soc_media_profiles['soc-media-#3']) { ?>
-								<br />
-								<a href="<?php echo esc_url($soc_media_profiles['soc-media-#3']['url']) ?>"><?php echo $soc_media_profiles['soc-media-#3']['title'] ?></a>
-							<?php }// end if 'soc-media-#3'  ?>
-							<?php if ($soc_media_profiles['soc-media-#4']) { ?>
-								<br />
-								<a href="<?php echo esc_url($soc_media_profiles['soc-media-#4']['url']) ?>"><?php echo $soc_media_profiles['soc-media-#4']['title'] ?></a>
-							<?php }// end if 'soc-media-#4'  ?>
-							<?php if ($soc_media_profiles['soc-media-#5']) { ?>
-								<br />
-								<a href="<?php echo esc_url($soc_media_profiles['soc-media-#5']['url']) ?>"><?php echo $soc_media_profiles['soc-media-#5']['title'] ?></a>
-							<?php }// end if 'soc-media-#4'  ?>
-							</p>
-					</div>	
-						<?php }//end if 'contact-social-media-profiles' ?>
-					<?php }//end while contact-info ?>
-				</div>
-			</div>
-		</footer>
-		<script src="https://unpkg.com/flickity@2/dist/flickity.pkgd.js"></script>
-		<?php wp_footer() ?>
+<section id="get-started" class="bc-container bc-get-started">
+				<article class="">
+					<div class="bc-text-component bc-content-block bc-column">
+						<h1>Get started</h1>
+						<p>Contact us now by email, phone or on social media to get started.</p>
+					</div><!-- // bc-grid column-->
+					<div class="bc-column bc-text-component bc-get-started__links">
+						<div class="bc-get-started__column">
+							<div class="bc-get-started__link">
+								<span class="bc-get-started__button-wrap">
+									<a href="tel:0863627302"class="bc-get-started__button bc-call-to-action-button">
+										<svg class="svg-icon">
+											<use xlink:href="assets/media/svg/icons/bc-svgs.svg#phone-outline-2"></use>
+										</svg>	
+										<span class="bc-get-started__button__text">086 362 7302</span>	 	
+									</a><!-- // .bc-get-started__button -->	
+								</span><!-- // .bc-get-started__button-wrap -->	
+							</div><!-- // .bc-get-started__link -->
+						</div><!-- // .bc-get-started__column -->
+						<div class="bc-get-started__column">
+							<div class="bc-get-started__link">
+								<span class="bc-get-started__button-wrap">
+									<a href="https://www.facebook.com/resinbounddesigns"class="bc-get-started__button bc-call-to-action-button">
+										<svg class="svg-icon">
+											<use xlink:href="assets/media/svg/icons/bc-svgs.svg#facebook"></use>
+										</svg>		
+									<span class="bc-get-started__button__text">Resin Bound Designs Ireland</span>	
+									</a><!-- // .bc-get-started__button -->	
+								</span><!-- // .bc-get-started__button-wrap -->	
+							</div><!-- // .bc-get-started__link -->
+						</div><!-- // .bc-get-started__column -->
+						<div class="bc-get-started__column">
+							<div class="bc-get-started__link">
+								<span class="bc-get-started__button-wrap">
+									<a href="https://www.facebook.com/featuredbespokewallsandceilings"class="bc-get-started__button bc-call-to-action-button">
+										<svg class="svg-icon">
+											<use xlink:href="assets/media/svg/icons/bc-svgs.svg#facebook"></use>
+										</svg>		
+										<span class="bc-get-started__button__text">Featured Walls and Ceilings</span>
+									</a><!-- // .bc-get-started__button -->	
+								</span><!-- // .bc-get-started__button-wrap -->	
+							</div><!-- // .bc-get-started__link -->
+						</div><!-- // .bc-get-started__column -->
+						<div class="bc-get-started__column">
+							<div class="bc-get-started__link">
+								<span class="bc-get-started__button-wrap">
+									<a href="mailto:capsltd@hotmail.com" class="bc-get-started__button bc-call-to-action-button">
+										<svg class="svg-icon">
+											<use xlink:href="assets/media/svg/icons/bc-svgs.svg#email-at"></use>
+										</svg>		
+										<span class="bc-get-started__button__text">capsltd@hotmail.com</span> 
+									</a><!-- // .bc-get-started__button -->	
+								</span><!-- // .bc-get-started__button-wrap -->	
+							</div><!-- // .bc-get-started__link -->
+						</div><!-- // .bc-get-started__column -->
+					</div><!-- // bc-grid column-->
+				</article><!-- .bc-grid--x2 -->
+			</section><!-- // Get started -->
+			
+			<footer class="bc-footer bc-container"> 
+				<div class="bc-grid">
+					<div>
+						<p>
+							<strong>CAPSLtd</strong>,<br />
+							Greencastle<br />
+							Co. Donegal<br />
+							<a href="tel:01234567">01234567</a><br />
+						</p>
+					</div><!-- // grid column -->
+				</div><!-- // .bc-grid -->
+			</footer>
+		</div><!-- //. bc-body-wrap --> 
+    <?php wp_footer(); ?>
 	</body>
-</html>
+</html> 
