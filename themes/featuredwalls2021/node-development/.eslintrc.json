@@ -16,6 +16,7 @@
 	"impliedStrict": true
   },
   "rules": {
+		"no-unused-vars": 1,
   	"indent": [
     	"error",
       "tab"

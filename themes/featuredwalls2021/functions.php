@@ -76,7 +76,7 @@
 	}
 	add_action('wp_enqueue_scripts', 'build_project_styles');
 	function build_project_scripts() {
-		wp_enqueue_script('project-scripts',  get_theme_file_uri('/assets/scripts/app-concat.js'), NULL, false, true);	
+		wp_enqueue_script('project-scripts',  get_theme_file_uri('/assets/scripts/app-concat.js'), NULL, time(), true);	
 	}
 	add_action('wp_enqueue_scripts', 'build_project_scripts');
 
