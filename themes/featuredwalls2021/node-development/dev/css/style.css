@@ -1337,7 +1337,7 @@ table {
     .bc-flickity.bc-flickity--feature-slider .bc-flickity__slide {
       flex-direction: column;
       height: 65vh;
-      margin-right: -10px; }
+      margin-right: 10px; }
       @media screen and (min-width: 1024px) {
         .bc-flickity.bc-flickity--feature-slider .bc-flickity__slide {
           opacity: 0.56;
@@ -1622,3 +1622,5 @@ table {
       background-color: #e20000; }
       .bc-get-started .bc-icon-link:active .svg-icon, .bc-get-started .bc-icon-link:hover .svg-icon, .bc-get-started .bc-icon-link:focus .svg-icon {
         opacity: 1; }
+
+/*# sourceMappingURL=style.css.map */

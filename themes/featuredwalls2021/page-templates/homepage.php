@@ -2,41 +2,19 @@
 	/* Template Name: Homepage template */
 	get_header();
 ?> 
-	<body>
-		<?php echo '<!-- Homepage template -->'; ?>
-		<div class="bc-body-wrap">
-			<nav class="bc-is-hidden" aria-label="Skip to main content link" >
-				<a href="#main-site-content" title="Skip site menu, go to to main site content"></a>	
-			</nav>
-			<header class="bc-site-header bc-is-hero-overlay bc-container">
-				<a title="Site hompepage" class="bc-site-header__home-link" href="./"> 
-					<img src="assets/media/caps-minimal-lc-final.png" alt="CAPS Ltd logo - presenting Featured Walls and Ceilings" /> 
-				</a>
-				<a href="#main-site-content" class="bc-site-header__menu-skip bc-is-hidden" title="Skip site menu, to main site content"></a>
-				<a href="javascript:void(0)" aria-hidden="true" class="bc-site-header__menu-link" title="Site Menu">
-					<svg class="svg-icon bc-site-header__menu-link__menu ">
-						<use xlink:href="assets/media/svg/icons/bc-svgs.svg#menu-thin"></use>
-					</svg>
-					<svg class="svg-icon bc-site-header__menu-link__close "> 
-						<use xlink:href="assets/media/svg/icons/bc-svgs.svg#close-x"></use>
-					</svg>
-				</a>
-				<ul id="site-main-navigation" role="navigation" aria-label="Main site navigation" class="bc-site-header__main-navigation">
-					<li class="bc-site-header__main-navigation__item"><a href="single-page.html">Single Page</a></li>
-					<li class="bc-site-header__main-navigation__item"><a href="javascript:void(0)">Page #2</a></li>
-					<li class="bc-site-header__main-navigation__item"><a href="javascript:void(0)">Page #3</a></li>
-					<li class="bc-site-header__main-navigation__item"><a href="javascript:void(0)">Page #4</a></li>
-				</ul>	
-			</header><!-- // ..be-hero__header -->
-			<!-- Hero -->
+			<?php if (get_field('leader-image') && !empty(get_field('leader-image'))) { 
+				$leader_image_url = esc_url(get_field('leader-image')['url']);
+				$leader_image_alt = esc_attr(get_field('leader-image')['alt']);
+			?>
+			<!-- Page content start: Hero -->
 			<section id="main-site-content" class="bc-hero--full-screen  has-lines" aria-label="Welcome to Featured Walls and Ceilings">
 				<picture class="bc-hero__media">
-					<img src="assets/media/featured-walls-and-ceilings-wood-finish.jpg" alt="A featured wall installation in a beautifully designed interior" />
+					<img src="<?php echo $leader_image_url ?>" alt="<?php echo $leader_image_alt ?>" />
 				</picture>
 				<article class="bc-hero__body bc-content-component" aria-label="Main page hero body">
 					<div class="bc-hero__body__content bc-text-block">
-						<h1 class="bc-hero__heading">Ireland&apos;s Feature Wall Specialists</h1>
-						<p class=""><strong><i>Imagine your special room</i> enhanced by the beauty of a stunning custom designed feature wall.</strong></p>
+						<h1 class="bc-hero__heading"><?php echo get_field('leader-header') ?></h1>
+						<p class=""><strong><?php echo get_field('leader-sub-header') ?></strong></p>
 					</div>
 				</article>
 				<footer class="bc-hero__footer">
@@ -50,48 +28,89 @@
 				<div class="bc-media-overlay"></div>
 				<div class="lines"></div>
 			</section>
+			<?php }//end if get_file('hero-image') ?>
 			<!-- // Hero -->
-			<!-- Featured walls and Ceilings -->
+			<?php if (get_field('carousel-feature-title') && strcmp(get_field('carousel-feature-title'), '') !== 0) { 
+				$title = get_field('carousel-feature-title');
+				if (get_field('feature-intro-paragraph-#1')) {
+					$para_1 = get_field('feature-intro-paragraph-#1');
+				}
+				if (get_field('feature-intro-paragraph-#2')) {
+					$para_2 = get_field('feature-intro-paragraph-#2');
+				}
+				if (get_field('carousel-call-to-action-text') && strcmp(get_field('carousel-call-to-action-text'), '') !== 0) {
+					$carousel_cta = get_field('carousel-call-to-action-text');
+				}
+			?>
+			<!-- Carousel feature -->
 			<section id="body-content" class="bc-container bc-fwc-containter" aria-label="Find out about our stylish featured walls and Ceilings">
 				<div class="bc-content-component--text bc-content-block bc-column">
 					<div class="bc-text-block">
-						<h2 class="bc-section-title">Discover the potential</h2>
-						<p class=""><strong><i>Make an impact</i></strong> in your living room, bedroom, or other special room with one of our stylish feature walls including a TV wall unit, stylish fireplace and inset lighting.</strong> </p>	
-						<p>As Ireland's <strong>feature wall</strong> experts, we work with you to create and co-design a custom installation, uniquely designed to suit your needs and to make you stand out.</p>
+						<h2 class="bc-section-title"><?php echo $title ?></h2>
+						<?php echo $para_1 ?>
+						<?php echo $para_2 ?>
 					</div><!-- // .bc-text-block -->	
 				</div><!-- // .bc-content-component -->
+				<?php if (is_array(get_field('carousel-images')) && is_array(get_field('carousel-images')['carousel-image-#1']) && is_array(get_field('carousel-images')['carousel-image-#2'])) { 
+					echo '<!-- Do carousel -->' ; 
+					$image_1 = get_field('carousel-images')['carousel-image-#1'];
+					$image_2 = get_field('carousel-images')['carousel-image-#2'];
+				?>
 				<div class="bc-flickity bc-flickity--feature-slider bc-content-component--media">
-					<article class="bc-flickity__slide" aria-label="Hero slide #1">
+					<article class="bc-flickity__slide">
 						<picture class=""> 
-							<source srcset="assets/media/featured-wall-interior-designed-1.jpg" media="(min-width: 768px)" alt="A custom featured wall with inset fireplace and lighting" />
-							<img src="assets/media/featured-wall-interior-designed-1-portrait.jpg" alt="A custom featured wall with inset fireplace and lighting" />
+							<?php if (is_array(get_field('carousel-images')['carousel-image-#1-small'])) {
+								$image_src = esc_url(get_field('carousel-images')['carousel-image-#1-small']['url']);
+								$image_alt = esc_attr(get_field('carousel-images')['carousel-image-#1-small']['alt']);
+							?>
+							<source srcset="<?php echo $image_src ?>" alt="<?php echo $image_alt ?>" media="(max-width: 767px)" />
+							<?php }//end if image-1-small ?>
+							<img src=" <?php echo esc_url($image_1['url']) ?> " alt="<?php echo esc_attr($image_1['alt']) ?>" />
+
 						</picture><!-- // .bc-hero__media -->
 					</article><!-- // .bc-flickity__slide -->
 					<article class="bc-flickity__slide" aria-label="Hero slide #1">
 						<picture class="">
-							<source srcset="assets/media/featured-wall-interior-designed-2.jpg" media="(min-width: 768px)" alt="A custom featured wall with inset fireplace and lighting" />
-							<img src="assets/media/featured-wall-interior-designed-2-portrait.jpg" alt="A custom featured wall with inset fireplace and lighting" />
+						<?php if (is_array(get_field('carousel-images')['carousel-image-#2-small'])) {
+								$image_src = esc_url(get_field('carousel-images')['carousel-image-#2-small']['url']);
+								$image_aly = esc_attr(get_field('carousel-images')['carousel-image-#2-small']['alt']);
+							?>
+							<source srcset="<?php echo $image_src ?>" alt="<?php echo $image_alt ?>" media="(max-width: 767px)" />
+							<?php }//end if image-1-small ?>
+							<img src="<?php echo esc_url($image_2['url']) ?>" alt="<?php echo esc_attr($image_2['alt']) ?>" />
 						</picture><!-- // .bc-hero__media -->
-						
 					</article><!-- // .bc-flickity__slide -->
+					<?php if (is_array(get_field('carousel-images')['carousel-image-#3'])) { 
+						$image_3 = get_field('carousel-images')['carousel-image-#3'];	
+					?>
 					<article class="bc-flickity__slide" aria-label="Hero slide #3">
 						<picture class="">
-							<img src="assets/media/featured-wall-interior-designed-3.jpg" alt="A custom featured wall with inset fireplace and lighting" />
-						</picture><!-- // .bc-hero__media --> 
-						
+							<?php if (is_array(get_field('carousel-images')['carousel-image-#3-small'])) {
+									$image_src = esc_url(get_field('carousel-images')['carousel-image-#3-small']['url']);
+									$image_aly = esc_attr(get_field('carousel-images')['carousel-image-#3-small']['alt']);
+								?>
+								<source srcset="<?php echo $image_src ?>" alt="<?php echo $image_alt ?>" media="(max-width: 767px)" />
+								<?php }//end if image-1-small ?>
+								<img src="<?php echo esc_url($image_3['url']) ?>" alt="<?php echo esc_attr($image_3['alt']) ?>" />
+							</picture><!-- // .bc-hero__media -->
 					</article><!-- // .bc-flickity__slide -->
-					<article class="bc-flickity__slide" aria-label="Hero slide #3">
+					<?php }//end if is array carousel image #3 ?>
+					<article class="bc-flickity__slide" aria-label="Hero slide #4">
 						<picture class="">
 							<img src="assets/media/featured-walls-and-ceilings-wood-finish.jpg" alt="A custom featured wall with inset fireplace and lighting" />
 						</picture><!-- // .bc-hero__media -->
 					</article><!-- // .bc-flickity__slide -->
 				</div><!-- //.bc-flickity -->
+				<?php }// endif is_array(carouse-images) ?>
+				<?php if ($carousel_cta) { ?>
 				<div class="bc-call-to-action">
 					<p class="bc-call-to-action-button">	
-						<a href="#get-started" class="bc-scroll-link">Get started here</a>
+						<a href="#get-started" class="bc-scroll-link"><?php echo $carousel_cta ?></a>
 					</p><!-- // .bc-call-to-action-button -->
 				</div><!-- // .bc-call-to-action -->
+				<?php }//end if $carousel_cta ?>
 			</section>
+			<?php }//end if get_field('carousel-feature-title') ?>
 			<!-- // Flickity hero slider -->
 			<section class="bc-container bc-fwc-containter">
 				<div class="bc-content-component--text bc-content-block bc-column">
