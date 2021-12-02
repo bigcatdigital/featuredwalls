@@ -88,6 +88,8 @@
 	}
 	add_action('after_setup_theme', 'project_features');
 
+
+
 	//Preload scripts
 	// add_action('wp_head', function () {
   // 	global $wp_scripts;
@@ -116,4 +118,43 @@
 // 	add_filter('rest_prepare_' . $post_type, 'bc_rest_prepare_post', 10, 3);
 // }
 
+/* Custom post types */
+function fwc_custom_postypes() {
+	register_post_type('main-cta', 
+		array(
+			'labels' => array(
+				'name'               => 'Main site contact cards',
+				'singular_name'      => 'Main site contact cards',
+				'menu_name'          => 'Main site contact cards',
+				'name_admin_bar'     => 'Main site contact cards',
+				'add_new'            => 'Add New',
+				'add_new_item'       => 'Add Main site contact cards',
+				'new_item'           => 'New Main site contact cards',
+				'edit_item'          => 'Edit Main site contact cards',
+				'view_item'          => 'View Main site contact cards',
+				'all_items'          => 'All Main site contact cards',
+				'search_items'       => 'Search Main site contact cards',
+				'parent_item_colon'  => 'Parent Main site contact cards',
+				'not_found'          => 'No Main site contact cards',
+				'not_found_in_trash' => 'No Main site contact cards in Trash'
+			),
+			'public'              => true,
+			'exclude_from_search' => false,
+			'publicly_queryable'  => true,
+			'show_ui'             => true,
+			'show_in_nav_menus'   => true,
+			'show_in_menu'        => true,
+			'show_in_admin_bar'   => true,
+			'menu_position'       => 5,
+			'menu_icon'           => 'dashicons-format-quote',
+			'capability_type'     => 'post',
+			'hierarchical'        => false,
+			'supports'            => array( 'title', 'author', 'thumbnail'),
+			'has_archive'         => true,
+			'rewrite'             => array( 'slug' => 'main-cta' ),
+			'query_var'           => true
+		)
+	);//register_post_type
+}//fwc_custom_postypes()
+add_action('init', 'fwc_custom_postypes');
 ?>

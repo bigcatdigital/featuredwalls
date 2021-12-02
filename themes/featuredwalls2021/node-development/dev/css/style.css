@@ -1604,9 +1604,14 @@ table {
     .bc-get-started .bc-get-started__button__text {
       z-index: 2; }
     .bc-get-started .bc-get-started__button .svg-icon {
-      margin-bottom: calc(var(--vertical-unit) / 2); }
+      margin-bottom: calc(var(--vertical-unit) / 2);
+      margin-right: calc(var(--vertical-unit) / 2);
+      transition: transform 280ms ease-in-out;
+      transform: scale(1); }
     .bc-get-started .bc-get-started__button:active, .bc-get-started .bc-get-started__button:hover, .bc-get-started .bc-get-started__button:focus {
       box-shadow: 8px 8px 24px rgba(0, 0, 0, 0.12), -8px -8px 24px rgba(0, 0, 0, 0.12); }
+      .bc-get-started .bc-get-started__button:active .svg-icon, .bc-get-started .bc-get-started__button:hover .svg-icon, .bc-get-started .bc-get-started__button:focus .svg-icon {
+        transform: scale(1.15); }
       .bc-get-started .bc-get-started__button:active::after, .bc-get-started .bc-get-started__button:hover::after, .bc-get-started .bc-get-started__button:focus::after {
         height: 0; }
   .bc-get-started .bc-icon-link {

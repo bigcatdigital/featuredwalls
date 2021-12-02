@@ -614,8 +614,13 @@ iframe
 			z-index: 2
 		.svg-icon
 			margin-bottom: calc(var(--vertical-unit) / 2)
+			margin-right: calc(var(--vertical-unit) / 2)
+			transition: transform 280ms ease-in-out 
+			transform: scale(1)
 		@include linkHover
 			box-shadow: 8px 8px 24px rgba($black, 0.12), -8px -8px 24px rgba($black, 0.12) 
+			.svg-icon
+				transform: scale(1.15)
 			&::after
 				height: 0 
 	.bc-icon-link

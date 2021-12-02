@@ -28,7 +28,7 @@
 			</nav>
 			<header class="bc-site-header bc-is-hero-overlay bc-container">
 				<a title="Site hompepage" class="bc-site-header__home-link" href="<?php echo site_url(); ?>"> 
-					<img src="<?php echo get_theme_file_uri('/assets/media/caps-minimal-lc-final.png'); ?>" alt="CAPS Ltd logo - presenting Featured Walls and Ceilings" /> 
+					<img src="<?php echo get_theme_file_uri('/assets/media/caps-logo.png'); ?>" alt="CAPS Ltd logo - presenting Featured Walls and Ceilings" /> 
 				</a>
 				<a href="#main-site-content" class="bc-site-header__menu-skip bc-is-hidden" title="Skip site menu, to main site content"></a>
 				<a href="javascript:void(0)" aria-hidden="true" class="bc-site-header__menu-link" title="Site Menu">
