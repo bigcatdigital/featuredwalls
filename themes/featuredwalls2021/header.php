@@ -18,7 +18,18 @@
 		window.dataLayer = window.dataLayer || [];
 		function gtag(){dataLayer.push(arguments);}
 		gtag('js', new Date());
+		gtag('consent', 'default', {
+			'ad_storage': 'denied',
+			'analytics_storage': 'denied'
+		});
 		gtag('config', 'G-EB511QMQDJ'); 
+		function GAConsentGranted() {
+			gtag('consent', 'default', {
+				'ad_storage': 'denied',
+				'analytics_storage': 'denied'
+			});
+			gtag('set', {'is_consent_granted': false});
+		}
 	</script>
 </head> 
 <body>
@@ -31,18 +42,25 @@
 					<img src="<?php echo get_theme_file_uri('/assets/media/caps-logo.png'); ?>" alt="CAPS Ltd logo - presenting Featured Walls and Ceilings" /> 
 				</a>
 				<a href="#main-site-content" class="bc-site-header__menu-skip bc-is-hidden" title="Skip site menu, to main site content"></a>
+				<div class="bc-site-header__site-nav">
+				<a href="#" class="bc-site-header__cart">
+					<svg id="shopping-cart" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 208 229.72"><defs><style>.cls-1{font-size:72px;fill:#fff;font-family:Lato-Regular, Lato;}.cls-2,.cls-3{fill:none;stroke:#fff;stroke-miterlimit:10;stroke-width:10px;}.cls-3{stroke-linecap:square;}</style></defs><title>shopping-cart</title><text class="cls-1" transform="translate(83.12 187.99)">3</text><g id="basket"><line id="bottom-line" class="cls-2" x1="36.5" y1="224.72" x2="171.5" y2="224.72"/><line id="right-line" class="cls-3" x1="169.5" y1="223.72" x2="198.45" y2="99.2"/><line id="right-line-2" data-name="right-line" class="cls-3" x1="39.33" y1="223.57" x2="10.37" y2="99.04"/><line id="top-line" class="cls-3" x1="5" y1="98.2" x2="203" y2="98.2"/><circle id="circle" class="cls-2" cx="109.96" cy="76.07" r="11"/><line id="handle" class="cls-2" x1="102.45" y1="65.29" x2="59.54" y2="2.83"/></g></svg>
+					<span class="bc-site-header__cart__prompt">View cart</span>
+				</a>
 				<a href="javascript:void(0)" aria-hidden="true" class="bc-site-header__menu-link" title="Site Menu">
 					<svg class="svg-icon bc-site-header__menu-link__menu ">
-						<use xlink:href="assets/media/svg/icons/bc-svgs.svg#menu-thin"></use>
+						<use xlink:href="<?php echo get_theme_file_uri('assets/media/svg/icons/bc-svgs.svg'); ?>#menu-thin"></use>
 					</svg>
 					<svg class="svg-icon bc-site-header__menu-link__close "> 
-						<use xlink:href="assets/media/svg/icons/bc-svgs.svg#close-x"></use>
+						<use xlink:href="<?php echo get_theme_file_uri('assets/media/svg/icons/bc-svgs.svg'); ?>#close-x"></use>
 					</svg>
 				</a>
 				<ul id="site-main-navigation" role="navigation" aria-label="Main site navigation" class="bc-site-header__main-navigation">
-					<li class="bc-site-header__main-navigation__item"><a href="single-page.html">Single Page</a></li>
-					<li class="bc-site-header__main-navigation__item"><a href="javascript:void(0)">Page #2</a></li>
-					<li class="bc-site-header__main-navigation__item"><a href="javascript:void(0)">Page #3</a></li>
-					<li class="bc-site-header__main-navigation__item"><a href="javascript:void(0)">Page #4</a></li>
+					<li class="bc-site-header__main-navigation__item"><a href="<?php echo esc_url(get_permalink(35)) 	?>">Resin bound design</a></li>
+					<li class="bc-site-header__main-navigation__item"><a href="<?php echo esc_url(get_permalink(113)) ?>">Sensory rooms</a></li>
 				</ul>	
+				<div class="bc-shopping-cart-preview">
+					<h2>Shopping card preview</h2>
+				</div>
+				</div><!-- // .bc-site-header__site-nav -->
 			</header><!-- // ..be-hero__header -->

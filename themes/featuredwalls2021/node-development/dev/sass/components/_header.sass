@@ -1,4 +1,4 @@
-.bc-site-header
+.bc-site-header 
 	position: relative
 	@include makeFlexbox($justify: space-between, $align: stretch, $wrap: wrap)
 	color: var(--text-black) 
@@ -7,14 +7,14 @@
 		@include makeFlexbox($align:center)
 	& &__menu-link
 		justify-content: flex-end
-	& &__menu-link
+	& &__menu-link 
 		&__close
 			display: none
 			fill: var(--shade-60)
-		@media screen and (min-width: #{$tablet-large})
+		@media screen and (min-width: #{$tablet-large}) 
 			display: none
 	& &__main-navigation
-		--header-height: #{($vertical-unit * 3 + 2rem)} 
+		--header-height: #{($vertical-unit * 5 + 2rem)}  
 		@include makeFlexbox($direction: column)
 		@include plainList
 		position: absolute
@@ -22,11 +22,10 @@
 		width: 100vw
 		height: 100vh
 		padding-top: var(--header-height)
-		
 		top: 0
 		left: auto
 		right: -100%
-		background-color: var(--white)
+		background-color: var(--white) 
 		z-index: 10
 		transition: right var(--medtrans) ease-out
 		&__item

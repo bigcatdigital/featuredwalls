@@ -220,7 +220,7 @@
 
 		<?php if (get_field('split-feature-title') && strcmp(get_field('split-feature-title'), '') !== 0) { ?>
 		<!-- FW&C WP theme: Homepage split feature -->
-		<section class="bc-container bc-fwc-containter">
+		<section class="bc-container bc-fwc-containter bc-2-col-feature-containter"> 
 			<div class="bc-content-component--text bc-content-block bc-column">
 				<div class="bc-text-block">
 					<h1 class="bc-content-block__heading"><span class="bc-featured-intro__heading"><?php echo get_field('split-feature-title'); ?></span></h1> 
@@ -284,5 +284,19 @@
 		</section><!-- // .bc-container -->
 		<!-- // End: FW&C WP theme: Homepage split feature -->
 		<?php } //endif split-feature-title ?>
+		<?php if (get_field('text-feature-header') && strcmp(get_field('text-feature-header'), '') !== 0) { ?>
+		<section class="bc-container bc-fwc-containter">
+			<div class="bc-content-component--text bc-content-block bc-column"">
+				<div class="bc-text-block">
+					<h1 class="bc-content-block__heading"><span class="bc-featured-intro__heading"><?php echo get_field('text-feature-header'); ?></span></h1> 
+					<?php if (get_field('text-feature-content')) { ?>
+					<div class="bc-featured-intro__body"> 
+						<?php echo get_field('text-feature-content') ?>
+					</div>
+					<?php }//end if get field text-feature-content ?>
+				</div>
+			</div><!-- .bc-content-component--text -->
+		</section>
+		<?php }// end if get field text-feature-header ?>
 <?php get_footer(); ?>
 			

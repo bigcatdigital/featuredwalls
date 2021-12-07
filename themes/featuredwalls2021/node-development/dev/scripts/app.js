@@ -2,8 +2,9 @@
  * BC custom scripts - Featured Walls & Ceilings 2021
  * 
 */
-(function bcAppJS() {
-	let debug = false;
+/* Functions to export to global scope */
+const bcFunctions = (function bcAppJS() {
+	let debug = true;
 	if (debug) {
 		console.log('WP Base Theme here');
 		console.log('Debug is go');
@@ -187,7 +188,7 @@
 			cb();
 		}
 		return;
-	}
+	}// bcAdjustHeight()
 	if (debug) {
 		console.log('Scroll links');
 		console.log('------------');
@@ -273,7 +274,6 @@
 	});
 
 	function mainNavigationSetup() {
-		debug = true;
 		if (window.outerWidth >= 1024) {
 			return true;
 		}
@@ -294,8 +294,9 @@
 		
 			$siteHeaderMenuLink.removeEventListener('click', menuIconClickHandler);
 			$siteHeaderMenuLink.addEventListener('click', menuIconClickHandler);
-			debug = false;
+			
 		}
+		$siteHeaderMenuLink.addEventListener('click', menuIconClickHandler);
 	}//mainNavigationSetup()
 	mainNavigationSetup();
 	const $bcFlkSliders = document.querySelectorAll('.bc-flickity');
@@ -403,5 +404,29 @@
 		};
 		IOmaker($slider, opts, sliderCallback);
 	});
+	/* Cookie funcitons */
+	function setCookie(cname, copts) {
+		let coptions = {
+			samesite: 'lax'
+		};
+		coptions = Object.assign(coptions, copts);
+		for (let key in coptions) {
+			console.log(`${key}: ${coptions[key]}`);	
+		}
+	}
+	function getCookie(cname) {
+		const allCookies = document.cookie.split('; ');
+		
+		const thisCookie = allCookies.find((row) => {
+		
+			return row.startsWith(cname);
+		}); 
+		return (thisCookie) ? thisCookie.split('=')[1] : null;
+	}
+	
 	window.addEventListener('resize', function () {});
+	//Export functions
+	return {
+		bcGetCookie: getCookie
+	};
 })(window);
