@@ -87,9 +87,54 @@
 		register_nav_menu('footerMenu2', 'Footer menu 2');*/
 	}
 	add_action('after_setup_theme', 'project_features');
-
-
-
+	/* Navigation menus */
+	function fwc_main_nav_menu() {
+		register_nav_menu('main-navigation',__( 'Main site navigation' ));
+	}
+	add_action( 'init', 'fwc_main_nav_menu' );
+	
+	/** Woocommerce stuff **/
+	function mytheme_add_woocommerce_support() {
+		add_theme_support( 'woocommerce' );
+	}
+	add_action( 'after_setup_theme', 'mytheme_add_woocommerce_support' );	
+	/* Disable styling */
+	
+	/* Add cart icon to main nav area */
+	//	1. Shortcode
+	add_shortcode('woo_cart_icon', 'show_woo_cart_icon');
+	function show_woo_cart_icon() {
+		ob_start();
+		$cart_count = WC()->cart->cart_contents_count;
+		$cart_location = wc_get_cart_url(); 
+		if ($cart_count > 0) {
+		?>
+		<a href="<?php echo $cart_location; ?>" class="bc-site-header__cart">
+		<svg id="shopping-cart" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 363.22 351.82"><defs><style>.cls-1,.cls-3,.cls-4{fill:none;}.cls-1,.cls-2,.cls-3,.cls-4{stroke:#fff;stroke-miterlimit:10;}.cls-1,.cls-2,.cls-3{stroke-width:22.21px;}.cls-2{fill:#231f20;}.cls-2,.cls-3,.cls-4{stroke-linecap:square;}.cls-4{stroke-width:22.03px;}</style></defs><title>shopping-cart</title><g id="basket"><line id="bottom-line" class="cls-1" x1="69.79" y1="340.23" x2="293.43" y2="340.23"/><line id="right-line" class="cls-2" x1="285.5" y1="338.5" x2="329.91" y2="147.47"/><line id="right-line-2" data-name="right-line" class="cls-3" x1="77.52" y1="338.25" x2="33.11" y2="147.23"/><line id="top-line" class="cls-3" x1="11.1" y1="144.3" x2="352.12" y2="144.3"/><line id="handle" class="cls-1" x1="179.15" y1="93.69" x2="93.6" y2="7.84"/></g><line class="cls-4" x1="134.13" y1="147.3" x2="134.13" y2="339.23"/><line class="cls-4" x1="226.13" y1="147.23" x2="226.13" y2="339.23"/><line class="cls-3" x1="51.55" y1="209.24" x2="311.67" y2="209.24"/><line class="cls-3" x1="65.82" y1="273.58" x2="297.4" y2="273.58"/></svg>
+		<span class="bc-site-header__cart__prompt cart-count"><?php //echo WC()->cart->cart_contents_count; ?></span>
+		
+		</a><!-- // .bc-site-header__cart -->
+		<?php 
+		}//end if $cart_count > 0
+		return ob_get_clean();
+	}
+	/* Update cart contents when an item is added - Woocommerce AJAX fragments */
+	add_filter('woocommerce_add_to_cart_fragments', 'update_woo_cart_icon');
+	function update_woo_cart_icon($fragments) { 
+		ob_start() ;
+		$cart_location = wc_get_cart_url(); 
+		$cart_count = WC()->cart->cart_contents_count;
+		if ($cart_count > 0) { ?> 
+			<a href="<?php echo get_permalink(187) ?>" class="bc-site-header__cart bc-is-visible">
+				<svg id="shopping-cart" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 363.22 351.82"><defs><style>.cls-1,.cls-3,.cls-4{fill:none;}.cls-1,.cls-2,.cls-3,.cls-4{stroke:#fff;stroke-miterlimit:10;}.cls-1,.cls-2,.cls-3{stroke-width:22.21px;}.cls-2{fill:#231f20;}.cls-2,.cls-3,.cls-4{stroke-linecap:square;}.cls-4{stroke-width:22.03px;}</style></defs><title>shopping-cart</title><g id="basket"><line id="bottom-line" class="cls-1" x1="69.79" y1="340.23" x2="293.43" y2="340.23"/><line id="right-line" class="cls-2" x1="285.5" y1="338.5" x2="329.91" y2="147.47"/><line id="right-line-2" data-name="right-line" class="cls-3" x1="77.52" y1="338.25" x2="33.11" y2="147.23"/><line id="top-line" class="cls-3" x1="11.1" y1="144.3" x2="352.12" y2="144.3"/><line id="handle" class="cls-1" x1="179.15" y1="93.69" x2="93.6" y2="7.84"/></g><line class="cls-4" x1="134.13" y1="147.3" x2="134.13" y2="339.23"/><line class="cls-4" x1="226.13" y1="147.23" x2="226.13" y2="339.23"/><line class="cls-3" x1="51.55" y1="209.24" x2="311.67" y2="209.24"/><line class="cls-3" x1="65.82" y1="273.58" x2="297.4" y2="273.58"/></svg>
+				<span class="bc-site-header__cart__prompt cart-count"><?php echo $cart_count; ?></span>
+			</a><!-- // .bc-site-header__cart -->
+		<?php } else { ?>
+			<a href="<?php echo get_permalink(187) ?>" class="bc-site-header__cart"></a><!-- // .bc-site-header__cart -->
+		<?php } 
+		$fragments['.bc-site-header__cart'] = ob_get_clean();
+		return $fragments;
+	}
 	//Preload scripts
 	// add_action('wp_head', function () {
   // 	global $wp_scripts;

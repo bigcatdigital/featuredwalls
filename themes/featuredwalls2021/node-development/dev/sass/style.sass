@@ -50,11 +50,18 @@ p, ul, ol, blockquote
 	margin-bottom: var(--vertical-unit)
 button
 	padding: calc(var(--vertical-unit)/2) calc(var(--gutter)/2)
+	font-size: var(--text-00)
 	font-family: var(--base-font)
 	background-color: var(--brand-primary)
 	color: white
 	border: none
 	transition: background-color 280ms ease-in-out
+	> a
+		color: var(--white)
+		font-size: var(--text-00)
+		text-decoration: none
+		@include linkHover
+			color: var(--white)
 	@include linkHover
 		background-color: darken($brand-primary, 12%)
 a 
@@ -91,6 +98,9 @@ iframe
 .svg-icon
 	max-width: 	2rem 
 	max-height: 2rem
+.bc-phone-number
+	text-decoration: none
+	font-weight: var(--bold-font-weight)
 .bc-intro-paragraph
 	font-size: 1rem 
 .bc-arrow-link, .bc-icon-link
@@ -98,9 +108,39 @@ iframe
 	svg
 		fill: $brand-primary	
 	a 
+		text-decoration: none
 		@include linkHover
-			text-decoration: none
-
+			text-decoration: none 
+	@include linkHover
+		text-decoration: none 
+	&--reversed
+		@extend .bc-arrow-link
+		.svg-icon
+			margin-left: 0
+			margin-right: calc(var(--gutter)/2) 
+.bc-link-no-hover
+	@include linkHover
+		&::after
+			height: 0
+@mixin makeButton
+	padding: calc(var(--vertical-unit)/2) calc(var(--gutter)/2)
+	font-family: var(--base-font)
+	background-color: var(--brand-primary)
+	color: white
+	border: none
+	transition: background-color 280ms ease-in-out
+	> a
+		color: var(--white)
+		font-size: var(--text-00)
+		text-decoration: none
+		@include linkHover
+			color: var(--white)
+			&::after
+				height: 0 
+	@include linkHover
+		background-color: darken($brand-primary, 12%)
+		&::after
+				height: 0 
 @mixin makeBoxShadowButton($bg-color: $brand-primary, $color: $white)
 	--button-ease: cubic-bezier(.63,.42,.47,.97)
 	--button-timing: 180ms
@@ -230,10 +270,10 @@ iframe
 	margin-right: auto
 	padding-left: calc(var(--gutter) /2)
 	padding-right: calc(var(--gutter) /2)
-	&--media, &--text
+	&--media, &--media-padded, &--text
 		@extend .bc-content-component
-	@media screen and (min-width: $tablet-large) 
-		max-width: 70.72% 
+		@media screen and (min-width: $tablet-large) 
+			max-width: 70.72% 
 	&--text
 		.bc-text-block 
 			margin-left:  auto
@@ -241,11 +281,12 @@ iframe
 	&--media
 		@media screen and (max-width: 1023px)
 			width: calc(100% + var(--gutter) * 2)
-			padding-left: 0
-			padding-right: 0
 			margin-left: calc(var(--gutter) * -1)
 			margin-right: calc(var(--gutter) * -1) 
-
+	&--media:not(.bc-content-component--media-padded)
+			@media screen and (max-width: 1023px)
+				padding-left: 0
+				padding-right: 0
 .bc-text-block
 	max-width: (650px / 16px * 1rem)
 .bc-text-component, .bc-media-component
@@ -275,6 +316,15 @@ iframe
 /* Inner page header */ 
 .bc-site-header
 	align-items: center
+	.bc-site-header__main-navigation
+		#menu-main-navigation
+			margin-bottom: 0
+			padding-left: 0
+			@media screen and (min-width: $tablet-large)
+				@include makeFlexbox($align: center)
+	ul.bc-site-header__main-navigation
+		display: none
+	
 	& &__site-nav
 		@include makeFlexbox($align: stretch)
 		@media screen and (min-width: $tablet-large)
@@ -309,58 +359,149 @@ iframe
 			text-decoration: none
 		@media screen and (max-width: calc(#{$tablet-large} - 1px))	
 		 color: var(--brand-primary)
-	/* Shopping cart svg icon */
+	/* Shopping cart icon */
 	& &__cart
 		position: relative
 		@include makeFlexbox(column, center, center)
 		color: var(--white)
-		transition: background-color 320ms ease-out 
-		margin-top: -0.25rem
-		padding-left: 	calc(var(--gutter) / 2)
-		padding-top: 		calc(var(--vertical-unit) / 0) 
-		padding-right: 	calc(var(--gutter) / 2)
+		transition-property: opacity, padding
+		transition-duration: 320ms
+		transition-timing-function: ease-out
+		transition-delay: 300ms
+		padding-left: 	0
+		padding-right: 	0
+		opacity: 0
+		z-index: 30
 		@media screen and (min-width: $tablet-large)
 			order: 1
+		.bc-site-header__menu-link__close
+			fill: var(--text-black)
+			display: none
 		&__prompt
 			position: absolute
 			bottom: calc(var(--text--1) * 1.3 * -1)
-			font-size: var(--text--1)
+			font-size: var(--text--1) 	
 			font-weight: 300
 		&::after
 			height: 0
+		&.bc-is-visible
+			padding-left: 	calc(var(--gutter) / 2)
+			padding-right: 	calc(var(--gutter) / 2)
+			opacity: 1
+		&.bc-is-active
+			.bc-site-header
+				&__cart__prompt
+					opacity: 0
+			svg#shopping-cart
+				display: none
+			.bc-site-header__menu-link__close
+				display: block
 		@include linkHover
 			.bc-site-header__cart__prompt
 				font-weight: var(--link-active-weight)
 	svg#shopping-cart
 		width: 100%
 		height: 100%
-		max-width: 	2.25rem
-		max-height: 2.25rem
+		max-width: 	1.75rem
+		max-height: 1.75rem
 		margin-bottom: calc(var(--vertical-unit) / 4)
+		.bc-has-items
+			fill: var(--brand-primary)
 /* Header overlay */
 .bc-site-header
 	& &__home-link
 		> svg
 			max-height: 4.189rem
 /* Shopping cart */
-.bc-shopping-cart-preview
-	--header-height: #{($vertical-unit * 5 + 2rem)}
-	position: absolute
-	top: 0
-	right: 0
-	transform: translateX(100%) 
-	height: 100vh
-	padding-top: var(--header-height)
-	padding-left: var(--gutter)
-	padding-right: var(--gutter)
-	background-color: red
-	color: white
-	transition: transform var(--medtrans) ease-in-out
-	@media screen and (max-width: ($tablet-large - 1))
-		left: 0
-		width: 100vw
-	&.is-active
-		transform: translateX(0) 
+.bc-site-header
+	.bc-shopping-cart-preview
+		--header-height: #{($vertical-unit * 5 + 2rem)}
+		position: absolute
+		top: 0
+		right: 0
+		transform: translateX(100%) 
+		min-height: 100vh
+		width: 33.333vw
+		padding-top: var(--header-height)
+		padding-left: var(--gutter) 
+		padding-right: var(--gutter)
+		padding-bottom: var(--gutter)
+		background-color: var(--white)
+		color: var(--text-black)
+		transition: transform var(--medtrans) ease-in-out
+		z-index: 29
+		@media screen and (max-width: ($tablet-large - 1))
+			left: 0
+			width: 100vw
+		a 
+			color: var(--brand-primary)
+		&.bc-is-active
+			transform: translateX(0) 
+		& &__items
+			display: grid
+			grid-template-rows: auto 
+			gap: calc(var(--gutter))
+			grid-template-columns: repeat(auto-fill, minmax(var(--min-col-width), 1fr))
+		.bc-shopping-cart-preview__remove
+			@include makeFlexbox($align: center) 
+			.svg-icon
+				margin-right: calc(var(--gutter) / 6)
+				max-height: var(--text--1)
+				max-width: calc(var(--text--1) * var(--line-height))
+				fill: var(--brand-primary)
+			font-size: var(--text--1)
+			a 
+				margin-bottom: 0
+		.bc-card 
+			@include linkHover
+				cursor: auto
+			&__heading, &__media, p 
+				margin-bottom: calc(var(--vertical-unit) / 4)
+			&__heading
+				font-size: var(--text-00)
+				> a
+					color: var(--text-black)
+					text-decoration: underline
+			&__media
+				background-color: var(--shade-20)
+		.bc-shopping-cart-preview__totals
+			margin-left: calc(var(--gutter) / 2 * -1)
+			padding-top: var(--vertical-unit)
+			padding-left: calc(var(--gutter) / 2)
+			padding-right: calc(var(--gutter) / 2)
+			padding-bottom: var(--vertical-unit)
+			margin-bottom: var(--vertical-unit)
+			border-top: 1px solid var(--shade-a0)
+			border-bottom: 1px solid var(--shade-a0)
+			&__item-cost
+				text-align: right
+		table
+			width: 100%
+			margin-left: 	calc(var(--gutter) / 8 * -1)
+			margin-right: calc(var(--gutter) / 8 * -1)
+			margin-bottom: 0
+		button
+			font-size: var(--text-00)
+			a 
+				color: var(--white)
+/* Shopping cart page template */
+.bc-shopping-cart
+	& &-item
+		&__remove
+			@include makeFlexbox($align: center)
+			a
+				margin-bottom: 0
+				font-size: var(--text--1)
+				font-weight: var(--bold-font-weight)
+			.svg-icon
+				max-height: var(--text--1)
+				fill: var(--brand-primary)
+	& &__checkout
+		padding-top: #{(9 / 14 * 1rem)}
+		
+		table
+			width: 100%
+
 /* Hero components overwrites */
 .bc-hero
 	padding-top: 		calc(var(--vertical-unit) * 4)
@@ -752,4 +893,195 @@ iframe
 			background-color: $brand-darker
 			.svg-icon
 				opacity: 1
+#shopping-cart
+	#cart-count
 
+.bc-fades-in-out
+	opacity: 1
+	transition: opacity var(--quicktrans) ease-in
+	&.bc-fade-out
+		opacity: 0
+/* Woocommerce custom styling & overrides */
+.product-thumbnail, .product-remove
+	> a 
+		@include linkHover
+				&::after
+					height: 0
+/* Products */
+/* Product listings */
+ul.products
+	display: grid
+	grid-template-rows: auto 
+	gap: calc(var(--gutter))
+	grid-template-columns: repeat(auto-fill, minmax(var(--min-col-width), 1fr))
+	margin-left: 0
+	margin-right: 0
+	padding-left: 0
+	li 
+		@include makeFlexbox(column)
+		list-style: none
+		&::marker
+			list-style: none
+		.woocommerce-LoopProduct-link
+			margin-bottom: calc(var(--vertical-unit) / 2)
+			text-decoration: none
+			h2, .price
+				color: var(--text-black)
+			@include linkHover
+				&::after
+					height: 0
+		.button
+			@include makeFlexbox($justify: center, $align: center)
+			width: 100%
+			@include makeButton
+			text-decoration: none
+/* single product */
+.bc-wc-single-product
+	.product_meta
+		font-size: var(--text--1)
+		margin-top: 	 calc(var(--vertical-unit) / 2) 
+		margin-bottom: var(--vertical-unit) 
+	.woocommerce-tabs
+		margin-bottom: var(--vertical-unit)
+		.wc-tabs
+			margin-bottom: 0
+			li
+				list-style: none
+				padding: calc(var(--gutter) / 2) calc(var(--vertical-unit) / 2) 	
+				background-color: var(--shade-e0) 
+				&::marker
+					list-style: none
+				&.active 
+					background-color: var(--white)
+				> a
+					text-decoration: none
+			@include makeFlexbox($align: center)
+			margin-left: 0
+			padding-left: 0
+		.woocommerce-Tabs-panel
+			padding: var(--vertical-unit) calc(var(--gutter) / 2)
+			background-color: var(--white)
+
+.woocommerce-product-gallery
+	& &__image
+		> a 
+			@include linkHover
+				&::after
+					height: 0
+/* Shopping cart */
+.woocommerce 
+	.bc-wc-cart-wrapper
+		@media screen and (min-width: $tablet-large) 
+			display: grid
+			grid-template-rows: auto 
+			gap: calc(var(--gutter) * 1.5)
+			grid-template-columns: 61.8fr 38.2fr
+		@media screen and (min-width: $laptop) 
+			grid-template-columns: 66.66fr 33.33fr
+		@media screen and (min-width: $laptop-large) 
+			grid-template-columns: 70fr 30fr
+		/* Cart items */
+		.shop_table
+			border: none	
+			td, th 
+				border: none
+				padding-left: 0
+				padding-right: 0
+			&.cart
+				@media screen and (max-width: calc($tablet - 1px))
+					tbody
+						tr
+							&:last-of-type
+								border-bottom: 1px solid var(--shade-80)
+				td 
+					&.product-remove 
+						&::before 
+							content: attr(data-title) ": "
+    					font-weight: 700
+    					float: left
+					&.product-name
+						.bc-product-name__name 
+							margin-bottom: 0
+					&.product-subtotal
+						font-weight: var(--bold-font-weight)
+							
+				@media screen and (min-width: $tablet)
+					thead
+						display: none 
+					tbody
+						@include makeGrid  
+						tr 
+							position: relative
+							@include makeFlexbox($direction: column, $align: stretch)  
+							td 
+								flex: 1 1 100%
+								padding-top: 0
+								padding-bottom: 0
+								margin-bottom: calc(var(--vertical-unit) / 2)
+								&.product-remove, &.product-price, &.product-quantity, &.product-subtotal
+									flex-direction: row
+									justify-content: space-between 
+									&::before 
+										content: attr(data-title) ": "
+    								font-weight: 700
+    								float: left
+								&.product-remove
+									border-top: 1px solid var(--shade-a0)
+									padding-top: calc(var(--vertical-unit) / 4)
+									font-style: italic
+									order: 1 
+						td
+							@include makeFlexbox($direction: column)
+							
+							&.product-thumbnail 
+								> a 
+									width: 100%
+									@include is-16x9() 
+
+		.cart-collaterals
+			&::before, &::after
+				display: none
+		.cart-totals
+			float: none
+			width: auto
+
+	.bc-shopping-cart__checkout
+		padding: calc(var(--vertical-unit)/2)
+		background-color: var(--shade-e0)
+		@media screen and (min-width: $tablet-large)
+			margin-top: calc(var(--text-02) * 1.5)
+		button
+			width: 100%
+		tr 
+			td, th 
+				width: 50%
+			td
+				text-align: right
+			&.shipping
+				td 
+					background-color: transparent !important
+			&.order-total
+				border-top: 1px solid var(--shade-a0)
+/* Checkout page */
+.bc-wc-checkout-page
+	.woocommerce-notices-wrapper
+		display: none
+	#ship-to-different-address
+		margin-top: var(--vertical-unit)
+	/* Form inputs */
+	form 
+		.form-row 
+			input
+				&.input-text
+					line-height: var(--line-height)
+			textarea
+				line-height: var(--line-height)
+				height: auto
+	/* Shop tables */
+	table
+		th 
+			border-bottom: none
+		&.shop_table
+			border: none
+			tbody
+			

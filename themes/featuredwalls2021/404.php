@@ -32,8 +32,8 @@
 				</p>
 				<p>These may be helpful:</p>
 				<ul>
-					<li><a href="<?php echo esc_url(get_permalink(5)) ?>">Hompage</a></li>
-					<li><a href="<?php echo esc_url(get_permalink(35)) ?>">Resin bound design</a></li>
+					<li><a href="<?php echo esc_url(get_permalink(5)) 	?>">Hompage</a></li>
+					<li><a href="<?php echo esc_url(get_permalink(35)) 	?>">Resin bound design</a></li>
 					<li><a href="<?php echo esc_url(get_permalink(113)) ?>">Sensory rooms</a></li>
 				</ul>
 				<p>Or, you can contact us directly using any of the options below.</p>

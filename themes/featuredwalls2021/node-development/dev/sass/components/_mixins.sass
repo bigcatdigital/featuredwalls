@@ -25,14 +25,14 @@
 //end makeLabel
 @mixin makeContainer()
 	padding: var(--gutter)
-	@media screen and (min-width: ($max-content-width +100px))
-		padding-left:  calc((100% - var(--max-content-width)) / 2)
+	@media screen and (min-width: ($max-content-width +100px)) 
+		padding-left:  calc((100% - var(--max-content-width)) / 2)  
 		padding-right: calc((100% - var(--max-content-width)) / 2)
 @mixin arContainer
 	position: relative
 	overflow: hidden
 	@content
-	picture, iframe, object, img
+	picture, iframe, object, img 
 		position: absolute
 		top: 0
 		left: 0
@@ -134,7 +134,7 @@
 	margin-right: auto
 
 /* Grids */
-@mixin makeGrid($cols)
+@mixin makeGrid($cols: 0)
 	display: grid
 	grid-template-rows: auto 
 	gap: calc(var(--gutter))

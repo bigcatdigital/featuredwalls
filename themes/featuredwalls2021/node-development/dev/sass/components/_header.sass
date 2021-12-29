@@ -7,12 +7,12 @@
 		@include makeFlexbox($align:center)
 	& &__menu-link
 		justify-content: flex-end
-	& &__menu-link 
+	& &__menu-link
 		&__close
 			display: none
 			fill: var(--shade-60)
-		@media screen and (min-width: #{$tablet-large}) 
-			display: none
+		@media screen and (min-width: #{$tablet-large})  
+			display: none 
 	& &__main-navigation
 		--header-height: #{($vertical-unit * 5 + 2rem)}  
 		@include makeFlexbox($direction: column)
@@ -47,12 +47,12 @@
 			&__item
 				width: auto 
 				> a
-					justify-content: center
+					justify-content: center  
 	& &__title
 		width: 100%
 		margin-top: var(--vertical-unit)
-		margin-bottom: 0
-	&.bc-is-active
+		margin-bottom: 0 
+	&.bc-is-active 
 		.bc-site-header__menu-link
 			&__close
 				display: block

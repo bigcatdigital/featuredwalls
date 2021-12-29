@@ -86,7 +86,7 @@
 							<strong>CAPSLtd</strong>,<br />
 							Greencastle<br />
 							Co. Donegal<br />
-							<a href="tel:01234567">01234567</a><br />
+							<a class="bc-phone-number" href="tel:+353863627302">086 362 7302</a><br />
 						</p>
 					</div><!-- // grid column -->
 				</div><!-- // .bc-grid -->
