@@ -90,7 +90,7 @@
     "babeljs": "./node_modules/.bin/babel ./dev/scripts/app.js -o ./dev/scripts/temp/app-temp.js",
     "uglifyjs": "uglifyjs ./dev/scripts/temp/app-temp.js -o ./dev/scripts/temp/app-temp.js --comments=some ",
     "lintcss": "csslint ./dev/css/style.css && copy:css",
-    "concatjs": "node ./bc_modules/concatente-js.js -m=build -d",
+    "concatjs": "node ./bc_modules/concatente-js.js --buildMode=build",
     "postcss": "find dev/. -type f -name \"*.css\" | xargs -Ifile ./node_modules/.bin/postcss file -d ../assets/css/",
     "copy:html": "find dev/. -type f -name \"*.html\" | xargs -Ifile rsync -vR file ../ && echo '\n'",
     "copy:css": "find dev/. -type f \"(\" -iname \"*.css\" -o -iname \"*.css.map\" \")\" | xargs -Ifile rsync -vR file ../assets/ && echo file 'copied' '\n'",

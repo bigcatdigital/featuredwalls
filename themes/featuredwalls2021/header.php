@@ -7,7 +7,7 @@
   <meta name="description" content="Specialists in creating beautiful feature walls, sensory rooms and resin bound driveways with custom interior and exterior design. Serving north-west of Ireland, Northern Ireland and all of the island of Ireland.">
 	<title>Custom Feature Wall Design | CAPS Ltd</title>
 	<link rel="shortcut icon" type="image/png" href="assets/media/caps-favicon.png"/>
-  <link rel="canonical" href="http://www.featuredwalls.ie/" />
+  <link rel="canonical" href="https://www.featuredwalls.ie/" />
   <!-- Google fonts Oswald & Lato -->
 	<link rel="preconnect" href="https://fonts.googleapis.com">
 	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>

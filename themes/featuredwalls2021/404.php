@@ -4,11 +4,11 @@
 ?>  
 	<!-- Page content start: Page header -->
 	<section id="main-site-content" class="bc-hero has-lines bc-innerpage-hero">
-	<?php if (is_array(get_field('leader-image'))) { 
-		echo '<!-- page leader --> ';
-		$leader_image_url = esc_url(get_field('leader-image')['url']);
-		$leader_image_alt = esc_attr(get_field('leader-image')['alt']);
-	?>
+		<?php if (is_array(get_field('leader-image'))) { 
+			echo '<!-- page leader --> ';
+			$leader_image_url = esc_url(get_field('leader-image')['url']);
+			$leader_image_alt = esc_attr(get_field('leader-image')['alt']);
+		?>
 		<picture class="bc-hero__media">
 			<img src="<?php echo $leader_image_url ?>" alt="<?php echo $leader_image_alt ?>" />
 		</picture>
