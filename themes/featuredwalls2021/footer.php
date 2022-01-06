@@ -107,12 +107,14 @@
     <?php wp_footer(); ?>
 		<script>
 			window.onload = function() {
+				document.cookie = 'wordpress_test_cookie = ; expires=Thu, 01 Jan 1970 00:00:00 GMT';
+				console.log(document.cookie);
 				const $cookiesConsentBlock = document.querySelector('.bc-cookies-consent');
 				const $cookiesConsentBtn = document.querySelector('#bc-cookies-consent');
 				
 				let consentStatus = bcFunctions.bcGetCookie('bc-consent-status');
 				
-				if (consentStatus === null || consentStatus === undefined) {
+				if (consentStatus === undefined) {
 					$cookiesConsentBtn.addEventListener('click', (evt) => {
 						gtag('consent', 'updated', {
 							'ad_storage': 'granted',
@@ -122,7 +124,6 @@
 						//Add a cookie to indicating users cookie preferences
 						const expiryDate = new Date(Date.now() + (7 * 24 * 60 * 60 * 1000));
 						console.log(`${expiryDate}`);
-						
 					});
 				}
 			}	

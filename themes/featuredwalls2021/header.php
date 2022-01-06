@@ -15,6 +15,7 @@
 	<!-- Global site tag (gtag.js) - Google Analytics -->
 	<script async src="https://www.googletagmanager.com/gtag/js?id=G-EB511QMQDJ"></script>
 	<script>
+		window['ga-disable-G-EB511QMQDJ'] = true;
 		window.dataLayer = window.dataLayer || [];
 		function gtag(){dataLayer.push(arguments);}
 		gtag('js', new Date());
@@ -24,12 +25,13 @@
 		});
 		gtag('config', 'G-EB511QMQDJ'); 
 		function GAConsentGranted() {
-			gtag('consent', 'default', {
-				'ad_storage': 'denied',
-				'analytics_storage': 'denied'
+			gtag('consent', 'update', {
+				'ad_storage': 'granted',
+				'analytics_storage': 'granted'
 			});
 			gtag('set', {'is_consent_granted': false});
 		}
+		
 	</script>
 </head> 
 <body>

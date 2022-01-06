@@ -405,7 +405,7 @@ const bcFunctions = (function bcAppJS() {
 		IOmaker($slider, opts, sliderCallback);
 	});
 	/* Cookie funcitons */
-	function setCookie(cname, copts) {
+	function bcSetCookie(cname, copts) {
 		let coptions = {
 			samesite: 'lax'
 		};
@@ -414,7 +414,7 @@ const bcFunctions = (function bcAppJS() {
 			console.log(`${key}: ${coptions[key]}`);	
 		}
 	}
-	function getCookie(cname) {
+	function bcGetCookie(cname) {
 		const allCookies = document.cookie.split('; ');
 		
 		const thisCookie = allCookies.find((row) => {
