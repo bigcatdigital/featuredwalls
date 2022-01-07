@@ -93,20 +93,22 @@
 			</footer>
 		</div><!-- //. bc-body-wrap --> 
 		<div class="bc-cookies-consent">
-			<div class="bc-cookies-consent__box">	
-				<h2 class="bc-cookies-consent__header">Your privacy</h2>
-				<p class="bc-cookies-consent__message">We use cookies on our website to make your experience better. See <a href="<?php echo get_permalink(161) ?>"> our privacy information here</a> for details.</p>
-				<div class="bc-cookies-consent__buttons">
-					<button class="bc-cookies-consent__buttons__manage"
-					><a href="<?php echo get_permalink(161); ?>">Manage data settings</a></button>
-					<button id="bc-cookies-consent" class="bc-cookies-consent__buttons__ok" onlick="GAConsentGranted">Accept</button>
+			<div class="bc-cookies-consent__box">
+				<div class="bc-content-component--text">	
+					<h2 class="bc-cookies-consent__header">Your privacy</h2>
+					<p class="bc-cookies-consent__message">We use cookies on our website to make your experience better. See <a href="<?php echo get_permalink(161) ?>"> our privacy information here</a> for details.</p>
+					<div class="bc-cookies-consent__buttons">
+						<button class="bc-cookies-consent__buttons__manage"
+						><a href="<?php echo get_permalink(161); ?>">Manage data settings</a></button>
+						<button id="bc-cookies-consent" class="bc-cookies-consent__buttons__ok" onlick="GAConsentGranted">Accept</button>
+					</div>
 				</div>
 			</div>
 		</div>
     <?php wp_footer(); ?>
 		<script>
 			window.onload = function() {
-				bcFunctions.bcSetCookie('bc-consent-status', 'default');
+				//bcFunctions.bcSetCookie('bc-consent-status', 'default');
 				const $cookiesConsentBlock = document.querySelector('.bc-cookies-consent');
 				const $cookiesConsentBtn = document.querySelector('#bc-cookies-consent');
 				consentStatus = bcFunctions.bcGetCookie('bc-consent-status');
@@ -116,7 +118,7 @@
 				} else if (consentStatus === 'default') {
 					setTimeout(() => {
 						$cookiesConsentBlock.classList.add('bc-is-visible');
-					}, 3000);
+					}, 3000); 
 					$cookiesConsentBtn.addEventListener('click', (evt) => {
 						gtag('consent', 'updated', {
 							'ad_storage': 'granted',
