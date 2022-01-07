@@ -889,14 +889,18 @@ iframe
 			background-color: $brand-darker
 			.svg-icon
 				opacity: 1
-#shopping-cart
-	#cart-count
 
 .bc-fades-in-out
 	opacity: 1
 	transition: opacity var(--quicktrans) ease-in
 	&.bc-fade-out
 		opacity: 0
+
+/* Privacy information form */
+.bc-privacy-form
+	& &__section
+		margin-bottom: calc(var(--vertical-unit) / 2)
+
 /* Woocommerce custom styling & overrides */
 .product-thumbnail, .product-remove
 	> a 

@@ -1897,6 +1897,10 @@ table {
   .bc-fades-in-out.bc-fade-out {
     opacity: 0; }
 
+/* Privacy information form */
+.bc-privacy-form .bc-privacy-form__section {
+  margin-bottom: calc(var(--vertical-unit) / 2); }
+
 /* Woocommerce custom styling & overrides */
 .product-thumbnail > a:active::after, .product-thumbnail > a:hover::after, .product-thumbnail > a:focus::after, .product-remove > a:active::after, .product-remove > a:hover::after, .product-remove > a:focus::after {
   height: 0; }
