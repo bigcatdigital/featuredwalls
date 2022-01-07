@@ -36,7 +36,7 @@
     </div><!-- // .bc-content-component -->  
 		<div class="bc-content-component--text">
 			<div class="bc-text-block">
-				<form class="bc-privacy-form" action="#" method="post">
+				<form class="bc-privacy-form" name="bc-privacy-form" id="bc-privacy-form" action="#" method="post">
 					<div class="bc-privacy-form__section">
 						<input type="checkbox" name="google-analytics" id="google-analytics" />
 						<label for="google-analytics">Disable Google analytics</label>
@@ -45,12 +45,37 @@
 						<input type="checkbox" name="google-ad-storage" id="google-ad-storage" />
 						<label for="google-analytics">Disable Google ad storage</label>
 					</div>
-					
 					<input class="bc-button" type="reset">
 					<input class="bc-button" type="submit">
 				</form>			
 			</div>
-			
+			<script>
+				const privacyForm = document.querySelector('#bc-privacy-form');
+				privacyForm.addEventListener('submit', (evt) => {
+					evt.preventDefault();
+					console.log(evt.currentTarget);
+					console.log(privacyForm['google-analytics'].checked);
+					console.log(privacyForm['google-ad-storage'].checked);
+					if (privacyForm['google-analytics'].checked || privacyForm['google-analytics'].checked) {
+						const expiryDate = new Date(Date.now() + (7 * 24 * 60 * 60 * 1000)).toUTCString();
+						bcFunctions.bcSetCookie('fwc-cookies-preferences', 'submitted', {
+							expires: expiryDate
+						});
+					}
+					if (privacyForm['google-analytics'].checked) {
+						const expiryDate = new Date(Date.now() + (7 * 24 * 60 * 60 * 1000)).toUTCString();
+						bcFunctions.bcSetCookie('fwc-ga-analytics', 'denied', {
+							expires: expiryDate
+						});
+					}
+					if (privacyForm['google-ad-storage'].checked) {
+						const expiryDate = new Date(Date.now() + (7 * 24 * 60 * 60 * 1000)).toUTCString();
+						bcFunctions.bcSetCookie('fwc-goolge-ad-storage', 'denied', {
+							expires: expiryDate
+						});
+					}
+				});
+			</script>
 		</div>
 	</section>
 	<?php get_footer(); ?>

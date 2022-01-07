@@ -20,28 +20,41 @@
 		function gtag(){dataLayer.push(arguments);}
 		gtag('js', new Date());
 		gtag('config', 'G-EB511QMQDJ'); 
-		let consentStatus = document.cookie.split('; ').find((row) => {
-			return row.startsWith('bc-consent-status');
+		let cookiesPreferences = document.cookie.split('; ').find((row) => {
+			return row.startsWith('fwc-cookies-preferences');
 		}); 
-		console.log(consentStatus);
-		if (consentStatus === 'default' || consentStatus === 'denied') {
+		cookiesPreferences = (cookiesPreferences) ? cookiesPreferences.split('=')[1] : undefined ;
+		console.log(cookiesPreferences);
+		if (cookiesPreferences === 'submitted') {
+			const gaAnalytics = document.cookie.split('; ').find((row) => {
+				return row.startsWith('fwc-ga-analytics');
+			}).split('=')[1]; 
+			if (gaAnalytics === 'denied') {
+				gtag('consent', 'update', {
+					'analytics_storage': 'denied'
+				});
+			} else {
+				gtag('consent', 'update', {
+					'analytics_storage': 'granted'
+				});
+			}
+			const gaAdStorage = document.cookie.split('; ').find((row) => {
+				return row.startsWith('fwc-goolge-ad-storage');
+			}).split('=')[1]; 
+			if (gaAdStorage === 'denied') {
+				gtag('consent', 'update', {
+					'ad_storage': 'denied'
+				});
+			} else {
+				gtag('consent', 'update', {
+					'ad_storage': 'granted'
+				});
+			}
+		} else {
 			gtag('consent', 'default', {
-			'ad_storage': 'denied',
-			'analytics_storage': 'denied'
+				'ad_storage': 'denied',
+				'analytics_storage': 'denied'
 			});
-		} else if (consentStatus === 'granted') {
-			gtag('consent', 'update', {
-				'ad_storage': 'granted',
-				'analytics_storage': 'granted'
-			});
-		}
-		
-		function GAConsentGranted() {
-			gtag('consent', 'update', {
-				'ad_storage': 'granted',
-				'analytics_storage': 'granted'
-			});
-			gtag('set', {'is_consent_granted': false});
 		}
 		
 	</script>

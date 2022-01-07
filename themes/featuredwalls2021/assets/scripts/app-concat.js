@@ -482,7 +482,6 @@ const bcFunctions = (function bcAppJS() {
 	}
 	function bcGetCookie(cname) {
 		const allCookies = document.cookie.split('; ');
-		
 		const thisCookie = allCookies.find((row) => {
 			return row.startsWith(cname);
 		}); 

@@ -564,7 +564,7 @@ p, ul, ol, blockquote {
       font-size: var(--text-01);
       line-height: calc(var(--text-01) * 1.5); } }
 
-button {
+button, .bc-button {
   padding: calc(var(--vertical-unit)/2) calc(var(--gutter)/2);
   font-size: var(--text-00);
   font-family: var(--base-font);
@@ -572,13 +572,13 @@ button {
   color: white;
   border: none;
   transition: background-color 280ms ease-in-out; }
-  button > a {
+  button > a, .bc-button > a {
     color: var(--white);
     font-size: var(--text-00);
     text-decoration: none; }
-    button > a:active, button > a:hover, button > a:focus {
+    button > a:active, button > a:hover, button > a:focus, .bc-button > a:active, .bc-button > a:hover, .bc-button > a:focus {
       color: var(--white); }
-  button:active, button:hover, button:focus {
+  button:active, button:hover, button:focus, .bc-button:active, .bc-button:hover, .bc-button:focus {
     background-color: #e20000; }
 
 a {
@@ -1898,8 +1898,18 @@ table {
     opacity: 0; }
 
 /* Privacy information form */
+.bc-privacy-form input[type="checkbox"], .bc-privacy-form input[type="submit"], .bc-privacy-form input[type="reset"] {
+  margin-right: calc(var(--gutter) / 4); }
+
 .bc-privacy-form .bc-privacy-form__section {
   margin-bottom: calc(var(--vertical-unit) / 2); }
+  .bc-privacy-form .bc-privacy-form__section:last-of-type {
+    margin-bottom: var(--vertical-unit); }
+
+.bc-privacy-form .bc-button[type="reset"] {
+  background-color: var(--shade-a0); }
+  .bc-privacy-form .bc-button[type="reset"]:active, .bc-privacy-form .bc-button[type="reset"]:hover, .bc-privacy-form .bc-button[type="reset"]:focus {
+    background-color: #818181; }
 
 /* Woocommerce custom styling & overrides */
 .product-thumbnail > a:active::after, .product-thumbnail > a:hover::after, .product-thumbnail > a:focus::after, .product-remove > a:active::after, .product-remove > a:hover::after, .product-remove > a:focus::after {

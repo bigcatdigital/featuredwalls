@@ -111,11 +111,10 @@
 				//bcFunctions.bcSetCookie('bc-consent-status', 'default');
 				const $cookiesConsentBlock = document.querySelector('.bc-cookies-consent');
 				const $cookiesConsentBtn = document.querySelector('#bc-cookies-consent');
-				consentStatus = bcFunctions.bcGetCookie('bc-consent-status');
 				
-				if (consentStatus === 'granted') {
+				if (cookiesPreferences === 'submitted') {
 					return true;
-				} else if (consentStatus === 'default') {
+				} else {
 					setTimeout(() => {
 						$cookiesConsentBlock.classList.add('bc-is-visible');
 					}, 3000); 
@@ -124,20 +123,21 @@
 							'ad_storage': 'granted',
 							'analytics_storage': 'granted',
 						});
-						$cookiesConsentBlock.classList.remove('bc-page-loaded');
 						//Add a cookie to indicating users cookie preferences
 						const expiryDate = new Date(Date.now() + (7 * 24 * 60 * 60 * 1000)).toUTCString();
-						bcFunctions.bcSetCookie('bc-consent-status', 'granted', {
+						bcFunctions.bcSetCookie('fwc-cookies-preferences', 'submitted', {
 							expires: expiryDate
 						});
+						bcFunctions.bcSetCookie('fwc-goolge-ad-storage', 'granted', {
+							expires: expiryDate
+						});
+						bcFunctions.bcSetCookie('fwc-ga-analytics', 'granted', {
+							expires: expiryDate
+						});
+						console.log(document.cookie);
 						$cookiesConsentBlock.classList.remove('bc-is-visible');
 					});
-				} else if (consentStatus === 'denied') {
-					gtag('consent', 'updated', {
-						'ad_storage': 'denied',
-						'analytics_storage': 'denied',
-					});
-				}
+				} 
 			}	
 		</script>	
 	</body>

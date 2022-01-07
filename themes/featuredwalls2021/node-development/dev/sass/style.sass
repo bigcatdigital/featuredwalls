@@ -48,7 +48,7 @@ p, ul, ol, blockquote
 		line-height: calc(var(--text-01) * 1.5)
 	margin-top: 0
 	margin-bottom: var(--vertical-unit)
-button
+button, .bc-button
 	padding: calc(var(--vertical-unit)/2) calc(var(--gutter)/2)
 	font-size: var(--text-00)
 	font-family: var(--base-font)
@@ -898,8 +898,16 @@ iframe
 
 /* Privacy information form */
 .bc-privacy-form
+	input[type="checkbox"], input[type="submit"], input[type="reset"]
+		margin-right: calc(var(--gutter) / 4)
 	& &__section
 		margin-bottom: calc(var(--vertical-unit) / 2)
+		&:last-of-type
+			margin-bottom: var(--vertical-unit)
+	.bc-button[type="reset"]
+		background-color: var(--shade-a0)
+		@include linkHover
+			background-color: darken($shade-a0, 12%)
 
 /* Woocommerce custom styling & overrides */
 .product-thumbnail, .product-remove
@@ -908,6 +916,13 @@ iframe
 				&::after
 					height: 0
 /* Products */
+// .product
+// 	&.has-post-thumbnail
+// 		@media screen and (min-width: $tablet-large)
+// 			@include makeFlexbox
+// 			flex-flow: wrap
+// 			.woocommerce-product-gallery, .summary
+// 				flex: 1 1 50%  
 /* Product listings */
 ul.products
 	display: grid
