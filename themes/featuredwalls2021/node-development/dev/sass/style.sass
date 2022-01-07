@@ -223,34 +223,30 @@ iframe
 @import 'components/tables';
 
 .bc-cookies-consent
-	display: none
 	position: fixed 
-	top: 0
-	left: 0
+	bottom: 0
+	@include makeFlexbox(column)
 	width: 100%
-	height: 100%
-	background-color: rgba($black, 0.24) 
-	z-index: 1000	
 	opacity: 0
-	transition: opacity 320ms ease-out 
-	&.bc-page-loaded
+	transform: translateY(100%)
+	z-index: 1000
+	transition: opacity 320ms ease-out 50ms, transform 320ms ease-in-out 50ms
+	&.bc-is-visible
 		opacity: 1
-		.bc-cookies-consent__box 
-			opacity: 1
-			transform: translateY(0)
+		transform: translateY(0)
 	.bc-cookies-consent__box  
-		position: absolute
-		bottom: 10%
-		left: 5%
-		width: 90%
-		padding: calc(var(--vertical-unit) /2) calc(var(--gutter) /2)
-		margin-left: auto	
-		margin-right: auto	 
+		width: 100%
+		padding: calc(var(--vertical-unit) / 1.5) calc(var(--gutter))	 
 		background-color: var(--white)
-		border: 4px solid var(--brand-primary)
-		opacity: 1
-		transform: translateY(130%)
-		transition: opacity 320ms ease-out 50ms, transform 320ms ease-in-out 50ms
+		border-top: 2px solid var(--brand-primary)
+	&__message
+		font-size: var(--small-text)
+		line-height: 1.3
+	&__buttons 
+		@include makeFlexbox()
+		button
+			flex: 1 1 100%
+
 	&__buttons__manage
 		background-color: var(--shade-e0)
 		a 

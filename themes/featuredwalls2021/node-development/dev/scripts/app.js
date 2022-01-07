@@ -1,19 +1,18 @@
 /* @preserve 
- * BC custom scripts - Featured Walls & Ceilings 2021
- * 
-*/
+ * eslint no-unused-vars: ["error", { "varsIgnorePattern": "^bc" }]
+
 /* Functions to export to global scope */
 const bcFunctions = (function bcAppJS() {
-	let debug = true;
+	let debug = false;
 	if (debug) {
 		console.log('WP Base Theme here');
-		console.log('Debug is go');
+		console.log('Debug is go');   
 		console.log('===========');
 		console.log('...'); 
 	}
 	function bcAJAX(url, options) {
 		if (options !== undefined) {
-			return fetch(url, options);
+			return fetch(url, options); 
 		} else {
 			return fetch(url);
 		}
@@ -405,28 +404,39 @@ const bcFunctions = (function bcAppJS() {
 		IOmaker($slider, opts, sliderCallback);
 	});
 	/* Cookie funcitons */
-	function bcSetCookie(cname, copts) {
-		let coptions = {
-			samesite: 'lax'
-		};
-		coptions = Object.assign(coptions, copts);
-		for (let key in coptions) {
-			console.log(`${key}: ${coptions[key]}`);	
+	function bcSetCookie(cname, cvalue, opts) {
+		let newCookie = cname + '=' + encodeURI(cvalue);
+		if (typeof opts === 'object') {
+			if (debug) {
+				console.log('opts is an object');
+			}
+			let optNames = Object.getOwnPropertyNames(opts);
+			optNames.forEach((key) => {
+				newCookie += '; ' + key + '=' + opts[key];
+			});
 		}
+		if (debug) {
+			console.log('New cookie is: '+newCookie);
+		}
+		document.cookie	= newCookie; 
+		if (debug) {
+			console.log('setCookie() document.cookie = '+ document.cookie);
+		}
+		
 	}
 	function bcGetCookie(cname) {
 		const allCookies = document.cookie.split('; ');
 		
 		const thisCookie = allCookies.find((row) => {
-		
 			return row.startsWith(cname);
 		}); 
-		return (thisCookie) ? thisCookie.split('=')[1] : null;
+		return (thisCookie) ? thisCookie.split('=')[1] : undefined ;
 	}
 	
 	window.addEventListener('resize', function () {});
 	//Export functions
 	return {
-		bcGetCookie: getCookie
+		bcGetCookie: bcGetCookie,
+		bcSetCookie: bcSetCookie
 	};
 })(window);

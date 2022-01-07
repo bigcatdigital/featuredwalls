@@ -94,27 +94,29 @@
 		</div><!-- //. bc-body-wrap --> 
 		<div class="bc-cookies-consent">
 			<div class="bc-cookies-consent__box">	
-				<h1 class="bc-cookies-consent__header">You like cookies?</h1>
-				<p>We use cookeies on our website to make your experience better.</p>
-				<p>But your privacy is important to us too. See <a href="<?php echo get_permalink(161) ?>"> our privacy information here</a> for details.</p>
+				<h2 class="bc-cookies-consent__header">Your privacy</h2>
+				<p class="bc-cookies-consent__message">We use cookies on our website to make your experience better. See <a href="<?php echo get_permalink(161) ?>"> our privacy information here</a> for details.</p>
 				<div class="bc-cookies-consent__buttons">
 					<button class="bc-cookies-consent__buttons__manage"
-					><a href="<?php echo get_permalink(161); ?>">Manage cookie settings</a></button>
-					<button id="bc-cookies-consent" class="bc-cookies-consent__buttons__ok" onlick="GAConsentGranted">All cookies are good</button>
+					><a href="<?php echo get_permalink(161); ?>">Manage data settings</a></button>
+					<button id="bc-cookies-consent" class="bc-cookies-consent__buttons__ok" onlick="GAConsentGranted">Accept</button>
 				</div>
 			</div>
 		</div>
     <?php wp_footer(); ?>
 		<script>
 			window.onload = function() {
-				document.cookie = 'wordpress_test_cookie = ; expires=Thu, 01 Jan 1970 00:00:00 GMT';
-				console.log(document.cookie);
+				bcFunctions.bcSetCookie('bc-consent-status', 'default');
 				const $cookiesConsentBlock = document.querySelector('.bc-cookies-consent');
 				const $cookiesConsentBtn = document.querySelector('#bc-cookies-consent');
+				consentStatus = bcFunctions.bcGetCookie('bc-consent-status');
 				
-				let consentStatus = bcFunctions.bcGetCookie('bc-consent-status');
-				
-				if (consentStatus === undefined) {
+				if (consentStatus === 'granted') {
+					return true;
+				} else if (consentStatus === 'default') {
+					setTimeout(() => {
+						$cookiesConsentBlock.classList.add('bc-is-visible');
+					}, 3000);
 					$cookiesConsentBtn.addEventListener('click', (evt) => {
 						gtag('consent', 'updated', {
 							'ad_storage': 'granted',
@@ -122,8 +124,16 @@
 						});
 						$cookiesConsentBlock.classList.remove('bc-page-loaded');
 						//Add a cookie to indicating users cookie preferences
-						const expiryDate = new Date(Date.now() + (7 * 24 * 60 * 60 * 1000));
-						console.log(`${expiryDate}`);
+						const expiryDate = new Date(Date.now() + (7 * 24 * 60 * 60 * 1000)).toUTCString();
+						bcFunctions.bcSetCookie('bc-consent-status', 'granted', {
+							expires: expiryDate
+						});
+						$cookiesConsentBlock.classList.remove('bc-is-visible');
+					});
+				} else if (consentStatus === 'denied') {
+					gtag('consent', 'updated', {
+						'ad_storage': 'denied',
+						'analytics_storage': 'denied',
 					});
 				}
 			}	

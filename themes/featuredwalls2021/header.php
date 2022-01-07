@@ -15,15 +15,27 @@
 	<!-- Global site tag (gtag.js) - Google Analytics -->
 	<script async src="https://www.googletagmanager.com/gtag/js?id=G-EB511QMQDJ"></script>
 	<script>
-		window['ga-disable-G-EB511QMQDJ'] = true;
+		//window['ga-disable-G-EB511QMQDJ'] = true;
 		window.dataLayer = window.dataLayer || [];
 		function gtag(){dataLayer.push(arguments);}
 		gtag('js', new Date());
-		gtag('consent', 'default', {
+		gtag('config', 'G-EB511QMQDJ'); 
+		let consentStatus = document.cookie.split('; ').find((row) => {
+			return row.startsWith('bc-consent-status');
+		}); 
+		console.log(consentStatus);
+		if (consentStatus === 'default' || consentStatus === 'denied') {
+			gtag('consent', 'default', {
 			'ad_storage': 'denied',
 			'analytics_storage': 'denied'
-		});
-		gtag('config', 'G-EB511QMQDJ'); 
+			});
+		} else if (consentStatus === 'granted') {
+			gtag('consent', 'update', {
+				'ad_storage': 'granted',
+				'analytics_storage': 'granted'
+			});
+		}
+		
 		function GAConsentGranted() {
 			gtag('consent', 'update', {
 				'ad_storage': 'granted',
