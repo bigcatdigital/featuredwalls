@@ -916,13 +916,58 @@ iframe
 				&::after
 					height: 0
 /* Products */
-// .product
-// 	&.has-post-thumbnail
-// 		@media screen and (min-width: $tablet-large)
-// 			@include makeFlexbox
-// 			flex-flow: wrap
-// 			.woocommerce-product-gallery, .summary
-// 				flex: 1 1 50%  
+.bc-wc-single-product
+	.product
+		margin-left: calc(var(--gutter) / 2 * -1) 
+		margin-right: calc(var(--gutter) / 2 * -1) 
+		.woocommerce-product-gallery
+			&__wrapper
+				margin: 0
+				@include is-1x1
+			&__image
+				position: absolute
+				top: 0
+				left: 0
+				width: 100%
+				height: 100%
+				> a 
+					display: block 
+					width: 100%
+					height: 100% 
+			margin: 0
+		.cart
+			.quantity
+				display: none
+		.woocommerce-tabs
+			width: 100%
+			margin-top: var(--vertical-unit)
+		.related
+			flex: 1 1 100%
+			.products
+				flex: 1 1 100%
+			.product
+				display: block
+				margin-left: auto
+				margin-right: auto
+			.price
+				display: block 
+				margin-bottom: calc(var(--vertical-unit) / 4) 
+		@media screen and (min-width: $tablet-large)
+			@include makeFlexbox
+			flex-flow: wrap
+			.woocommerce-product-gallery, .summary, .woocommerce-tabs, .related 
+				padding-left:  calc(var(--gutter) / 2)
+				padding-right: calc(var(--gutter) / 2)
+			.woocommerce-product-gallery
+				flex: 1 1 50%
+			.summary 
+				flex: 1 1 50%
+				padding-top: calc(var(--vertical-unit) / 2)
+
+		
+
+			
+
 /* Product listings */
 ul.products
 	display: grid
@@ -933,7 +978,7 @@ ul.products
 	margin-right: 0
 	padding-left: 0
 	li 
-		@include makeFlexbox(column)
+		@include makeFlexbox(column, $justify: space-between)
 		list-style: none
 		&::marker
 			list-style: none

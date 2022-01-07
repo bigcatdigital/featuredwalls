@@ -50,8 +50,8 @@ get_header(); ?>
 	</section><!-- // .bc-hero --> 
 	<section id="body-content" class="bc-container bc-wc-single-product " aria-label="Find out about our stylish featured walls and Ceilings">
 		
-		<div class="bc-content-component--text bc-content-block bc-column">
-		<?php wc_get_template_part( 'content', 'single-product' ); ?>
+		<div class="bc-content-component--media-padded bc-content-block bc-column">
+			<?php wc_get_template_part( 'content', 'single-product' ); ?>
 		</div>
 	</section>
 		<?php endwhile; // end of the loop. ?>
