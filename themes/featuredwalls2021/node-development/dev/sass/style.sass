@@ -64,6 +64,23 @@ button, .bc-button
 			color: var(--white)
 	@include linkHover
 		background-color: darken($brand-primary, 12%)
+
+@mixin makeButton($btn-bg-colour: $brand-primary, $btn-colour: $white)
+	padding: calc(var(--vertical-unit)/2) calc(var(--gutter)/2)
+	font-size: var(--text-00)
+	font-family: var(--base-font)
+	background-color: $btn-bg-colour
+	color: $btn-colour
+	border: none
+	transition: background-color 280ms ease-in-out
+	> a
+		color: $btn-colour
+		font-size: var(--text-00)
+		text-decoration: none
+		@include linkHover
+			color: $btn-colour
+	@include linkHover
+		background-color: darken($btn-bg-colour, 12%)
 a 
 	color: var(--link-color)
 	transition: color var(--quicktrans) var(--easing)
@@ -915,6 +932,18 @@ iframe
 		@include linkHover
 				&::after
 					height: 0
+.woocommerce-message
+	border-top-color: var(--brand-secondary)
+	&::before 
+		color: var(--brand-secondary)
+.woocommerce-info
+	border-top-color: var(--shade-a0)
+	&::before
+		color: var(--shade-a0)
+.woocommerce-error
+	border-top-color: var(--brand-primary)
+	&::before
+		color: var(--brand-primary)
 /* Products */
 .bc-wc-single-product
 	.product
@@ -963,10 +992,6 @@ iframe
 			.summary 
 				flex: 1 1 50%
 				padding-top: calc(var(--vertical-unit) / 2)
-
-		
-
-			
 
 /* Product listings */
 ul.products
@@ -1029,7 +1054,7 @@ ul.products
 				&::after
 					height: 0
 /* Shopping cart */
-.woocommerce 
+.bc-wc-cart
 	.bc-wc-cart-wrapper
 		@media screen and (min-width: $tablet-large) 
 			display: grid
@@ -1096,7 +1121,7 @@ ul.products
 							&.product-thumbnail 
 								> a 
 									width: 100%
-									@include is-16x9() 
+									@include is-1x1() 
 
 		.cart-collaterals
 			&::before, &::after
@@ -1122,6 +1147,15 @@ ul.products
 					background-color: transparent !important
 			&.order-total
 				border-top: 1px solid var(--shade-a0)
+	.woocommerce 
+		a.button
+			border-radius: 0
+			@include makeButton
+		@media screen and (min-width: $tablet-large)
+			max-width: 70.72%
+			margin-left: auto
+			margin-right: auto 
+
 /* Checkout page */
 .bc-wc-checkout-page
 	.woocommerce-notices-wrapper

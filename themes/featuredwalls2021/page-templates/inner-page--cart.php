@@ -25,7 +25,7 @@
 	</section><!-- // .bc-hero -->
 	<?php }//end if get_file('leader-image') ?>
 	
-  <section id="body-content" class="bc-container " aria-label="Find out about our stylish featured walls and Ceilings">
+  <section id="body-content" class="bc-container bc-wc-cart" aria-label="Find out about our stylish featured walls and Ceilings">
 		<div class="bc-content-component--text bc-content-block bc-column">
 			<div class="bc-text-block">
 				<h2 class="bc-section-title"><?php echo 'Your cart' ?></h2>
